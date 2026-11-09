@@ -44,7 +44,7 @@ onUnmounted(() => {
               En <strong>VIBROMINE</strong> respaldamos la continuidad operativa y confiabilidad
               de la Gran Minería e Industria con más de <strong>24 años de experiencia</strong>.
               Especialistas en análisis de vibraciones, balanceo dinámico in-situ, alineamiento láser y ensayos no
-              destructivos bajo normas <span class="badge bg-white text-vm-blue fw-bold">ISO 18436-2</span> y
+              destructivos bajo normas <span class="badge bg-vm-red fw-bold">ISO 18436-2</span> y
               <span class="badge bg-vm-red fw-bold">ASNT SNT-TC-1A</span>.
             </p>
 
