@@ -5,7 +5,7 @@ import { clientsList } from '../data/vibromineData'
 const activeSector = ref('all')
 
 const sectors = [
-  { id: 'all', label: 'Todos los Clientes (26)', icon: 'fa-solid fa-building-shield' },
+  { id: 'all', label: 'Todos los Clientes', icon: 'fa-solid fa-building-shield' },
   { id: 'mineria', label: 'Gran Minería Metálica', icon: 'fa-solid fa-helmet-safety' },
   { id: 'litio', label: 'Litio y Minería No Metálica', icon: 'fa-solid fa-gem' },
   { id: 'industria', label: 'Ingeniería y Proveedores Mineros', icon: 'fa-solid fa-gears' },

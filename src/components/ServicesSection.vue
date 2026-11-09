@@ -19,7 +19,7 @@ function setCardImageIndex(serviceId, idx) {
 }
 
 const categories = [
-  { id: 'all', label: 'Todos los Servicios (8)', icon: 'fa-solid fa-layer-group' },
+  { id: 'all', label: 'Todos los Servicios', icon: 'fa-solid fa-layer-group' },
   { id: 'predictivo', label: 'Monitoreo Predictivo', icon: 'fa-solid fa-wave-square' },
   { id: 'precision', label: 'Alineación & Geometría', icon: 'fa-solid fa-crosshairs' },
   { id: 'correctivo', label: 'Corrección In-Situ', icon: 'fa-solid fa-fan' },
