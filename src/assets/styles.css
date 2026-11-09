@@ -1,0 +1,576 @@
+/* ==========================================================================
+   SISTEMA DE DISEÑO INDUSTRIAL VIBROMINE (Inspirado en Treppco)
+   ========================================================================== */
+
+:root {
+  --vm-navy-950: #050c17;
+  --vm-navy-900: #0b192c;
+  --vm-navy-800: #132743;
+  --vm-navy-700: #1e3a5f;
+  --vm-cyan-500: #00b4d8;
+  --vm-cyan-400: #48cae4;
+  --vm-cyan-600: #0096c7;
+  --vm-orange-500: #ff6b35;
+  --vm-orange-600: #e8531d;
+  --vm-emerald-500: #10b981;
+  --vm-slate-50: #f4f7fb;
+  --vm-slate-100: #e9eff6;
+  --vm-slate-200: #d5e0ec;
+  --vm-slate-600: #4b5e75;
+  --vm-slate-800: #1f2d3d;
+  --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--vm-slate-800);
+  background-color: #ffffff;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar & Sticky Navbar (Estilo Corporativo Treppco)
+   -------------------------------------------------------------------------- */
+.vm-topbar {
+  background-color: var(--vm-navy-950);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vm-topbar a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vm-topbar a:hover {
+  color: var(--vm-cyan-400);
+}
+
+.vm-navbar {
+  background: rgba(11, 25, 44, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 180, 216, 0.18);
+  transition: all 0.3s ease;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.vm-navbar.scrolled {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  box-shadow: 0 10px 30px rgba(5, 12, 23, 0.45);
+}
+
+.vm-nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.95rem !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.vm-nav-link:hover,
+.vm-nav-link.active {
+  color: var(--vm-cyan-400) !important;
+  background: rgba(0, 180, 216, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   Botones Industriales
+   -------------------------------------------------------------------------- */
+.btn-vm-primary {
+  background: linear-gradient(135deg, var(--vm-cyan-500) 0%, var(--vm-cyan-600) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-vm-primary:hover {
+  background: linear-gradient(135deg, var(--vm-cyan-400) 0%, var(--vm-cyan-500) 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.45);
+}
+
+.btn-vm-orange {
+  background: linear-gradient(135deg, var(--vm-orange-500) 0%, var(--vm-orange-600) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-vm-orange:hover {
+  background: linear-gradient(135deg, #ff7d4d 0%, var(--vm-orange-500) 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.45);
+}
+
+.btn-vm-outline-light {
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.btn-vm-outline-light:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.vm-hero {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, rgba(0, 180, 216, 0.18) 0%, transparent 45%),
+              radial-gradient(circle at 15% 85%, rgba(255, 107, 53, 0.12) 0%, transparent 40%),
+              linear-gradient(160deg, var(--vm-navy-950) 0%, var(--vm-navy-900) 55%, var(--vm-navy-800) 100%);
+  color: #ffffff;
+  padding: 5.5rem 0 5rem;
+  overflow: hidden;
+}
+
+.vm-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.vm-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(0, 180, 216, 0.14);
+  border: 1px solid rgba(0, 180, 216, 0.4);
+  color: var(--vm-cyan-400);
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.vm-hero-title {
+  font-size: clamp(2.15rem, 4.2vw, 3.55rem);
+  font-weight: 800;
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+}
+
+.vm-text-gradient {
+  background: linear-gradient(90deg, #48cae4 0%, #00b4d8 50%, #ff8a5b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vm-hero-showcase {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 180, 216, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  background: var(--vm-navy-900);
+}
+
+.vm-hero-main-img {
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.vm-hero-showcase:hover .vm-hero-main-img {
+  transform: scale(1.03);
+}
+
+.vm-hero-thumb {
+  width: 68px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.65;
+  transition: all 0.2s ease;
+}
+
+.vm-hero-thumb.active,
+.vm-hero-thumb:hover {
+  border-color: var(--vm-cyan-400);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Barra de Estadísticas e Impacto
+   -------------------------------------------------------------------------- */
+.vm-stats-bar {
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.vm-stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.75rem 1.4rem;
+  border: 1px solid var(--vm-slate-200);
+  box-shadow: 0 15px 35px rgba(11, 25, 44, 0.08);
+  height: 100%;
+  transition: all 0.3s ease;
+  border-bottom: 4px solid var(--vm-cyan-500);
+}
+
+.vm-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgba(11, 25, 44, 0.14);
+  border-bottom-color: var(--vm-orange-500);
+}
+
+.vm-stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--vm-navy-900);
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Encabezados de Sección
+   -------------------------------------------------------------------------- */
+.vm-section-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--vm-cyan-600);
+  background: rgba(0, 180, 216, 0.1);
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+
+.vm-section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: var(--vm-navy-900);
+}
+
+/* --------------------------------------------------------------------------
+   Tarjetas de Servicios (8 Especialidades VIBROMINE)
+   -------------------------------------------------------------------------- */
+.vm-service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--vm-slate-200);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(11, 25, 44, 0.05);
+}
+
+.vm-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(11, 25, 44, 0.14);
+  border-color: var(--vm-cyan-500);
+}
+
+.vm-service-card.highlighted-symptom {
+  border: 2px solid var(--vm-orange-500);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2), 0 20px 40px rgba(11, 25, 44, 0.15);
+}
+
+.vm-service-img-wrapper {
+  position: relative;
+  height: 215px;
+  overflow: hidden;
+  background: var(--vm-navy-900);
+}
+
+.vm-service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vm-service-card:hover .vm-service-img {
+  transform: scale(1.07);
+}
+
+.vm-service-num {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(5, 12, 23, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--vm-cyan-400);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 180, 216, 0.4);
+}
+
+.vm-service-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(11, 25, 44, 0.9);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vm-service-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--vm-navy-900) 0%, var(--vm-navy-700) 100%);
+  color: var(--vm-cyan-400);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.vm-detection-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+}
+
+.vm-detection-list li {
+  position: relative;
+  padding-left: 1.45rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--vm-slate-600);
+}
+
+.vm-detection-list li::before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--vm-cyan-600);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Diagnosticador Rápido de Síntomas
+   -------------------------------------------------------------------------- */
+.vm-symptom-box {
+  background: linear-gradient(135deg, var(--vm-navy-900) 0%, var(--vm-navy-800) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  color: #ffffff;
+  border: 1px solid rgba(0, 180, 216, 0.28);
+}
+
+.vm-symptom-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.vm-symptom-pill:hover,
+.vm-symptom-pill.active {
+  background: rgba(255, 107, 53, 0.2);
+  border-color: var(--vm-orange-500);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Certificaciones y Normativas
+   -------------------------------------------------------------------------- */
+.vm-cert-section {
+  background: linear-gradient(160deg, var(--vm-navy-950) 0%, var(--vm-navy-900) 100%);
+  color: #ffffff;
+}
+
+.vm-cert-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.vm-cert-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--vm-cyan-400);
+  transform: translateY(-5px);
+}
+
+/* --------------------------------------------------------------------------
+   Clientes Mineros e Industriales
+   -------------------------------------------------------------------------- */
+.vm-client-card {
+  background: #ffffff;
+  border: 1px solid var(--vm-slate-200);
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.vm-client-card:hover {
+  border-color: var(--vm-cyan-500);
+  box-shadow: 0 10px 25px rgba(11, 25, 44, 0.08);
+  transform: translateY(-3px);
+}
+
+.vm-client-card.client-featured {
+  border-left: 4px solid var(--vm-cyan-500);
+}
+
+/* --------------------------------------------------------------------------
+   Formulario de Contacto y Cotización
+   -------------------------------------------------------------------------- */
+.vm-quote-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--vm-slate-200);
+  box-shadow: 0 20px 50px rgba(11, 25, 44, 0.1);
+  padding: 2.5rem;
+}
+
+.vm-form-control {
+  border: 1.5px solid var(--vm-slate-200);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.vm-form-control:focus {
+  border-color: var(--vm-cyan-500);
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Botón Flotante de WhatsApp
+   -------------------------------------------------------------------------- */
+.vm-whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.8rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+  transition: all 0.25s ease;
+}
+
+.vm-whatsapp-float:hover {
+  background: #1ebe5d;
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Footer Corporativo
+   -------------------------------------------------------------------------- */
+.vm-footer {
+  background: var(--vm-navy-950);
+  color: rgba(255, 255, 255, 0.75);
+  border-top: 3px solid var(--vm-cyan-500);
+}
+
+.vm-footer a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vm-footer a:hover {
+  color: var(--vm-cyan-400);
+}
+
+@media (max-width: 767.98px) {
+  .vm-hero {
+    padding: 3.5rem 0 4rem;
+  }
+  .vm-hero-main-img {
+    height: 270px;
+  }
+  .vm-quote-card {
+    padding: 1.5rem;
+  }
+}
