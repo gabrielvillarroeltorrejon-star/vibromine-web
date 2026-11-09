@@ -311,15 +311,13 @@ function openWhatsAppWithQuote() {
               class="p-4 rounded-4 text-white shadow"
               style="background-color: #0012b8; border-top: 5px solid #d91018;"
             >
-              <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="badge bg-vm-red border border-white fw-bold">SEDE CENTRAL</span>
-                <span class="small text-white fw-semibold">Antofagasta, II Región, Chile</span>
-              </div>
-              <h3 class="h4 fw-bold mb-4">Canales Directos VIBROMINE</h3>
+              <h3 class="h4 fw-bold mb-3 pb-2 border-bottom border-white border-opacity-25">
+                Canales Directos VIBROMINE
+              </h3>
 
               <div class="d-flex flex-column gap-3">
                 <!-- Dirección -->
-                <div class="d-flex align-items-start gap-3">
+                <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
                     style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
@@ -328,13 +326,12 @@ function openWhatsAppWithQuote() {
                   </div>
                   <div>
                     <div class="small text-white">Dirección Comercial y Técnica</div>
-                    <div class="fw-bold">{{ companyInfo.contact.address }}</div>
-                    <div class="small text-white fw-semibold">{{ companyInfo.contact.city }} - {{ companyInfo.contact.country }}</div>
+                    <div class="fw-bold">{{ companyInfo.contact.address }}, {{ companyInfo.contact.city }}</div>
                   </div>
                 </div>
 
                 <!-- Teléfonos Oficiales -->
-                <div class="d-flex align-items-start gap-3">
+                <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
                     style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
@@ -343,7 +340,7 @@ function openWhatsAppWithQuote() {
                   </div>
                   <div>
                     <div class="small text-white">Teléfonos Red Fija Antofagasta</div>
-                    <div class="d-flex flex-wrap gap-3 mt-1">
+                    <div class="d-flex flex-wrap gap-2 mt-1">
                       <a
                         :href="`tel:${companyInfo.contact.phones[0].raw}`"
                         class="text-white fw-bold text-decoration-none font-mono-tech"
@@ -362,7 +359,7 @@ function openWhatsAppWithQuote() {
                 </div>
 
                 <!-- Email Oficial -->
-                <div class="d-flex align-items-start gap-3">
+                <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
                     style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
@@ -381,7 +378,7 @@ function openWhatsAppWithQuote() {
                 </div>
 
                 <!-- Sitio Web -->
-                <div class="d-flex align-items-start gap-3">
+                <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
                     style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
