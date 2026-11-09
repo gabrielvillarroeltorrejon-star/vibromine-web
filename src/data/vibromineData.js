@@ -91,7 +91,7 @@ export const servicesList = [
     shortTitle: 'Análisis Vibracional',
     category: 'predictivo',
     categoryLabel: 'Monitoreo Predictivo',
-    icon: 'fa-solid fa-wave-square',
+    icon: 'vm-icon-vibration',
     badge: 'ISO 18436-2 Cat. II',
     summary:
       'Técnica avanzada que permite, a través del análisis del espectro vibracional generado por el equipo en operación, la detección temprana de fallas incipientes sin detener la producción.',
@@ -402,7 +402,7 @@ export const certificationsList = [
     organization: 'International Organization for Standardization (ISO)',
     description:
       'Acredita la competencia técnica internacional para configurar mediciones espectrales, diagnosticar fallas complejas en maquinaria rotatoria y definir acciones correctivas de alta precisión.',
-    icon: 'fa-solid fa-wave-square',
+    icon: 'vm-icon-vibration',
     accentColor: '#0018E8'
   },
   {
