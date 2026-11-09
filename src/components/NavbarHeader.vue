@@ -101,7 +101,7 @@ onUnmounted(() => {
               class="btn btn-vm-red d-flex align-items-center justify-content-center gap-2 py-2 px-4"
               @click="closeMobileMenu"
             >
-              <i class="fa-solid fa-wave-square"></i>
+              <i class="fa-solid fa-envelope"></i>
               <span>Solicitar Cotización</span>
             </a>
           </div>
