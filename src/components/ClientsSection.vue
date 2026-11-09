@@ -30,8 +30,8 @@ const uniqueLogoClients = computed(() => {
 </script>
 
 <template>
-  <section id="clientes" class="py-5 bg-white">
-    <div class="container py-lg-4">
+  <section id="clientes" class="py-5 bg-white overflow-hidden">
+    <div class="container pt-lg-4">
       <!-- Encabezado de Clientes -->
       <div class="text-center mx-auto mb-4" style="max-width: 760px;">
         <span class="vm-section-eyebrow">
@@ -45,9 +45,11 @@ const uniqueLogoClients = computed(() => {
           avalan nuestra trayectoria de más de 24 años de servicio continuo.
         </p>
       </div>
+    </div>
 
-      <!-- Carrusel Continuo de Logotipos Corporativos (Estilo Treppco) -->
-      <div class="vm-logo-marquee mb-5">
+    <!-- Carrusel Continuo de Logotipos Corporativos de Ancho Completo -->
+    <div class="container-fluid px-2 px-md-4 mb-5">
+      <div class="vm-logo-marquee">
         <div class="vm-logo-track">
           <div
             v-for="(client, i) in [...uniqueLogoClients, ...uniqueLogoClients]"
@@ -59,7 +61,9 @@ const uniqueLogoClients = computed(() => {
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="container pb-lg-4">
       <!-- Filtros por Sector Industrial -->
       <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
         <button
