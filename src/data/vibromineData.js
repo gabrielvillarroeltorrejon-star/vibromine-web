@@ -424,7 +424,7 @@ export const certificationsList = [
     organization: 'ASNT & National Aerospace Standard (NAS-410)',
     description:
       'Calificación de alto estándar para la calibración, evaluación e interpretación de discontinuidades internas en uniones soldadas, pernos de molinos y elementos estructurales.',
-    icon: 'fa-solid fa-shield-halved',
+    icon: 'fa-solid fa-magnifying-glass-chart',
     accentColor: '#0018E8'
   }
 ]
