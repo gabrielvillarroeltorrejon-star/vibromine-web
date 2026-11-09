@@ -24,56 +24,56 @@ onUnmounted(() => {
 
 <template>
   <header class="sticky-top">
-    <!-- Top Bar Corporativa estilo Treppco -->
+    <!-- Top Bar Corporativa con Identidad Azul/Rojo VIBROMINE -->
     <div class="vm-topbar py-2 d-none d-lg-block">
       <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center gap-4">
           <span>
-            <i class="fa-solid fa-location-dot text-info me-1"></i>
+            <i class="fa-solid fa-location-dot text-vm-red-light me-1"></i>
             {{ companyInfo.contact.fullAddress }}
           </span>
           <a :href="`mailto:${companyInfo.contact.email}`">
-            <i class="fa-solid fa-envelope text-info me-1"></i>
+            <i class="fa-solid fa-envelope text-vm-blue-light me-1"></i>
             {{ companyInfo.contact.email }}
           </a>
           <span>
-            <i class="fa-solid fa-phone-volume text-warning me-1"></i>
+            <i class="fa-solid fa-phone-volume text-vm-red-light me-1"></i>
             <a :href="`tel:${companyInfo.contact.phones[0].raw}`" class="me-2">{{ companyInfo.contact.phones[0].display }}</a>
             <span class="text-white-50">|</span>
             <a :href="`tel:${companyInfo.contact.phones[1].raw}`" class="ms-2">{{ companyInfo.contact.phones[1].display }}</a>
           </span>
         </div>
-        <div class="d-flex align-items-center gap-3">
-          <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 font-mono-tech">
-            <i class="fa-solid fa-award me-1"></i>ISO 18436-2 Cat. II
+        <div class="d-flex align-items-center gap-2">
+          <span
+            class="badge font-mono-tech px-2 py-1"
+            style="background: rgba(0, 34, 232, 0.35); color: #ffffff; border: 1px solid rgba(112, 141, 255, 0.5);"
+          >
+            <i class="fa-solid fa-award text-vm-blue-light me-1"></i>ISO 18436-2 Cat. II
           </span>
-          <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 font-mono-tech">
-            <i class="fa-solid fa-shield-halved me-1"></i>ASNT SNT-TC-1A / NAS-410
+          <span
+            class="badge font-mono-tech px-2 py-1"
+            style="background: rgba(217, 25, 32, 0.3); color: #ffffff; border: 1px solid rgba(255, 107, 112, 0.5);"
+          >
+            <i class="fa-solid fa-shield-halved text-vm-red-light me-1"></i>ASNT SNT-TC-1A / NAS-410
           </span>
         </div>
       </div>
     </div>
 
-    <!-- Navbar Principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark vm-navbar" :class="{ scrolled: isScrolled }">
+    <!-- Navbar Principal Blanca con el Logo Oficial de VIBROMINE -->
+    <nav class="navbar navbar-expand-lg vm-navbar" :class="{ scrolled: isScrolled }">
       <div class="container">
-        <!-- Logo Corporativo VIBROMINE -->
-        <a class="navbar-brand d-flex align-items-center gap-3 py-0" href="#inicio">
-          <div class="d-flex align-items-center justify-content-center rounded-3 p-1" style="background: rgba(0, 180, 216, 0.12); border: 1.5px solid rgba(0, 180, 216, 0.45);">
-            <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 36H12L16 16L21 48L25 26L29 36" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M22 14L35 50L48 14" stroke="#00B4D8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="52" cy="15" r="4" fill="#FF6B35"/>
-            </svg>
-          </div>
-          <div>
-            <div class="fw-black text-white fs-4 lh-1 font-heading" style="letter-spacing: 0.04em;">
-              VIBRO<span style="color: #00B4D8;">MINE</span>
-            </div>
-            <div class="text-info fw-semibold" style="font-size: 0.66rem; letter-spacing: 0.05em;">
-              SKM · SYMPTOMATIC KEEN MAINTENANCE
-            </div>
-          </div>
+        <!-- Logo Oficial de VIBROMINE Recortado con Precisión -->
+        <a class="navbar-brand py-0 d-flex align-items-center" href="#inicio" aria-label="VIBROMINE Inicio">
+          <svg
+            class="vm-logo-svg"
+            viewBox="95 232 835 238"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Logo Oficial VIBROMINE - SKM Symptomatic Keen Maintenance - Servicio de Mantenimiento Sintomático"
+          >
+            <image href="/images/logo-vibromine.jpg" width="1024" height="764" />
+          </svg>
         </a>
 
         <!-- Botón Hamburguesa Móvil -->
@@ -83,7 +83,7 @@ onUnmounted(() => {
           @click="mobileMenuOpen = !mobileMenuOpen"
           aria-label="Abrir menú de navegación"
         >
-          <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark fs-3 text-info' : 'fa-bars fs-3 text-white'"></i>
+          <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark fs-3 text-vm-red' : 'fa-bars fs-3 text-vm-blue'"></i>
         </button>
 
         <!-- Enlaces de Navegación -->
@@ -97,7 +97,8 @@ onUnmounted(() => {
             </li>
             <li class="nav-item">
               <a class="nav-link vm-nav-link" href="#servicios" @click="closeMobileMenu">
-                Servicios <span class="badge rounded-pill bg-info text-dark ms-1" style="font-size: 0.68rem;">8</span>
+                Servicios
+                <span class="badge rounded-pill bg-vm-blue ms-1" style="font-size: 0.68rem;">8</span>
               </a>
             </li>
             <li class="nav-item">
@@ -116,18 +117,18 @@ onUnmounted(() => {
               :href="companyInfo.contact.brochureUrl"
               target="_blank"
               download="Brochure-Corporativo-VIBROMINE.pdf"
-              class="btn btn-sm btn-vm-outline-light d-flex align-items-center justify-content-center gap-2 py-2 px-3"
+              class="btn btn-sm btn-vm-outline-blue d-flex align-items-center justify-content-center gap-2 py-2 px-3"
               title="Descargar Presentación Corporativa Oficial en PDF"
             >
-              <i class="fa-solid fa-file-pdf text-danger"></i>
+              <i class="fa-solid fa-file-pdf text-vm-red"></i>
               <span>Brochure PDF</span>
             </a>
             <a
               href="#cotizar"
-              class="btn btn-sm btn-vm-orange d-flex align-items-center justify-content-center gap-2 py-2 px-3"
+              class="btn btn-sm btn-vm-red d-flex align-items-center justify-content-center gap-2 py-2 px-3"
               @click="closeMobileMenu"
             >
-              <i class="fa-solid fa-bolt"></i>
+              <i class="fa-solid fa-wave-square"></i>
               <span>Solicitar Cotización</span>
             </a>
           </div>

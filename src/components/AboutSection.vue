@@ -6,52 +6,67 @@ import { companyInfo } from '../data/vibromineData'
   <section id="nosotros" class="py-5">
     <div class="container py-lg-4">
       <div class="row align-items-center g-5">
-        <!-- Columna Izquierda: Historia, Propósito y Distribución Minera -->
+        <!-- Columna Izquierda: Identidad Corporativa, Historia y Distribución Minera -->
         <div class="col-lg-6">
           <span class="vm-section-eyebrow">
-            <i class="fa-solid fa-industry me-1"></i>Quiénes Somos · ADN VIBROMINE
+            <i class="fa-solid fa-wave-square me-1"></i>Quiénes Somos · Identidad VIBROMINE
           </span>
           <h2 class="vm-section-title mb-3">
-            Más de dos décadas garantizando la confiabilidad de activos en el Norte de Chile
+            Más de 24 años liderando el Mantenimiento Sintomático en el Norte de Chile
           </h2>
+
+          <!-- Tarjeta de Sello Oficial con el Logo VIBROMINE -->
+          <div class="p-3 rounded-4 border bg-white shadow-sm mb-4 d-flex align-items-center gap-3 flex-wrap">
+            <svg
+              style="height: 54px; width: auto;"
+              viewBox="95 232 835 238"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Logo VIBROMINE"
+            >
+              <image href="/images/logo-vibromine.jpg" width="1024" height="764" />
+            </svg>
+            <div class="border-start ps-3 small text-secondary" style="flex: 1; min-width: 200px;">
+              Sede central en <strong class="text-dark">Antofagasta</strong>, comprometidos con la máxima producción y confiabilidad operacional de nuestros clientes.
+            </div>
+          </div>
+
           <p class="text-secondary mb-4">
-            Con sede estratégica en <strong>Antofagasta</strong>, en <strong>VIBROMINE (SKM Symptomatic Keen Maintenance)</strong>
-            somos especialistas en el <em>Servicio de Mantenimiento Sintomático de Equipos y Maquinarias en General</em>.
-            Nuestra metodología combina instrumentación de diagnóstico de última generación con más de
-            <strong>24 años de experiencia práctica en terreno</strong>, permitiendo anticipar fallas críticas y realizar
-            correcciones de precisión directamente en faena.
+            En <strong class="text-vm-blue">VIBROMINE</strong> (<em class="text-vm-red fw-semibold">Servicio de Mantenimiento Sintomático</em>)
+            combinamos instrumentación de diagnóstico no destructivo con más de dos décadas de experiencia en
+            terreno, detectando anomalías mecánicas, eléctricas y estructurales antes de que comprometan la
+            continuidad de su planta.
           </p>
 
           <!-- Indicador Visual de Participación en Minería (Datos Oficiales Presentación Pág. 3) -->
           <div class="p-4 rounded-4 mb-4" style="background: var(--vm-slate-50); border: 1px solid var(--vm-slate-200);">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <span class="fw-bold text-dark small text-uppercase">
-                <i class="fa-solid fa-chart-pie text-info me-2"></i>Distribución Histórica de Nuestros +1.600 Servicios
+                <i class="fa-solid fa-chart-pie text-vm-blue me-2"></i>Distribución de Nuestros +1.600 Servicios
               </span>
-              <span class="badge bg-dark font-mono-tech">Últimos 10 Años</span>
+              <span class="badge bg-vm-red font-mono-tech">Últimos 10 Años</span>
             </div>
 
-            <div class="progress mb-3" style="height: 16px; border-radius: 50px;">
+            <div class="progress mb-3" style="height: 18px; border-radius: 50px;">
               <div
-                class="progress-bar"
+                class="progress-bar fw-bold"
                 role="progressbar"
-                style="width: 40%; background-color: #0b192c;"
+                style="width: 40%; background-color: #0022e8;"
                 title="40% Empresas Mineras Directas"
               >
                 40% Mineras
               </div>
               <div
-                class="progress-bar"
+                class="progress-bar fw-bold"
                 role="progressbar"
-                style="width: 45%; background-color: #00b4d8;"
+                style="width: 45%; background-color: #d91920;"
                 title="45% Empresas Vinculadas a la Minería"
               >
-                45% Proveedores Mineros
+                45% Vinculadas a Minería
               </div>
               <div
-                class="progress-bar"
+                class="progress-bar fw-bold"
                 role="progressbar"
-                style="width: 15%; background-color: #ff6b35;"
+                style="width: 15%; background-color: #07133e;"
                 title="15% Industria General y Energía"
               >
                 15%
@@ -60,15 +75,15 @@ import { companyInfo } from '../data/vibromineData'
 
             <div class="row g-2 small">
               <div class="col-sm-4 d-flex align-items-center gap-2">
-                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #0b192c;"></span>
+                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #0022e8;"></span>
                 <span><strong>40%</strong> Mineras Directas</span>
               </div>
               <div class="col-sm-5 d-flex align-items-center gap-2">
-                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #00b4d8;"></span>
+                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #d91920;"></span>
                 <span><strong>45%</strong> Vinculadas a Minería</span>
               </div>
               <div class="col-sm-3 d-flex align-items-center gap-2">
-                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #ff6b35;"></span>
+                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #07133e;"></span>
                 <span><strong>15%</strong> Otros Rubros</span>
               </div>
             </div>
@@ -77,9 +92,9 @@ import { companyInfo } from '../data/vibromineData'
           <!-- Misión y Visión (Datos Oficiales Presentación Pág. 2) -->
           <div class="row g-3">
             <div class="col-md-6">
-              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm">
+              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm" style="border-top: 4px solid #0022e8 !important;">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="fa-solid fa-bullseye text-info fs-5"></i>
+                  <i class="fa-solid fa-bullseye text-vm-blue fs-5"></i>
                   <h3 class="h5 fw-bold mb-0">Nuestra Misión</h3>
                 </div>
                 <p class="small text-secondary mb-0">
@@ -88,9 +103,9 @@ import { companyInfo } from '../data/vibromineData'
               </div>
             </div>
             <div class="col-md-6">
-              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm">
+              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm" style="border-top: 4px solid #d91920 !important;">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="fa-solid fa-eye text-warning fs-5"></i>
+                  <i class="fa-solid fa-eye text-vm-red fs-5"></i>
                   <h3 class="h5 fw-bold mb-0">Nuestra Visión</h3>
                 </div>
                 <p class="small text-secondary mb-0">
@@ -112,7 +127,7 @@ import { companyInfo } from '../data/vibromineData'
                   class="w-100 object-fit-cover"
                   style="height: 220px;"
                 />
-                <span class="position-absolute bottom-0 start-0 m-2 badge bg-dark bg-opacity-75">
+                <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-blue">
                   Inspección en Molinos
                 </span>
               </div>
@@ -125,7 +140,7 @@ import { companyInfo } from '../data/vibromineData'
                   class="w-100 object-fit-cover"
                   style="height: 220px;"
                 />
-                <span class="position-absolute bottom-0 start-0 m-2 badge bg-dark bg-opacity-75">
+                <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-red">
                   Alineamiento en Planta
                 </span>
               </div>
@@ -138,7 +153,7 @@ import { companyInfo } from '../data/vibromineData'
                   class="w-100 object-fit-cover"
                   style="height: 220px;"
                 />
-                <span class="position-absolute bottom-0 start-0 m-2 badge bg-dark bg-opacity-75">
+                <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-red">
                   Control Topográfico Minero
                 </span>
               </div>
@@ -151,7 +166,7 @@ import { companyInfo } from '../data/vibromineData'
                   class="w-100 object-fit-cover"
                   style="height: 220px;"
                 />
-                <span class="position-absolute bottom-0 start-0 m-2 badge bg-dark bg-opacity-75">
+                <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-blue">
                   Diagnóstico de Motores
                 </span>
               </div>
@@ -161,18 +176,18 @@ import { companyInfo } from '../data/vibromineData'
           <!-- Banner de Compromiso Regional -->
           <div
             class="mt-3 p-3 rounded-4 d-flex align-items-center justify-content-between flex-wrap gap-3 text-white"
-            style="background: linear-gradient(135deg, #0b192c 0%, #1e3a5f 100%);"
+            style="background: linear-gradient(135deg, #040a24 0%, #07133e 65%, #0022e8 100%); border-left: 5px solid #d91920;"
           >
             <div class="d-flex align-items-center gap-3">
-              <div class="rounded-circle bg-info bg-opacity-25 p-3 text-info">
+              <div class="rounded-circle p-3 text-white" style="background: rgba(217, 25, 32, 0.85);">
                 <i class="fa-solid fa-map-location-dot fs-4"></i>
               </div>
               <div>
                 <div class="fw-bold">Base Operativa en Antofagasta</div>
-                <div class="small text-white-50">Despliegue rápido a Chuquicamata, Salar, Mejillones, El Salvador y todo el Norte</div>
+                <div class="small text-white-50">Despliegue rápido a Chuquicamata, Salar, Mejillones, El Salvador y Zona Norte</div>
               </div>
             </div>
-            <a href="#cotizar" class="btn btn-sm btn-vm-primary">
+            <a href="#cotizar" class="btn btn-sm btn-vm-red">
               Agendar Visita Técnica
             </a>
           </div>

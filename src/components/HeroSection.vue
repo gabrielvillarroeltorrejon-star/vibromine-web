@@ -22,7 +22,7 @@ onUnmounted(() => {
 
 <template>
   <section id="inicio">
-    <!-- Hero Principal Inspirado en Treppco -->
+    <!-- Hero Principal con la Identidad Azul Rey y Rojo Sintomático de VIBROMINE -->
     <div class="vm-hero">
       <div class="vm-hero-grid-bg"></div>
       <div class="container position-relative z-1">
@@ -31,50 +31,51 @@ onUnmounted(() => {
           <div class="col-lg-7">
             <div class="vm-hero-badge mb-3">
               <i class="fa-solid fa-wave-square"></i>
-              <span>Antofagasta · +24 Años Respaldando la Gran Minería e Industria</span>
+              <span>SKM · Symptomatic Keen Maintenance · Antofagasta</span>
             </div>
 
             <h1 class="vm-hero-title">
-              Ingeniería en
+              Servicio de
               <span class="vm-text-gradient">Mantenimiento Sintomático</span>
-              y Confiabilidad Operacional
+              de Equipos y Maquinarias en General
             </h1>
 
             <p class="lead text-white-50 mb-4" style="max-width: 630px; font-size: 1.12rem;">
-              En <strong class="text-white">VIBROMINE (SKM - Symptomatic Keen Maintenance)</strong>
-              maximizamos la disponibilidad de sus equipos y maquinarias críticas en faena mediante
-              diagnóstico predictivo, alineamiento láser, balanceo in-situ y ensayos no destructivos
-              bajo estándares internacionales <strong class="text-info">ISO 18436-2</strong> y <strong class="text-warning">ASNT</strong>.
+              En <strong class="text-white">VIBROMINE</strong> respaldamos la continuidad operativa y confiabilidad
+              de la Gran Minería e Industria con más de <strong class="text-white">24 años de experiencia</strong>.
+              Especialistas en análisis de vibraciones, balanceo dinámico in-situ, alineamiento láser y ensayos no
+              destructivos bajo normas <strong class="text-vm-blue-light">ISO 18436-2</strong> y
+              <strong class="text-vm-red-light">ASNT SNT-TC-1A</strong>.
             </p>
 
             <!-- Puntos Clave de Confianza -->
             <div class="row g-2 mb-4 text-white-75 small">
               <div class="col-sm-6 d-flex align-items-center gap-2">
-                <i class="fa-solid fa-circle-check text-info"></i>
+                <i class="fa-solid fa-circle-check text-vm-red-light"></i>
                 <span>Atención directa en Faenas del Norte Grande</span>
               </div>
               <div class="col-sm-6 d-flex align-items-center gap-2">
-                <i class="fa-solid fa-circle-check text-info"></i>
+                <i class="fa-solid fa-circle-check text-vm-blue-light"></i>
                 <span>Intervenciones In-Situ sin desmontaje invasivo</span>
               </div>
               <div class="col-sm-6 d-flex align-items-center gap-2">
-                <i class="fa-solid fa-circle-check text-info"></i>
-                <span>Especialistas certificados Categoría II</span>
+                <i class="fa-solid fa-circle-check text-vm-red-light"></i>
+                <span>Analistas certificados Categoría II</span>
               </div>
               <div class="col-sm-6 d-flex align-items-center gap-2">
-                <i class="fa-solid fa-circle-check text-info"></i>
-                <span>+1.600 servicios ejecutados con éxito</span>
+                <i class="fa-solid fa-circle-check text-vm-blue-light"></i>
+                <span>+1.600 servicios ejecutados en los últimos 10 años</span>
               </div>
             </div>
 
             <!-- Botones de Acción (CTA) -->
             <div class="d-flex flex-wrap gap-3 pt-2">
-              <a href="#cotizar" class="btn btn-vm-orange btn-lg d-inline-flex align-items-center gap-2">
+              <a href="#cotizar" class="btn btn-vm-red btn-lg d-inline-flex align-items-center gap-2">
                 <i class="fa-solid fa-file-signature"></i>
                 <span>Cotizar Servicio en Faena</span>
               </a>
               <a href="#servicios" class="btn btn-vm-outline-light btn-lg d-inline-flex align-items-center gap-2">
-                <i class="fa-solid fa-layer-group text-info"></i>
+                <i class="fa-solid fa-layer-group text-vm-blue-light"></i>
                 <span>Explorar las 8 Especialidades</span>
               </a>
             </div>
@@ -89,19 +90,22 @@ onUnmounted(() => {
                   :alt="companyInfo.heroPhotos[activePhotoIndex].caption"
                   class="vm-hero-main-img"
                 />
+                <!-- Sello superior -->
                 <div
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill fw-bold small"
-                  style="background: rgba(5, 12, 23, 0.85); color: #48cae4; border: 1px solid rgba(0, 180, 216, 0.45);"
+                  style="background: rgba(4, 10, 36, 0.9); color: #ffffff; border: 1.5px solid #0022e8;"
                 >
-                  <i class="fa-solid fa-camera me-1"></i>
+                  <i class="fa-solid fa-camera text-vm-red-light me-1"></i>
                   Registro Real en Terreno · {{ companyInfo.heroPhotos[activePhotoIndex].tag }}
                 </div>
+
+                <!-- Pie de foto interactivo -->
                 <div
                   class="position-absolute bottom-0 inset-x-0 w-100 p-3"
-                  style="background: linear-gradient(to top, rgba(5, 12, 23, 0.95) 0%, rgba(5, 12, 23, 0.6) 70%, transparent 100%);"
+                  style="background: linear-gradient(to top, rgba(4, 10, 36, 0.96) 0%, rgba(4, 10, 36, 0.65) 75%, transparent 100%);"
                 >
                   <p class="mb-2 fw-bold text-white small">
-                    <i class="fa-solid fa-helmet-safety text-warning me-2"></i>
+                    <i class="fa-solid fa-helmet-safety text-vm-red-light me-2"></i>
                     {{ companyInfo.heroPhotos[activePhotoIndex].caption }}
                   </p>
                   <div class="d-flex align-items-center gap-2">
@@ -130,12 +134,20 @@ onUnmounted(() => {
           <div class="vm-stat-card">
             <div class="d-flex justify-content-between align-items-start mb-3">
               <div>
-                <span class="vm-stat-number">{{ stat.value }}</span>
-                <span class="ms-1 fw-bold text-info text-uppercase small">{{ stat.unit }}</span>
+                <span class="vm-stat-number" :class="index % 2 === 1 ? 'text-vm-red' : 'text-vm-blue'">
+                  {{ stat.value }}
+                </span>
+                <span
+                  class="ms-1 fw-bold text-uppercase small"
+                  :class="index % 2 === 1 ? 'text-vm-red' : 'text-vm-blue'"
+                >
+                  {{ stat.unit }}
+                </span>
               </div>
               <div
                 class="rounded-3 d-flex align-items-center justify-content-center"
-                style="width: 44px; height: 44px; background: rgba(0, 180, 216, 0.1); color: #0096c7;"
+                :class="index % 2 === 1 ? 'bg-vm-red-soft' : 'bg-vm-blue-soft'"
+                style="width: 44px; height: 44px;"
               >
                 <i :class="[stat.icon, 'fs-5']"></i>
               </div>

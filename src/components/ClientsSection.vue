@@ -20,13 +20,13 @@ const filteredClients = computed(() => {
 
 function getSectorIcon(sector) {
   const map = {
-    mineria: 'fa-solid fa-mountain-sun text-warning',
-    litio: 'fa-solid fa-flask text-info',
-    energia: 'fa-solid fa-bolt-lightning text-success',
-    industria: 'fa-solid fa-industry text-primary',
-    logistica: 'fa-solid fa-train-subway text-danger'
+    mineria: 'fa-solid fa-mountain-sun text-vm-red',
+    litio: 'fa-solid fa-flask text-vm-blue',
+    energia: 'fa-solid fa-bolt-lightning text-vm-red',
+    industria: 'fa-solid fa-industry text-vm-blue',
+    logistica: 'fa-solid fa-train-subway text-vm-red'
   }
-  return map[sector] || 'fa-solid fa-building text-secondary'
+  return map[sector] || 'fa-solid fa-building text-vm-blue'
 }
 </script>
 
@@ -57,7 +57,7 @@ function getSectorIcon(sector) {
           :class="activeSector === sec.id ? 'btn-vm-primary' : 'bg-light text-dark border'"
           @click="activeSector = sec.id"
         >
-          <i :class="[sec.icon, 'me-1']"></i>
+          <i :class="[sec.icon, 'me-1', activeSector === sec.id ? 'text-white' : 'text-vm-blue']"></i>
           {{ sec.label }}
         </button>
       </div>
@@ -91,7 +91,7 @@ function getSectorIcon(sector) {
       <!-- Banner CTA de Confianza -->
       <div
         class="mt-5 p-4 p-lg-5 rounded-4 text-white shadow"
-        style="background: linear-gradient(135deg, #0b192c 0%, #132743 60%, #1e3a5f 100%);"
+        style="background: linear-gradient(135deg, #040a24 0%, #07133e 55%, #0022e8 100%); border-left: 6px solid #d91920;"
       >
         <div class="row align-items-center g-4">
           <div class="col-lg-8">
@@ -104,7 +104,7 @@ function getSectorIcon(sector) {
             </p>
           </div>
           <div class="col-lg-4 text-lg-end">
-            <a href="#cotizar" class="btn btn-vm-orange btn-lg">
+            <a href="#cotizar" class="btn btn-vm-red btn-lg">
               <i class="fa-solid fa-headset me-2"></i>Contactar a Ingeniería
             </a>
           </div>

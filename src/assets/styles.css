@@ -1,23 +1,29 @@
 /* ==========================================================================
-   SISTEMA DE DISEÑO INDUSTRIAL VIBROMINE (Inspirado en Treppco)
+   SISTEMA DE DISEÑO E IDENTIDAD CORPORATIVA VIBROMINE
+   Paleta Oficial Extraída del Logo:
+   - Azul Rey / Cobalto VIBROMINE: #0022E8 / #0018B5
+   - Azul Marino Profundo: #040B29 / #071442
+   - Rojo Sintomático (Pulso Vibracional): #D91920 / #B81218
+   - Blanco Puro: #FFFFFF y Gris Hielo: #F4F6FB
    ========================================================================== */
 
 :root {
-  --vm-navy-950: #050c17;
-  --vm-navy-900: #0b192c;
-  --vm-navy-800: #132743;
-  --vm-navy-700: #1e3a5f;
-  --vm-cyan-500: #00b4d8;
-  --vm-cyan-400: #48cae4;
-  --vm-cyan-600: #0096c7;
-  --vm-orange-500: #ff6b35;
-  --vm-orange-600: #e8531d;
-  --vm-emerald-500: #10b981;
-  --vm-slate-50: #f4f7fb;
-  --vm-slate-100: #e9eff6;
-  --vm-slate-200: #d5e0ec;
-  --vm-slate-600: #4b5e75;
-  --vm-slate-800: #1f2d3d;
+  --vm-navy-950: #040a24;
+  --vm-navy-900: #07133e;
+  --vm-navy-800: #0b1d5c;
+  --vm-blue-primary: #0022e8;
+  --vm-blue-royal: #0018b5;
+  --vm-blue-light: #4d6bfe;
+  --vm-blue-soft: #ebf0ff;
+  --vm-red-primary: #d91920;
+  --vm-red-hover: #b51117;
+  --vm-red-light: #ff4d54;
+  --vm-red-soft: #fdecee;
+  --vm-slate-50: #f4f6fb;
+  --vm-slate-100: #e8ecf7;
+  --vm-slate-200: #d3dbed;
+  --vm-slate-600: #42506b;
+  --vm-slate-800: #111b36;
   --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -25,7 +31,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -46,99 +52,180 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 /* --------------------------------------------------------------------------
-   Top Bar & Sticky Navbar (Estilo Corporativo Treppco)
+   Utilidades de Color Corporativo VIBROMINE
+   -------------------------------------------------------------------------- */
+.text-vm-blue {
+  color: var(--vm-blue-primary) !important;
+}
+
+.text-vm-blue-light {
+  color: #708dff !important;
+}
+
+.text-vm-red {
+  color: var(--vm-red-primary) !important;
+}
+
+.text-vm-red-light {
+  color: #ff6b70 !important;
+}
+
+.bg-vm-blue {
+  background-color: var(--vm-blue-primary) !important;
+  color: #ffffff !important;
+}
+
+.bg-vm-red {
+  background-color: var(--vm-red-primary) !important;
+  color: #ffffff !important;
+}
+
+.bg-vm-blue-soft {
+  background-color: var(--vm-blue-soft) !important;
+  color: var(--vm-blue-royal) !important;
+}
+
+.bg-vm-red-soft {
+  background-color: var(--vm-red-soft) !important;
+  color: var(--vm-red-primary) !important;
+}
+
+.badge-vm-blue {
+  background-color: var(--vm-blue-soft);
+  color: var(--vm-blue-primary);
+  border: 1px solid rgba(0, 34, 232, 0.25);
+  font-weight: 700;
+}
+
+.badge-vm-red {
+  background-color: var(--vm-red-soft);
+  color: var(--vm-red-primary);
+  border: 1px solid rgba(217, 25, 32, 0.25);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar & Sticky Navbar Blanca (Integración Perfecta con el Logo Oficial)
    -------------------------------------------------------------------------- */
 .vm-topbar {
-  background-color: var(--vm-navy-950);
-  color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(90deg, var(--vm-navy-950) 0%, var(--vm-navy-900) 100%);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.82rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 2px solid var(--vm-red-primary);
 }
 
 .vm-topbar a {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .vm-topbar a:hover {
-  color: var(--vm-cyan-400);
+  color: #708dff;
 }
 
 .vm-navbar {
-  background: rgba(11, 25, 44, 0.96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(0, 180, 216, 0.18);
+  background: #ffffff;
+  border-bottom: 1px solid var(--vm-slate-200);
   transition: all 0.3s ease;
-  padding-top: 0.85rem;
-  padding-bottom: 0.85rem;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  box-shadow: 0 4px 20px rgba(7, 19, 62, 0.06);
 }
 
 .vm-navbar.scrolled {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
-  box-shadow: 0 10px 30px rgba(5, 12, 23, 0.45);
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  box-shadow: 0 10px 30px rgba(7, 19, 62, 0.12);
+}
+
+.vm-logo-svg {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.vm-navbar.scrolled .vm-logo-svg {
+  height: 50px;
 }
 
 .vm-nav-link {
-  color: rgba(255, 255, 255, 0.88) !important;
-  font-weight: 600;
+  color: var(--vm-navy-900) !important;
+  font-weight: 700;
   font-size: 0.92rem;
   padding: 0.5rem 0.95rem !important;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .vm-nav-link:hover,
 .vm-nav-link.active {
-  color: var(--vm-cyan-400) !important;
-  background: rgba(0, 180, 216, 0.08);
+  color: var(--vm-blue-primary) !important;
+  background: var(--vm-blue-soft);
 }
 
 /* --------------------------------------------------------------------------
-   Botones Industriales
+   Botones Corporativos (Azul VIBROMINE y Rojo Sintomático)
    -------------------------------------------------------------------------- */
 .btn-vm-primary {
-  background: linear-gradient(135deg, var(--vm-cyan-500) 0%, var(--vm-cyan-600) 100%);
+  background: linear-gradient(135deg, var(--vm-blue-primary) 0%, var(--vm-blue-royal) 100%);
   color: #ffffff;
   font-weight: 700;
   border: none;
   padding: 0.75rem 1.6rem;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 34, 232, 0.28);
   transition: all 0.25s ease;
 }
 
 .btn-vm-primary:hover {
-  background: linear-gradient(135deg, var(--vm-cyan-400) 0%, var(--vm-cyan-500) 100%);
+  background: linear-gradient(135deg, #1e40ff 0%, var(--vm-blue-primary) 100%);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.45);
+  box-shadow: 0 10px 25px rgba(0, 34, 232, 0.42);
 }
 
+.btn-vm-red,
 .btn-vm-orange {
-  background: linear-gradient(135deg, var(--vm-orange-500) 0%, var(--vm-orange-600) 100%);
+  background: linear-gradient(135deg, var(--vm-red-primary) 0%, var(--vm-red-hover) 100%);
   color: #ffffff;
   font-weight: 700;
   border: none;
   padding: 0.75rem 1.6rem;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 6px 20px rgba(217, 25, 32, 0.32);
   transition: all 0.25s ease;
 }
 
+.btn-vm-red:hover,
 .btn-vm-orange:hover {
-  background: linear-gradient(135deg, #ff7d4d 0%, var(--vm-orange-500) 100%);
+  background: linear-gradient(135deg, #ef232a 0%, var(--vm-red-primary) 100%);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.45);
+  box-shadow: 0 10px 25px rgba(217, 25, 32, 0.48);
+}
+
+.btn-vm-outline-blue {
+  color: var(--vm-blue-primary);
+  border: 1.5px solid var(--vm-blue-primary);
+  background: #ffffff;
+  font-weight: 700;
+  padding: 0.65rem 1.35rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.btn-vm-outline-blue:hover {
+  background: var(--vm-blue-soft);
+  color: var(--vm-blue-royal);
+  transform: translateY(-2px);
 }
 
 .btn-vm-outline-light {
   color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -146,31 +233,32 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .btn-vm-outline-light:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
   border-color: #ffffff;
   color: #ffffff;
   transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
-   Hero Section
+   Hero Section con los Tonos Oficiales del Logo
    -------------------------------------------------------------------------- */
 .vm-hero {
   position: relative;
-  background: radial-gradient(circle at 80% 20%, rgba(0, 180, 216, 0.18) 0%, transparent 45%),
-              radial-gradient(circle at 15% 85%, rgba(255, 107, 53, 0.12) 0%, transparent 40%),
-              linear-gradient(160deg, var(--vm-navy-950) 0%, var(--vm-navy-900) 55%, var(--vm-navy-800) 100%);
+  background: radial-gradient(circle at 82% 22%, rgba(0, 34, 232, 0.35) 0%, transparent 48%),
+              radial-gradient(circle at 12% 85%, rgba(217, 25, 32, 0.22) 0%, transparent 42%),
+              linear-gradient(155deg, var(--vm-navy-950) 0%, var(--vm-navy-900) 55%, var(--vm-navy-800) 100%);
   color: #ffffff;
-  padding: 5.5rem 0 5rem;
+  padding: 5rem 0 5rem;
   overflow: hidden;
+  border-bottom: 4px solid var(--vm-blue-primary);
 }
 
 .vm-hero-grid-bg {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 44px 44px;
   pointer-events: none;
 }
@@ -179,9 +267,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(0, 180, 216, 0.14);
-  border: 1px solid rgba(0, 180, 216, 0.4);
-  color: var(--vm-cyan-400);
+  background: rgba(217, 25, 32, 0.18);
+  border: 1px solid rgba(255, 77, 84, 0.5);
+  color: #ff8589;
   padding: 0.45rem 1rem;
   border-radius: 50px;
   font-size: 0.82rem;
@@ -191,14 +279,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-hero-title {
-  font-size: clamp(2.15rem, 4.2vw, 3.55rem);
+  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
   font-weight: 800;
   line-height: 1.12;
   margin-bottom: 1.25rem;
 }
 
 .vm-text-gradient {
-  background: linear-gradient(90deg, #48cae4 0%, #00b4d8 50%, #ff8a5b 100%);
+  background: linear-gradient(90deg, #6e8efb 0%, #ffffff 48%, #ff5c62 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -207,8 +295,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid rgba(0, 180, 216, 0.35);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(77, 107, 254, 0.5);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
   background: var(--vm-navy-900);
 }
 
@@ -236,7 +324,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-hero-thumb.active,
 .vm-hero-thumb:hover {
-  border-color: var(--vm-cyan-400);
+  border-color: var(--vm-red-light);
   opacity: 1;
   transform: translateY(-2px);
 }
@@ -245,7 +333,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
    Barra de Estadísticas e Impacto
    -------------------------------------------------------------------------- */
 .vm-stats-bar {
-  margin-top: -2.5rem;
+  margin-top: -2.6rem;
   position: relative;
   z-index: 10;
 }
@@ -255,23 +343,26 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 14px;
   padding: 1.75rem 1.4rem;
   border: 1px solid var(--vm-slate-200);
-  box-shadow: 0 15px 35px rgba(11, 25, 44, 0.08);
+  box-shadow: 0 15px 35px rgba(7, 19, 62, 0.09);
   height: 100%;
   transition: all 0.3s ease;
-  border-bottom: 4px solid var(--vm-cyan-500);
+  border-bottom: 4px solid var(--vm-blue-primary);
+}
+
+.vm-stat-card:nth-child(even) {
+  border-bottom-color: var(--vm-red-primary);
 }
 
 .vm-stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 22px 45px rgba(11, 25, 44, 0.14);
-  border-bottom-color: var(--vm-orange-500);
+  box-shadow: 0 22px 45px rgba(7, 19, 62, 0.16);
 }
 
 .vm-stat-number {
   font-family: var(--font-heading);
   font-size: 2.4rem;
   font-weight: 900;
-  color: var(--vm-navy-900);
+  color: var(--vm-blue-primary);
   line-height: 1;
 }
 
@@ -283,16 +374,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--vm-cyan-600);
-  background: rgba(0, 180, 216, 0.1);
-  padding: 0.35rem 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--vm-red-primary);
+  background: var(--vm-red-soft);
+  border: 1px solid rgba(217, 25, 32, 0.2);
+  padding: 0.35rem 0.95rem;
   border-radius: 50px;
   margin-bottom: 0.75rem;
 }
 
 .vm-section-title {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
   font-weight: 800;
   color: var(--vm-navy-900);
 }
@@ -309,18 +401,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   display: flex;
   flex-direction: column;
   transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px rgba(11, 25, 44, 0.05);
+  box-shadow: 0 8px 24px rgba(7, 19, 62, 0.05);
 }
 
 .vm-service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 22px 45px rgba(11, 25, 44, 0.14);
-  border-color: var(--vm-cyan-500);
+  box-shadow: 0 22px 45px rgba(0, 34, 232, 0.14);
+  border-color: var(--vm-blue-primary);
 }
 
 .vm-service-card.highlighted-symptom {
-  border: 2px solid var(--vm-orange-500);
-  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2), 0 20px 40px rgba(11, 25, 44, 0.15);
+  border: 2px solid var(--vm-red-primary);
+  box-shadow: 0 0 0 4px rgba(217, 25, 32, 0.18), 0 20px 40px rgba(7, 19, 62, 0.15);
 }
 
 .vm-service-img-wrapper {
@@ -345,41 +437,41 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(5, 12, 23, 0.85);
-  backdrop-filter: blur(6px);
-  color: var(--vm-cyan-400);
+  background: var(--vm-blue-primary);
+  color: #ffffff;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   padding: 0.25rem 0.65rem;
   border-radius: 6px;
-  border: 1px solid rgba(0, 180, 216, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .vm-service-badge {
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background: rgba(11, 25, 44, 0.9);
+  background: rgba(4, 10, 36, 0.9);
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.3rem 0.7rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .vm-service-icon-box {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--vm-navy-900) 0%, var(--vm-navy-700) 100%);
-  color: var(--vm-cyan-400);
+  background: linear-gradient(135deg, var(--vm-blue-primary) 0%, var(--vm-navy-800) 100%);
+  color: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
   flex-shrink: 0;
+  box-shadow: 0 6px 15px rgba(0, 34, 232, 0.25);
 }
 
 .vm-detection-list {
@@ -403,7 +495,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   position: absolute;
   left: 0;
   top: 2px;
-  color: var(--vm-cyan-600);
+  color: var(--vm-red-primary);
   font-size: 0.85rem;
 }
 
@@ -411,17 +503,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
    Diagnosticador Rápido de Síntomas
    -------------------------------------------------------------------------- */
 .vm-symptom-box {
-  background: linear-gradient(135deg, var(--vm-navy-900) 0%, var(--vm-navy-800) 100%);
+  background: linear-gradient(135deg, var(--vm-navy-950) 0%, var(--vm-navy-900) 60%, var(--vm-navy-800) 100%);
   border-radius: 16px;
   padding: 2rem;
   color: #ffffff;
-  border: 1px solid rgba(0, 180, 216, 0.28);
+  border-left: 5px solid var(--vm-red-primary);
 }
 
 .vm-symptom-pill {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   border-radius: 10px;
   padding: 0.7rem 1rem;
   font-size: 0.86rem;
@@ -437,8 +529,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-symptom-pill:hover,
 .vm-symptom-pill.active {
-  background: rgba(255, 107, 53, 0.2);
-  border-color: var(--vm-orange-500);
+  background: rgba(217, 25, 32, 0.25);
+  border-color: var(--vm-red-light);
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -449,6 +541,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .vm-cert-section {
   background: linear-gradient(160deg, var(--vm-navy-950) 0%, var(--vm-navy-900) 100%);
   color: #ffffff;
+  border-top: 4px solid var(--vm-red-primary);
 }
 
 .vm-cert-card {
@@ -462,7 +555,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-cert-card:hover {
   background: rgba(255, 255, 255, 0.07);
-  border-color: var(--vm-cyan-400);
+  border-color: var(--vm-blue-light);
   transform: translateY(-5px);
 }
 
@@ -482,13 +575,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-client-card:hover {
-  border-color: var(--vm-cyan-500);
-  box-shadow: 0 10px 25px rgba(11, 25, 44, 0.08);
+  border-color: var(--vm-blue-primary);
+  box-shadow: 0 10px 25px rgba(0, 34, 232, 0.1);
   transform: translateY(-3px);
 }
 
 .vm-client-card.client-featured {
-  border-left: 4px solid var(--vm-cyan-500);
+  border-left: 4px solid var(--vm-blue-primary);
+}
+
+.vm-client-card.client-featured:nth-child(odd) {
+  border-left-color: var(--vm-red-primary);
 }
 
 /* --------------------------------------------------------------------------
@@ -498,7 +595,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background: #ffffff;
   border-radius: 18px;
   border: 1px solid var(--vm-slate-200);
-  box-shadow: 0 20px 50px rgba(11, 25, 44, 0.1);
+  border-top: 5px solid var(--vm-blue-primary);
+  box-shadow: 0 20px 50px rgba(7, 19, 62, 0.1);
   padding: 2.5rem;
 }
 
@@ -511,8 +609,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-form-control:focus {
-  border-color: var(--vm-cyan-500);
-  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.15);
+  border-color: var(--vm-blue-primary);
+  box-shadow: 0 0 0 4px rgba(0, 34, 232, 0.14);
 }
 
 /* --------------------------------------------------------------------------
@@ -549,21 +647,24 @@ h1, h2, h3, h4, h5, h6, .font-heading {
    -------------------------------------------------------------------------- */
 .vm-footer {
   background: var(--vm-navy-950);
-  color: rgba(255, 255, 255, 0.75);
-  border-top: 3px solid var(--vm-cyan-500);
+  color: rgba(255, 255, 255, 0.78);
+  border-top: 4px solid var(--vm-red-primary);
 }
 
 .vm-footer a {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .vm-footer a:hover {
-  color: var(--vm-cyan-400);
+  color: #708dff;
 }
 
 @media (max-width: 767.98px) {
+  .vm-logo-svg {
+    height: 46px;
+  }
   .vm-hero {
     padding: 3.5rem 0 4rem;
   }

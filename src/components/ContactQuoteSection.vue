@@ -55,8 +55,6 @@ async function handleSubmit() {
         : '¡Solicitud registrada exitosamente! (Almacenada en registro local de demostración y lista para sincronizar con Supabase). También puede enviarla directo por WhatsApp con un clic abajo.'
 
     recentSubmissions.value = getLocalLeads()
-
-    // Limpiar mensaje manteniendo datos básicos por si desea enviar por WhatsApp
     form.message = ''
   } catch (err) {
     submitStatus.value = 'error'
@@ -110,7 +108,7 @@ function openWhatsAppWithQuote() {
               </div>
               <span
                 class="badge rounded-pill px-3 py-2 font-mono-tech"
-                :class="isSupabaseConfigured ? 'bg-success bg-opacity-10 text-success border border-success' : 'bg-info bg-opacity-10 text-info border border-info'"
+                :class="isSupabaseConfigured ? 'bg-success bg-opacity-10 text-success border border-success' : 'badge-vm-blue'"
               >
                 <i class="fa-solid fa-database me-1"></i>
                 {{ isSupabaseConfigured ? 'Supabase Cloud Activo' : 'Supabase Ready' }}
@@ -152,7 +150,7 @@ function openWhatsAppWithQuote() {
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label fw-semibold small text-dark">
-                    Nombre y Apellido <span class="text-danger">*</span>
+                    Nombre y Apellido <span class="text-vm-red">*</span>
                   </label>
                   <input
                     v-model="form.fullName"
@@ -165,7 +163,7 @@ function openWhatsAppWithQuote() {
 
                 <div class="col-md-6">
                   <label class="form-label fw-semibold small text-dark">
-                    Empresa / Compañía Minera <span class="text-danger">*</span>
+                    Empresa / Compañía Minera <span class="text-vm-red">*</span>
                   </label>
                   <input
                     v-model="form.company"
@@ -178,7 +176,7 @@ function openWhatsAppWithQuote() {
 
                 <div class="col-md-6">
                   <label class="form-label fw-semibold small text-dark">
-                    Correo Electrónico Corporativo <span class="text-danger">*</span>
+                    Correo Electrónico Corporativo <span class="text-vm-red">*</span>
                   </label>
                   <input
                     v-model="form.email"
@@ -191,7 +189,7 @@ function openWhatsAppWithQuote() {
 
                 <div class="col-md-6">
                   <label class="form-label fw-semibold small text-dark">
-                    Teléfono / Celular de Contacto <span class="text-danger">*</span>
+                    Teléfono / Celular de Contacto <span class="text-vm-red">*</span>
                   </label>
                   <input
                     v-model="form.phone"
@@ -204,7 +202,7 @@ function openWhatsAppWithQuote() {
 
                 <div class="col-md-7">
                   <label class="form-label fw-semibold small text-dark">
-                    Servicio Técnico Requerido <span class="text-danger">*</span>
+                    Servicio Técnico Requerido <span class="text-vm-red">*</span>
                   </label>
                   <select v-model="form.serviceInterest" class="form-select vm-form-control" required>
                     <option v-for="srv in servicesList" :key="srv.id" :value="srv.title">
@@ -253,7 +251,7 @@ function openWhatsAppWithQuote() {
 
                 <div class="col-12">
                   <label class="form-label fw-semibold small text-dark">
-                    Descripción del Equipo o Requerimiento <span class="text-danger">*</span>
+                    Descripción del Equipo o Requerimiento <span class="text-vm-red">*</span>
                   </label>
                   <textarea
                     v-model="form.message"
@@ -267,7 +265,7 @@ function openWhatsAppWithQuote() {
                 <div class="col-12 pt-2 d-flex flex-wrap gap-2">
                   <button
                     type="submit"
-                    class="btn btn-vm-orange btn-lg flex-grow-1 d-flex align-items-center justify-content-center gap-2"
+                    class="btn btn-vm-red btn-lg flex-grow-1 d-flex align-items-center justify-content-center gap-2"
                     :disabled="isSubmitting"
                   >
                     <span v-if="isSubmitting" class="spinner-border spinner-border-sm"></span>
@@ -292,7 +290,7 @@ function openWhatsAppWithQuote() {
             <div v-if="recentSubmissions.length > 0" class="mt-4 pt-3 border-top">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <span class="small fw-bold text-secondary">
-                  <i class="fa-solid fa-clock-rotate-left text-info me-1"></i>
+                  <i class="fa-solid fa-clock-rotate-left text-vm-blue me-1"></i>
                   Solicitudes registradas recientemente ({{ recentSubmissions.length }})
                 </span>
               </div>
@@ -305,7 +303,7 @@ function openWhatsAppWithQuote() {
                   <div>
                     <strong class="text-dark">{{ item.full_name }}</strong> ·
                     <span class="text-secondary">{{ item.company }}</span> —
-                    <span class="badge bg-info text-dark">{{ item.service_interest }}</span>
+                    <span class="badge bg-vm-blue">{{ item.service_interest }}</span>
                   </div>
                   <span class="badge bg-success">{{ item.status || 'Recibido' }}</span>
                 </div>
@@ -320,10 +318,10 @@ function openWhatsAppWithQuote() {
             <!-- Tarjeta Corporativa de Contacto Directo -->
             <div
               class="p-4 rounded-4 text-white shadow"
-              style="background: linear-gradient(155deg, #0b192c 0%, #132743 100%);"
+              style="background: linear-gradient(155deg, #040a24 0%, #07133e 65%, #0b1d5c 100%); border-top: 4px solid #d91920;"
             >
               <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="badge bg-info text-dark fw-bold">SEDE CENTRAL</span>
+                <span class="badge bg-vm-red fw-bold">SEDE CENTRAL</span>
                 <span class="small text-white-50">Antofagasta, II Región, Chile</span>
               </div>
               <h3 class="h4 fw-bold mb-4">Canales Directos VIBROMINE</h3>
@@ -333,14 +331,14 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background: rgba(0, 180, 216, 0.15); color: #48cae4;"
+                    style="width: 44px; height: 44px; background: rgba(0, 34, 232, 0.35); color: #708dff;"
                   >
                     <i class="fa-solid fa-location-dot fs-5"></i>
                   </div>
                   <div>
                     <div class="small text-white-50">Dirección Comercial y Técnica</div>
                     <div class="fw-bold">{{ companyInfo.contact.address }}</div>
-                    <div class="small text-info">{{ companyInfo.contact.city }} - {{ companyInfo.contact.country }}</div>
+                    <div class="small text-vm-blue-light">{{ companyInfo.contact.city }} - {{ companyInfo.contact.country }}</div>
                   </div>
                 </div>
 
@@ -348,7 +346,7 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background: rgba(255, 107, 53, 0.18); color: #ff6b35;"
+                    style="width: 44px; height: 44px; background: rgba(217, 25, 32, 0.28); color: #ff6b70;"
                   >
                     <i class="fa-solid fa-phone-volume fs-5"></i>
                   </div>
@@ -376,7 +374,7 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background: rgba(16, 185, 129, 0.15); color: #10b981;"
+                    style="width: 44px; height: 44px; background: rgba(0, 34, 232, 0.35); color: #708dff;"
                   >
                     <i class="fa-solid fa-envelope-open-text fs-5"></i>
                   </div>
@@ -384,7 +382,7 @@ function openWhatsAppWithQuote() {
                     <div class="small text-white-50">Correo Electrónico Corporativo</div>
                     <a
                       :href="`mailto:${companyInfo.contact.email}`"
-                      class="text-info fw-bold text-decoration-none"
+                      class="text-vm-blue-light fw-bold text-decoration-none"
                     >
                       {{ companyInfo.contact.email }}
                     </a>
@@ -411,14 +409,14 @@ function openWhatsAppWithQuote() {
             <div class="rounded-4 overflow-hidden border shadow-sm bg-white flex-grow-1 d-flex flex-column">
               <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
                 <span class="fw-bold small text-dark">
-                  <i class="fa-solid fa-map-pin text-danger me-1"></i>
+                  <i class="fa-solid fa-map-pin text-vm-red me-1"></i>
                   Ubicación: Hermógenes Alfaro 1098, Antofagasta
                 </span>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Herm%C3%B3genes+Alfaro+1098,+Antofagasta,+Chile"
                   target="_blank"
                   rel="noopener"
-                  class="btn btn-sm btn-outline-primary py-1 px-2"
+                  class="btn btn-sm btn-vm-outline-blue py-1 px-2"
                 >
                   Abrir en Google Maps
                 </a>

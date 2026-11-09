@@ -34,7 +34,7 @@ function handleQuoteAndClose() {
     tabindex="-1"
     role="dialog"
     aria-modal="true"
-    style="background: rgba(5, 12, 23, 0.78); backdrop-filter: blur(6px);"
+    style="background: rgba(4, 10, 36, 0.8); backdrop-filter: blur(6px);"
     @click.self="emit('close')"
   >
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -42,18 +42,18 @@ function handleQuoteAndClose() {
         <!-- Encabezado del Modal -->
         <div
           class="modal-header text-white border-0 p-4"
-          style="background: linear-gradient(135deg, #0b192c 0%, #1e3a5f 100%);"
+          style="background: linear-gradient(135deg, #040a24 0%, #07133e 55%, #0022e8 100%); border-bottom: 4px solid #d91920 !important;"
         >
           <div class="d-flex align-items-center gap-3">
             <div
               class="rounded-3 d-flex align-items-center justify-content-center"
-              style="width: 52px; height: 52px; background: rgba(0, 180, 216, 0.18); color: #48cae4;"
+              style="width: 52px; height: 52px; background: rgba(217, 25, 32, 0.85); color: #ffffff;"
             >
               <i :class="[service.iconClass || service.icon, 'fs-4']"></i>
             </div>
             <div>
               <div class="d-flex align-items-center gap-2 mb-1">
-                <span class="badge bg-info text-dark font-mono-tech">ESPECIALIDAD {{ service.number }}</span>
+                <span class="badge bg-vm-red font-mono-tech">ESPECIALIDAD {{ service.number }}</span>
                 <span class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25">
                   {{ service.badge }}
                 </span>
@@ -88,7 +88,7 @@ function handleQuoteAndClose() {
                   :key="i"
                   type="button"
                   class="p-0 border rounded-3 overflow-hidden flex-fill"
-                  :class="selectedImgIndex === i ? 'border-info border-2 shadow-sm' : 'opacity-50'"
+                  :class="selectedImgIndex === i ? 'border-danger border-2 shadow-sm' : 'opacity-50'"
                   @click="selectedImgIndex = i"
                 >
                   <img
@@ -100,14 +100,14 @@ function handleQuoteAndClose() {
                 </button>
               </div>
               <div class="small text-muted mt-2 text-center">
-                <i class="fa-solid fa-camera text-info me-1"></i>
+                <i class="fa-solid fa-camera text-vm-blue me-1"></i>
                 Fotografías reales de servicios ejecutados por VIBROMINE en faena
               </div>
             </div>
 
             <!-- Alcance Técnico y Detección -->
             <div class="col-md-6">
-              <h4 class="h6 fw-bold text-uppercase text-info mb-2">
+              <h4 class="h6 fw-bold text-uppercase text-vm-blue mb-2">
                 Descripción Técnica del Servicio
               </h4>
               <p class="small text-secondary mb-3">
@@ -115,7 +115,7 @@ function handleQuoteAndClose() {
               </p>
 
               <h4 class="h6 fw-bold text-dark mb-2">
-                <i class="fa-solid fa-list-check text-info me-1"></i>
+                <i class="fa-solid fa-list-check text-vm-red me-1"></i>
                 {{ service.detectionsTitle }}
               </h4>
               <ul class="vm-detection-list mb-3">
@@ -129,13 +129,13 @@ function handleQuoteAndClose() {
           <!-- Beneficios Operacionales -->
           <div class="mt-3 p-3 rounded-4" style="background: var(--vm-slate-50); border: 1px solid var(--vm-slate-200);">
             <h4 class="h6 fw-bold text-dark mb-2">
-              <i class="fa-solid fa-shield-heart text-warning me-2"></i>
+              <i class="fa-solid fa-shield-heart text-vm-red me-2"></i>
               Beneficios Directos para su Planta o Faena:
             </h4>
             <div class="row g-2">
               <div v-for="(benefit, bIdx) in service.benefits" :key="bIdx" class="col-md-4">
                 <div class="p-2 bg-white rounded-3 border h-100 small d-flex align-items-start gap-2">
-                  <i class="fa-solid fa-bolt text-warning mt-1"></i>
+                  <i class="fa-solid fa-bolt text-vm-blue mt-1"></i>
                   <span>{{ benefit }}</span>
                 </div>
               </div>
@@ -148,7 +148,7 @@ function handleQuoteAndClose() {
           <button type="button" class="btn btn-outline-secondary" @click="emit('close')">
             Cerrar ventana
           </button>
-          <button type="button" class="btn btn-vm-orange" @click="handleQuoteAndClose">
+          <button type="button" class="btn btn-vm-red" @click="handleQuoteAndClose">
             <i class="fa-solid fa-file-signature me-2"></i>
             Solicitar Cotización para {{ service.shortTitle }}
           </button>
