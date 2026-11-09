@@ -82,10 +82,7 @@ onUnmounted(() => {
               <a class="nav-link vm-nav-link" href="#nosotros" @click="closeMobileMenu">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link vm-nav-link" href="#servicios" @click="closeMobileMenu">
-                Servicios
-                <span class="badge rounded-pill bg-vm-blue ms-1" style="font-size: 0.68rem;">8</span>
-              </a>
+              <a class="nav-link vm-nav-link" href="#servicios" @click="closeMobileMenu">Servicios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link vm-nav-link" href="#certificaciones" @click="closeMobileMenu">Certificaciones</a>
