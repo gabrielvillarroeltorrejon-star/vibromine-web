@@ -64,18 +64,18 @@ const uniqueLogoClients = computed(() => {
     </div>
 
     <div class="container pb-lg-4">
-      <!-- Filtros por Sector Industrial -->
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+      <!-- Filtros por Sector Industrial en una sola línea -->
+      <div class="vm-sector-filter-bar mb-4">
         <button
           v-for="sec in sectors"
           :key="sec.id"
           type="button"
-          class="btn btn-sm rounded-pill px-3 py-2 fw-semibold"
-          :class="activeSector === sec.id ? 'btn-vm-primary' : 'bg-light text-dark border'"
+          class="vm-sector-filter-btn"
+          :class="{ active: activeSector === sec.id }"
           @click="activeSector = sec.id"
         >
           <i :class="[sec.icon, 'me-1', activeSector === sec.id ? 'text-white' : 'text-vm-blue']"></i>
-          {{ sec.label }}
+          <span>{{ sec.label }}</span>
         </button>
       </div>
 

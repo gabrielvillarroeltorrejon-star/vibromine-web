@@ -687,6 +687,52 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   display: block;
 }
 
+.vm-sector-filter-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  overflow-x: auto;
+  padding: 0.25rem 0;
+  scrollbar-width: none;
+}
+
+.vm-sector-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.vm-sector-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 50px;
+  padding: 0.52rem 0.92rem;
+  font-size: 0.81rem;
+  font-weight: 600;
+  background: var(--vm-slate-50);
+  color: var(--vm-navy-900);
+  border: 1px solid var(--vm-slate-200);
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.vm-sector-filter-btn:hover {
+  border-color: var(--vm-blue-primary);
+  color: var(--vm-blue-primary);
+  background: #ffffff;
+}
+
+.vm-sector-filter-btn.active {
+  background: linear-gradient(135deg, var(--vm-blue-primary) 0%, var(--vm-blue-dark) 100%);
+  color: #ffffff;
+  border-color: var(--vm-blue-primary);
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0, 34, 232, 0.28);
+}
+
 .vm-client-card {
   background: #ffffff;
   border: 1px solid var(--vm-slate-200);
