@@ -322,7 +322,7 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background-color: #ffffff; color: #0018e8;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
                   >
                     <i class="fa-solid fa-location-dot fs-5"></i>
                   </div>
@@ -337,7 +337,7 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background-color: #d91018; color: #ffffff; border: 1.5px solid #ffffff;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
                   >
                     <i class="fa-solid fa-phone-volume fs-5"></i>
                   </div>
@@ -384,7 +384,7 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background-color: #d91018; color: #ffffff; border: 1.5px solid #ffffff;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
                   >
                     <i class="fa-solid fa-globe fs-5"></i>
                   </div>
