@@ -72,14 +72,13 @@ function handleQuoteAndClose() {
         <!-- Cuerpo del Modal -->
         <div class="modal-body p-4">
           <div class="row g-4">
-            <!-- Galería Fotográfica de Terreno (3 fotos reales del PDF) -->
+            <!-- Galería Fotográfica de Terreno en Proporción 4:3 HD (1200x900) -->
             <div class="col-md-6">
               <div class="rounded-4 overflow-hidden border shadow-sm mb-2 bg-dark">
                 <img
                   :src="service.images[selectedImgIndex]"
                   :alt="`${service.title} - Imagen ${selectedImgIndex + 1}`"
-                  class="w-100 object-fit-cover"
-                  style="height: 270px;"
+                  class="vm-modal-img-4x3"
                 />
               </div>
               <div class="d-flex gap-2">
@@ -95,13 +94,13 @@ function handleQuoteAndClose() {
                     :src="imgUrl"
                     :alt="`Miniatura ${i + 1}`"
                     class="w-100 object-fit-cover"
-                    style="height: 64px;"
+                    style="aspect-ratio: 4 / 3;"
                   />
                 </button>
               </div>
               <div class="small text-muted mt-2 text-center">
                 <i class="fa-solid fa-camera text-vm-blue me-1"></i>
-                Fotografías reales de servicios ejecutados por VIBROMINE en faena
+                Fotografías en formato 4:3 HD (1200×900) ejecutadas por VIBROMINE en faena
               </div>
             </div>
 

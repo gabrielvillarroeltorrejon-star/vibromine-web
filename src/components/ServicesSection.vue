@@ -1,11 +1,22 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { servicesList, symptomFinderItems } from '../data/vibromineData'
 
 const emit = defineEmits(['open-service-modal', 'select-service-quote'])
 
 const activeCategory = ref('all')
 const activeSymptom = ref(null)
+
+// Estado reactivo para permitir alternar las 3 fotos 4:3 HD directamente en cada tarjeta
+const activeCardImageIdx = reactive({})
+
+function getCardImageIndex(serviceId) {
+  return activeCardImageIdx[serviceId] || 0
+}
+
+function setCardImageIndex(serviceId, idx) {
+  activeCardImageIdx[serviceId] = idx
+}
 
 const categories = [
   { id: 'all', label: 'Todos los Servicios (8)', icon: 'fa-solid fa-layer-group' },
@@ -119,85 +130,115 @@ function isServiceHighlighted(serviceId) {
         </button>
       </div>
 
-      <!-- Grid de las 8 Especialidades (Datos e Imágenes Oficiales del PDF) -->
+      <!-- Grilla de 2 Columnas con Tarjetas Horizontales y Proporción 4:3 HD -->
       <div class="row g-4">
         <div
           v-for="service in filteredServices"
           :key="service.id"
-          class="col-md-6 col-xl-3"
+          class="col-lg-6"
         >
           <article
             class="vm-service-card"
             :class="{ 'highlighted-symptom': isServiceHighlighted(service.id) }"
           >
-            <!-- Imagen Real de Terreno -->
-            <div class="vm-service-img-wrapper">
-              <img
-                :src="service.images[0]"
-                :alt="service.title"
-                class="vm-service-img"
-                loading="lazy"
-              />
-              <span class="vm-service-num">SERVICIO {{ service.number }}</span>
-              <span class="vm-service-badge">
-                <i class="fa-solid fa-check-double text-vm-red-light me-1"></i>{{ service.badge }}
-              </span>
-              <div
-                v-if="isServiceHighlighted(service.id)"
-                class="position-absolute top-0 end-0 m-2 badge bg-vm-red fw-bold shadow"
-              >
-                <i class="fa-solid fa-star me-1"></i>Recomendado
-              </div>
-            </div>
-
-            <!-- Cuerpo de la Tarjeta -->
-            <div class="p-4 d-flex flex-column flex-grow-1">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="vm-service-icon-box">
-                  <i :class="service.iconClass || service.icon"></i>
-                </div>
+            <div class="row g-0 h-100">
+              <!-- Columna Multimedia Izquierda: Imagen Principal 4:3 HD + Selector de 3 Fotos 4:3 -->
+              <div class="col-md-5 vm-service-media-col">
                 <div>
-                  <span class="text-uppercase fw-bold text-vm-red" style="font-size: 0.7rem; letter-spacing: 0.05em;">
-                    {{ service.categoryLabel }}
-                  </span>
-                  <h3 class="h5 fw-bold text-dark mb-0 lh-sm">{{ service.title }}</h3>
+                  <div
+                    class="vm-service-img-wrapper cursor-pointer"
+                    @click="emit('open-service-modal', service)"
+                    title="Clic para ampliar ficha técnica y galería"
+                  >
+                    <img
+                      :src="service.images[getCardImageIndex(service.id)]"
+                      :alt="service.title"
+                      class="vm-service-img"
+                      loading="lazy"
+                    />
+                    <span class="vm-service-num">SERVICIO {{ service.number }}</span>
+                    <span class="vm-service-badge">
+                      <i class="fa-solid fa-check-double text-vm-red-light me-1"></i>{{ service.badge }}
+                    </span>
+                    <div
+                      v-if="isServiceHighlighted(service.id)"
+                      class="position-absolute top-0 end-0 m-2 badge bg-vm-red fw-bold shadow"
+                    >
+                      <i class="fa-solid fa-star me-1"></i>Recomendado
+                    </div>
+                  </div>
+
+                  <!-- Tira Interactiva de 3 Miniaturas 4:3 en Terreno -->
+                  <div class="vm-service-thumb-strip">
+                    <button
+                      v-for="(imgUrl, idx) in service.images"
+                      :key="idx"
+                      type="button"
+                      class="vm-service-thumb-btn"
+                      :class="{ active: getCardImageIndex(service.id) === idx }"
+                      @click="setCardImageIndex(service.id, idx)"
+                      :title="`Ver fotografía ${idx + 1} de ${service.shortTitle}`"
+                    >
+                      <img :src="imgUrl" :alt="`${service.shortTitle} foto ${idx + 1}`" loading="lazy" />
+                    </button>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-2 pt-1 text-white-50" style="font-size: 0.72rem;">
+                  <span><i class="fa-solid fa-camera text-vm-blue-light me-1"></i>Registro en Faena</span>
+                  <span class="font-mono-tech text-white-50">4:3 HD</span>
                 </div>
               </div>
 
-              <p class="small text-secondary mb-3">
-                {{ service.summary }}
-              </p>
+              <!-- Columna de Contenido Técnico Derecha -->
+              <div class="col-md-7 p-4 d-flex flex-column">
+                <div class="d-flex align-items-start gap-3 mb-2">
+                  <div class="vm-service-icon-box">
+                    <i :class="service.iconClass || service.icon"></i>
+                  </div>
+                  <div>
+                    <span class="text-uppercase fw-bold text-vm-red d-block" style="font-size: 0.72rem; letter-spacing: 0.05em;">
+                      {{ service.categoryLabel }}
+                    </span>
+                    <h3 class="h5 fw-bold text-dark mb-0 lh-sm">{{ service.title }}</h3>
+                  </div>
+                </div>
 
-              <div class="fw-bold text-dark small mb-2">
-                {{ service.detectionsTitle }}
-              </div>
-              <ul class="vm-detection-list flex-grow-1">
-                <li v-for="(item, idx) in service.detections.slice(0, 4)" :key="idx">
-                  {{ item }}
-                </li>
-                <li v-if="service.detections.length > 4" class="text-vm-blue fw-semibold">
-                  + {{ service.detections.length - 4 }} aplicaciones adicionales...
-                </li>
-              </ul>
+                <p class="small text-secondary mb-3">
+                  {{ service.summary }}
+                </p>
 
-              <!-- Acciones de la Tarjeta -->
-              <div class="d-grid gap-2 pt-3 border-top mt-auto">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-vm-outline-blue py-2"
-                  @click="emit('open-service-modal', service)"
-                >
-                  <i class="fa-solid fa-magnifying-glass-plus text-vm-red me-1"></i>
-                  Ficha Técnica y Fotos ({{ service.images.length }})
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-vm-primary py-2"
-                  @click="emit('select-service-quote', service.title)"
-                >
-                  <i class="fa-solid fa-paper-plane me-1"></i>
-                  Cotizar este Servicio
-                </button>
+                <div class="fw-bold text-dark small mb-2">
+                  <i class="fa-solid fa-crosshairs text-vm-blue me-1"></i>{{ service.detectionsTitle }}
+                </div>
+                <ul class="vm-detection-list flex-grow-1 mb-3">
+                  <li v-for="(item, idx) in service.detections.slice(0, 4)" :key="idx">
+                    {{ item }}
+                  </li>
+                  <li v-if="service.detections.length > 4" class="text-vm-blue fw-semibold">
+                    + {{ service.detections.length - 4 }} parámetros técnicos adicionales...
+                  </li>
+                </ul>
+
+                <!-- Botones de Acción Horizontales -->
+                <div class="d-flex flex-wrap gap-2 pt-3 border-top mt-auto">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-vm-outline-blue flex-fill py-2"
+                    @click="emit('open-service-modal', service)"
+                  >
+                    <i class="fa-solid fa-magnifying-glass-plus text-vm-red me-1"></i>
+                    Ficha Técnica
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-vm-red flex-fill py-2"
+                    @click="emit('select-service-quote', service.title)"
+                  >
+                    <i class="fa-solid fa-paper-plane me-1"></i>
+                    Cotizar Servicio
+                  </button>
+                </div>
               </div>
             </div>
           </article>

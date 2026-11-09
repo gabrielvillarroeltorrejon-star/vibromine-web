@@ -125,7 +125,7 @@ import { companyInfo } from '../data/vibromineData'
                   src="/images/services/vibromine-real-02.jpg"
                   alt="Inspección de molinos VIBROMINE"
                   class="w-100 object-fit-cover"
-                  style="height: 220px;"
+                  style="aspect-ratio: 4 / 3;"
                 />
                 <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-blue">
                   Inspección en Molinos
@@ -138,7 +138,7 @@ import { companyInfo } from '../data/vibromineData'
                   src="/images/services/vibromine-real-03.jpg"
                   alt="Alineamiento de acoplamientos en faena"
                   class="w-100 object-fit-cover"
-                  style="height: 220px;"
+                  style="aspect-ratio: 4 / 3;"
                 />
                 <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-red">
                   Alineamiento en Planta
@@ -151,7 +151,7 @@ import { companyInfo } from '../data/vibromineData'
                   src="/images/services/vibromine-real-21.jpg"
                   alt="Nivelación topográfica en faena minera"
                   class="w-100 object-fit-cover"
-                  style="height: 220px;"
+                  style="aspect-ratio: 4 / 3;"
                 />
                 <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-red">
                   Control Topográfico Minero
@@ -164,7 +164,7 @@ import { companyInfo } from '../data/vibromineData'
                   src="/images/services/vibromine-real-04.jpg"
                   alt="Medición vibracional de motores"
                   class="w-100 object-fit-cover"
-                  style="height: 220px;"
+                  style="aspect-ratio: 4 / 3;"
                 />
                 <span class="position-absolute bottom-0 start-0 m-2 badge bg-vm-blue">
                   Diagnóstico de Motores
