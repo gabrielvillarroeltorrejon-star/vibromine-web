@@ -110,7 +110,7 @@ const uniqueLogoClients = computed(() => {
       <!-- Banner CTA de Confianza -->
       <div
         class="mt-5 p-4 p-lg-5 rounded-4 text-white shadow"
-        style="background: linear-gradient(135deg, #040a24 0%, #07133e 55%, #0022e8 100%); border-left: 6px solid #d91920;"
+        style="background-color: #07133e; border-left: 6px solid #d91920;"
       >
         <div class="row align-items-center g-4">
           <div class="col-lg-8">

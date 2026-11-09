@@ -176,7 +176,7 @@ import { companyInfo } from '../data/vibromineData'
           <!-- Banner de Compromiso Regional -->
           <div
             class="mt-3 p-3 rounded-4 d-flex align-items-center justify-content-between flex-wrap gap-3 text-white"
-            style="background: linear-gradient(135deg, #040a24 0%, #07133e 65%, #0022e8 100%); border-left: 5px solid #d91920;"
+            style="background-color: #07133e; border-left: 5px solid #d91920;"
           >
             <div class="d-flex align-items-center gap-3">
               <div class="rounded-circle p-3 text-white" style="background: rgba(217, 25, 32, 0.85);">

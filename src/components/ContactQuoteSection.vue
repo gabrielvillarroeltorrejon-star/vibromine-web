@@ -318,7 +318,7 @@ function openWhatsAppWithQuote() {
             <!-- Tarjeta Corporativa de Contacto Directo -->
             <div
               class="p-4 rounded-4 text-white shadow"
-              style="background: linear-gradient(155deg, #040a24 0%, #07133e 65%, #0b1d5c 100%); border-top: 4px solid #d91920;"
+              style="background-color: #07133e; border-top: 4px solid #d91920;"
             >
               <div class="d-flex align-items-center gap-2 mb-3">
                 <span class="badge bg-vm-red fw-bold">SEDE CENTRAL</span>

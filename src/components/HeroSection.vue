@@ -102,7 +102,7 @@ onUnmounted(() => {
                 <!-- Pie de foto interactivo -->
                 <div
                   class="position-absolute bottom-0 inset-x-0 w-100 p-3"
-                  style="background: linear-gradient(to top, rgba(4, 10, 36, 0.96) 0%, rgba(4, 10, 36, 0.65) 75%, transparent 100%);"
+                  style="background-color: rgba(4, 10, 36, 0.9);"
                 >
                   <p class="mb-2 fw-bold text-white small">
                     <i class="fa-solid fa-helmet-safety text-vm-red-light me-2"></i>

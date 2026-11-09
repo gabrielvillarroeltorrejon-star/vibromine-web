@@ -42,7 +42,7 @@ function handleQuoteAndClose() {
         <!-- Encabezado del Modal -->
         <div
           class="modal-header text-white border-0 p-4"
-          style="background: linear-gradient(135deg, #040a24 0%, #07133e 55%, #0022e8 100%); border-bottom: 4px solid #d91920 !important;"
+          style="background-color: #07133e; border-bottom: 4px solid #d91920 !important;"
         >
           <div class="d-flex align-items-center gap-3">
             <div
