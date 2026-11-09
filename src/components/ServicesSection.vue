@@ -67,13 +67,13 @@ function isServiceHighlighted(serviceId) {
       <div class="vm-symptom-box mb-5 shadow">
         <div class="row align-items-center g-4">
           <div class="col-lg-4">
-            <span class="badge bg-vm-red fw-bold mb-2 px-3 py-1">
+            <span class="badge bg-vm-red fw-bold mb-2 px-3 py-1 border border-white">
               <i class="fa-solid fa-stethoscope me-1"></i>Asistente Técnico SKM
             </span>
             <h3 class="h5 fw-bold text-white mb-2">
               ¿Qué síntoma o requerimiento presenta su equipo?
             </h3>
-            <p class="small text-white-50 mb-0">
+            <p class="small text-white mb-0">
               Seleccione una condición operativa para filtrar e iluminar automáticamente los servicios de
               <strong>VIBROMINE</strong> recomendados para su caso.
             </p>
@@ -87,7 +87,7 @@ function isServiceHighlighted(serviceId) {
                   :class="{ active: activeSymptom && activeSymptom.id === item.id }"
                   @click="toggleSymptom(item)"
                 >
-                  <i :class="[item.icon, 'text-vm-red-light flex-shrink-0']"></i>
+                  <i :class="[item.icon, 'flex-shrink-0']"></i>
                   <span>{{ item.symptom }}</span>
                 </button>
               </div>
@@ -97,15 +97,15 @@ function isServiceHighlighted(serviceId) {
             <div
               v-if="activeSymptom"
               class="mt-3 p-3 rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2"
-              style="background: rgba(0, 34, 232, 0.28); border: 1px solid rgba(112, 141, 255, 0.55);"
+              style="background-color: #000c8a; border: 2px solid #ffffff;"
             >
               <div class="small text-white">
-                <strong class="text-vm-red-light"><i class="fa-solid fa-lightbulb me-1"></i>Diagnóstico Recomendado:</strong>
+                <span class="badge bg-vm-red me-2"><i class="fa-solid fa-lightbulb me-1"></i>Diagnóstico Recomendado</span>
                 {{ activeSymptom.explanation }}
               </div>
               <button
                 type="button"
-                class="btn btn-sm btn-outline-light py-1 px-2"
+                class="btn btn-sm btn-light text-vm-blue fw-bold py-1 px-2"
                 @click="activeSymptom = null"
               >
                 Limpiar filtro
@@ -121,11 +121,11 @@ function isServiceHighlighted(serviceId) {
           v-for="cat in categories"
           :key="cat.id"
           type="button"
-          class="btn rounded-pill px-3 py-2 fw-semibold small transition-all"
-          :class="activeCategory === cat.id ? 'btn-vm-primary' : 'bg-white text-dark border'"
+          class="btn rounded-pill px-3 py-2 fw-bold small transition-all"
+          :class="activeCategory === cat.id ? 'btn-vm-red' : 'btn-vm-outline-blue'"
           @click="activeCategory = cat.id"
         >
-          <i :class="[cat.icon, 'me-1', activeCategory === cat.id ? 'text-white' : 'text-vm-blue']"></i>
+          <i :class="[cat.icon, 'me-1']"></i>
           {{ cat.label }}
         </button>
       </div>
@@ -157,11 +157,11 @@ function isServiceHighlighted(serviceId) {
                       loading="lazy"
                     />
                     <span class="vm-service-badge">
-                      <i class="fa-solid fa-check-double text-vm-red-light me-1"></i>{{ service.badge }}
+                      <i class="fa-solid fa-check-double text-white me-1"></i>{{ service.badge }}
                     </span>
                     <div
                       v-if="isServiceHighlighted(service.id)"
-                      class="position-absolute top-0 end-0 m-2 badge bg-vm-red fw-bold shadow"
+                      class="position-absolute top-0 end-0 m-2 badge bg-vm-red border border-white fw-bold shadow"
                     >
                       <i class="fa-solid fa-star me-1"></i>Recomendado
                     </div>
@@ -183,9 +183,9 @@ function isServiceHighlighted(serviceId) {
                   </div>
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center mt-2 pt-1 text-white-50" style="font-size: 0.72rem;">
-                  <span><i class="fa-solid fa-camera text-vm-blue-light me-1"></i>Registro en Faena</span>
-                  <span class="font-mono-tech text-white-50">4:3 HD</span>
+                <div class="d-flex justify-content-between align-items-center mt-2 pt-1 text-white fw-semibold" style="font-size: 0.72rem;">
+                  <span><i class="fa-solid fa-camera text-white me-1"></i>Registro en Faena</span>
+                  <span class="font-mono-tech badge bg-vm-red">4:3 HD</span>
                 </div>
               </div>
 
@@ -199,7 +199,7 @@ function isServiceHighlighted(serviceId) {
                     <span class="text-uppercase fw-bold text-vm-red d-block" style="font-size: 0.72rem; letter-spacing: 0.05em;">
                       {{ service.categoryLabel }}
                     </span>
-                    <h3 class="h5 fw-bold text-dark mb-0 lh-sm">{{ service.title }}</h3>
+                    <h3 class="h5 fw-bold text-vm-blue mb-0 lh-sm">{{ service.title }}</h3>
                   </div>
                 </div>
 

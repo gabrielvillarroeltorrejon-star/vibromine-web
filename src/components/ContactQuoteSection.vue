@@ -101,14 +101,14 @@ function openWhatsAppWithQuote() {
           <div class="vm-quote-card h-100">
             <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 pb-3 border-bottom">
               <div>
-                <h3 class="h4 fw-bold text-dark mb-1">Formulario de Requerimiento Técnico</h3>
+                <h3 class="h4 fw-bold text-vm-blue mb-1">Formulario de Requerimiento Técnico</h3>
                 <p class="small text-secondary mb-0">
                   Respuesta prioritaria para jefes de planta, planificadores y mantenedores
                 </p>
               </div>
               <span
                 class="badge rounded-pill px-3 py-2 font-mono-tech"
-                :class="isSupabaseConfigured ? 'bg-success bg-opacity-10 text-success border border-success' : 'badge-vm-blue'"
+                :class="isSupabaseConfigured ? 'bg-vm-blue' : 'badge-vm-blue'"
               >
                 <i class="fa-solid fa-database me-1"></i>
                 {{ isSupabaseConfigured ? 'Supabase Cloud Activo' : 'Supabase Ready' }}
@@ -275,7 +275,7 @@ function openWhatsAppWithQuote() {
 
                   <button
                     type="button"
-                    class="btn btn-outline-success btn-lg d-flex align-items-center justify-content-center gap-2"
+                    class="btn btn-vm-outline-blue btn-lg d-flex align-items-center justify-content-center gap-2"
                     @click="openWhatsAppWithQuote"
                     title="Enviar datos del formulario directo por WhatsApp"
                   >
@@ -318,11 +318,11 @@ function openWhatsAppWithQuote() {
             <!-- Tarjeta Corporativa de Contacto Directo -->
             <div
               class="p-4 rounded-4 text-white shadow"
-              style="background-color: #07133e; border-top: 4px solid #d91920;"
+              style="background-color: #0012b8; border-top: 5px solid #d91018;"
             >
               <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="badge bg-vm-red fw-bold">SEDE CENTRAL</span>
-                <span class="small text-white-50">Antofagasta, II Región, Chile</span>
+                <span class="badge bg-vm-red border border-white fw-bold">SEDE CENTRAL</span>
+                <span class="small text-white fw-semibold">Antofagasta, II Región, Chile</span>
               </div>
               <h3 class="h4 fw-bold mb-4">Canales Directos VIBROMINE</h3>
 
@@ -331,14 +331,14 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background: rgba(0, 34, 232, 0.35); color: #708dff;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #0018e8;"
                   >
                     <i class="fa-solid fa-location-dot fs-5"></i>
                   </div>
                   <div>
-                    <div class="small text-white-50">Dirección Comercial y Técnica</div>
+                    <div class="small text-white">Dirección Comercial y Técnica</div>
                     <div class="fw-bold">{{ companyInfo.contact.address }}</div>
-                    <div class="small text-vm-blue-light">{{ companyInfo.contact.city }} - {{ companyInfo.contact.country }}</div>
+                    <div class="small text-white fw-semibold">{{ companyInfo.contact.city }} - {{ companyInfo.contact.country }}</div>
                   </div>
                 </div>
 
@@ -346,12 +346,12 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background: rgba(217, 25, 32, 0.28); color: #ff6b70;"
+                    style="width: 44px; height: 44px; background-color: #d91018; color: #ffffff; border: 1.5px solid #ffffff;"
                   >
                     <i class="fa-solid fa-phone-volume fs-5"></i>
                   </div>
                   <div>
-                    <div class="small text-white-50">Teléfonos Red Fija Antofagasta</div>
+                    <div class="small text-white">Teléfonos Red Fija Antofagasta</div>
                     <div class="d-flex flex-wrap gap-3 mt-1">
                       <a
                         :href="`tel:${companyInfo.contact.phones[0].raw}`"
@@ -359,7 +359,7 @@ function openWhatsAppWithQuote() {
                       >
                         {{ companyInfo.contact.phones[0].display }}
                       </a>
-                      <span class="text-white-50">/</span>
+                      <span class="text-white">/</span>
                       <a
                         :href="`tel:${companyInfo.contact.phones[1].raw}`"
                         class="text-white fw-bold text-decoration-none font-mono-tech"
@@ -374,15 +374,15 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background: rgba(0, 34, 232, 0.35); color: #708dff;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
                   >
                     <i class="fa-solid fa-envelope-open-text fs-5"></i>
                   </div>
                   <div>
-                    <div class="small text-white-50">Correo Electrónico Corporativo</div>
+                    <div class="small text-white">Correo Electrónico Corporativo</div>
                     <a
                       :href="`mailto:${companyInfo.contact.email}`"
-                      class="text-vm-blue-light fw-bold text-decoration-none"
+                      class="text-white fw-bold text-decoration-none"
                     >
                       {{ companyInfo.contact.email }}
                     </a>
@@ -393,12 +393,12 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-start gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background: rgba(255, 255, 255, 0.1); color: #ffffff;"
+                    style="width: 44px; height: 44px; background-color: #d91018; color: #ffffff; border: 1.5px solid #ffffff;"
                   >
                     <i class="fa-solid fa-globe fs-5"></i>
                   </div>
                   <div>
-                    <div class="small text-white-50">Portal Corporativo</div>
+                    <div class="small text-white">Portal Corporativo</div>
                     <div class="fw-bold font-mono-tech">{{ companyInfo.contact.website }}</div>
                   </div>
                 </div>

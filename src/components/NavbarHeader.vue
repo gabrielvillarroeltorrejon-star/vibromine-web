@@ -29,17 +29,17 @@ onUnmounted(() => {
       <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center gap-4">
           <span>
-            <i class="fa-solid fa-location-dot text-vm-red-light me-1"></i>
+            <i class="fa-solid fa-location-dot text-white me-1"></i>
             {{ companyInfo.contact.fullAddress }}
           </span>
           <a :href="`mailto:${companyInfo.contact.email}`">
-            <i class="fa-solid fa-envelope text-vm-blue-light me-1"></i>
+            <i class="fa-solid fa-envelope text-white me-1"></i>
             {{ companyInfo.contact.email }}
           </a>
           <span>
-            <i class="fa-solid fa-phone-volume text-vm-red-light me-1"></i>
+            <i class="fa-solid fa-phone-volume text-white me-1"></i>
             <a :href="`tel:${companyInfo.contact.phones[0].raw}`" class="me-2">{{ companyInfo.contact.phones[0].display }}</a>
-            <span class="text-white-50">|</span>
+            <span class="text-white">|</span>
             <a :href="`tel:${companyInfo.contact.phones[1].raw}`" class="ms-2">{{ companyInfo.contact.phones[1].display }}</a>
           </span>
         </div>

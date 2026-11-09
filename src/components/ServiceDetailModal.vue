@@ -34,7 +34,7 @@ function handleQuoteAndClose() {
     tabindex="-1"
     role="dialog"
     aria-modal="true"
-    style="background: rgba(4, 10, 36, 0.8); backdrop-filter: blur(6px);"
+    style="background-color: rgba(0, 12, 138, 0.82); backdrop-filter: blur(6px);"
     @click.self="emit('close')"
   >
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -42,19 +42,19 @@ function handleQuoteAndClose() {
         <!-- Encabezado del Modal -->
         <div
           class="modal-header text-white border-0 p-4"
-          style="background-color: #07133e; border-bottom: 4px solid #d91920 !important;"
+          style="background-color: #0012b8; border-bottom: 4px solid #d91018 !important;"
         >
           <div class="d-flex align-items-center gap-3">
             <div
               class="rounded-3 d-flex align-items-center justify-content-center"
-              style="width: 52px; height: 52px; background: rgba(217, 25, 32, 0.85); color: #ffffff;"
+              style="width: 52px; height: 52px; background-color: #d91018; color: #ffffff; border: 2px solid #ffffff;"
             >
               <i :class="[service.iconClass || service.icon, 'fs-4']"></i>
             </div>
             <div>
               <div class="d-flex align-items-center gap-2 mb-1">
-                <span class="badge bg-vm-red">{{ service.categoryLabel }}</span>
-                <span class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25">
+                <span class="badge bg-vm-red border border-white">{{ service.categoryLabel }}</span>
+                <span class="badge bg-white text-vm-blue fw-bold">
                   {{ service.badge }}
                 </span>
               </div>
@@ -74,7 +74,7 @@ function handleQuoteAndClose() {
           <div class="row g-4">
             <!-- Galería Fotográfica de Terreno en Proporción 4:3 HD (1200x900) -->
             <div class="col-md-6">
-              <div class="rounded-4 overflow-hidden border shadow-sm mb-2 bg-dark">
+              <div class="rounded-4 overflow-hidden shadow-sm mb-2 bg-vm-blue" style="border: 2px solid #0018e8;">
                 <img
                   :src="service.images[selectedImgIndex]"
                   :alt="`${service.title} - Imagen ${selectedImgIndex + 1}`"

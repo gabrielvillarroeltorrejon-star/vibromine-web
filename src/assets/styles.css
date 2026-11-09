@@ -1,29 +1,41 @@
 /* ==========================================================================
-   SISTEMA DE DISEÑO E IDENTIDAD CORPORATIVA VIBROMINE
-   Paleta Oficial Extraída del Logo:
-   - Azul Rey / Cobalto VIBROMINE: #0022E8 / #0018B5
-   - Azul Marino Profundo: #040B29 / #071442
-   - Rojo Sintomático (Pulso Vibracional): #D91920 / #B81218
-   - Blanco Puro: #FFFFFF y Gris Hielo: #F4F6FB
+   SISTEMA DE DISEÑO E IDENTIDAD CORPORATIVA VIBROMINE (100% SÓLIDO, CERO GRADIENTES)
+   Paleta Oficial Extraída Píxel por Píxel del Logotipo VIBROMINE:
+   - Azul Rey / Eléctrico VIBROMINE: #0018E8 / #0012B8 / #000C8A
+   - Rojo Sintomático (Pulso Vibracional): #D91018 / #B30910
+   - Blanco Puro: #FFFFFF y Hielo Técnico: #F3F6FC
    ========================================================================== */
 
 :root {
-  --vm-navy-950: #040a24;
-  --vm-navy-900: #07133e;
-  --vm-navy-800: #0b1d5c;
-  --vm-blue-primary: #0022e8;
-  --vm-blue-royal: #0018b5;
-  --vm-blue-light: #4d6bfe;
-  --vm-blue-soft: #ebf0ff;
-  --vm-red-primary: #d91920;
-  --vm-red-hover: #b51117;
-  --vm-red-light: #ff4d54;
-  --vm-red-soft: #fdecee;
-  --vm-slate-50: #f4f6fb;
-  --vm-slate-100: #e8ecf7;
-  --vm-slate-200: #d3dbed;
-  --vm-slate-600: #42506b;
-  --vm-slate-800: #111b36;
+  /* Azules Oficiales del Logo VIBROMINE ("V", Ondas y Wordmark) */
+  --vm-blue-primary: #0018e8;
+  --vm-blue-royal: #0012b8;
+  --vm-blue-deep: #000c8a;
+  --vm-blue-soft: #eef2ff;
+  --vm-blue-border: #b8c7ff;
+
+  /* Rojos Oficiales del Logo VIBROMINE (Pulso Vibracional y "Servicio de Mantenimiento Sintomático") */
+  --vm-red-primary: #d91018;
+  --vm-red-hover: #b30910;
+  --vm-red-soft: #fff0f1;
+  --vm-red-border: #f7b8bc;
+
+  /* Lienzos Neutros Limpios (Blanco del Logo y Hielo Azulado) */
+  --vm-white: #ffffff;
+  --vm-slate-50: #f3f6fc;
+  --vm-slate-100: #e5ecfa;
+  --vm-slate-200: #cdd8f0;
+  --vm-slate-600: #334366;
+  --vm-slate-700: #1e3163;
+  --vm-slate-800: #0a194e;
+
+  /* Tokens redirigidos a los Azules reales del Logo (nunca negro) */
+  --vm-navy-950: #000c8a;
+  --vm-navy-900: #0012b8;
+  --vm-navy-800: #0018e8;
+  --vm-blue-light: #ffffff;
+  --vm-red-light: #ffccd0;
+
   --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -59,7 +71,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .text-vm-blue-light {
-  color: #708dff !important;
+  color: #ffffff !important;
 }
 
 .text-vm-red {
@@ -67,7 +79,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .text-vm-red-light {
-  color: #ff6b70 !important;
+  color: #ffccd0 !important;
 }
 
 .bg-vm-blue {
@@ -93,14 +105,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .badge-vm-blue {
   background-color: var(--vm-blue-soft);
   color: var(--vm-blue-primary);
-  border: 1px solid rgba(0, 34, 232, 0.25);
+  border: 1.5px solid var(--vm-blue-border);
   font-weight: 700;
 }
 
 .badge-vm-red {
   background-color: var(--vm-red-soft);
   color: var(--vm-red-primary);
-  border: 1px solid rgba(217, 25, 32, 0.25);
+  border: 1.5px solid var(--vm-red-border);
   font-weight: 700;
 }
 
@@ -108,35 +120,36 @@ h1, h2, h3, h4, h5, h6, .font-heading {
    Top Bar & Sticky Navbar Blanca (Integración Perfecta con el Logo Oficial)
    -------------------------------------------------------------------------- */
 .vm-topbar {
-  background-color: var(--vm-navy-950);
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.82rem;
-  border-bottom: 2px solid var(--vm-red-primary);
+  background-color: var(--vm-blue-deep);
+  color: #ffffff;
+  font-size: 0.83rem;
+  font-weight: 600;
+  border-bottom: 3px solid var(--vm-red-primary);
 }
 
 .vm-topbar a {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .vm-topbar a:hover {
-  color: #708dff;
+  color: #ffccd0;
 }
 
 .vm-navbar {
-  background: #ffffff;
-  border-bottom: 1px solid var(--vm-slate-200);
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--vm-blue-primary);
   transition: all 0.3s ease;
   padding-top: 0.65rem;
   padding-bottom: 0.65rem;
-  box-shadow: 0 4px 20px rgba(7, 19, 62, 0.06);
+  box-shadow: 0 4px 18px rgba(0, 24, 232, 0.08);
 }
 
 .vm-navbar.scrolled {
   padding-top: 0.45rem;
   padding-bottom: 0.45rem;
-  box-shadow: 0 10px 30px rgba(7, 19, 62, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 24, 232, 0.14);
 }
 
 .vm-logo-svg {
@@ -151,7 +164,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-nav-link {
-  color: var(--vm-navy-900) !important;
+  color: var(--vm-blue-royal) !important;
   font-weight: 700;
   font-size: 0.92rem;
   padding: 0.5rem 0.95rem !important;
@@ -161,12 +174,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-nav-link:hover,
 .vm-nav-link.active {
-  color: var(--vm-blue-primary) !important;
-  background: var(--vm-blue-soft);
+  color: #ffffff !important;
+  background-color: var(--vm-blue-primary);
 }
 
 /* --------------------------------------------------------------------------
-   Botones Corporativos (Azul VIBROMINE y Rojo Sintomático)
+   Botones Corporativos Sólidos (Azul VIBROMINE y Rojo Sintomático)
    -------------------------------------------------------------------------- */
 .btn-vm-primary {
   background-color: var(--vm-blue-primary);
@@ -175,7 +188,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border: none;
   padding: 0.75rem 1.6rem;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 34, 232, 0.28);
+  box-shadow: 0 6px 18px rgba(0, 24, 232, 0.28);
   transition: all 0.25s ease;
 }
 
@@ -183,7 +196,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: var(--vm-blue-royal);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 34, 232, 0.42);
+  box-shadow: 0 10px 24px rgba(0, 18, 184, 0.38);
 }
 
 .btn-vm-red,
@@ -194,7 +207,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border: none;
   padding: 0.75rem 1.6rem;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(217, 25, 32, 0.32);
+  box-shadow: 0 6px 18px rgba(217, 16, 24, 0.32);
   transition: all 0.25s ease;
 }
 
@@ -203,13 +216,13 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: var(--vm-red-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(217, 25, 32, 0.48);
+  box-shadow: 0 10px 24px rgba(179, 9, 16, 0.45);
 }
 
 .btn-vm-outline-blue {
   color: var(--vm-blue-primary);
-  border: 1.5px solid var(--vm-blue-primary);
-  background: #ffffff;
+  border: 2px solid var(--vm-blue-primary);
+  background-color: #ffffff;
   font-weight: 700;
   padding: 0.65rem 1.35rem;
   border-radius: 8px;
@@ -217,38 +230,38 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .btn-vm-outline-blue:hover {
-  background: var(--vm-blue-soft);
-  color: var(--vm-blue-royal);
+  background-color: var(--vm-blue-primary);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
 .btn-vm-outline-light {
-  color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.06);
-  font-weight: 600;
+  color: var(--vm-blue-royal);
+  border: 2px solid #ffffff;
+  background-color: #ffffff;
+  font-weight: 700;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   transition: all 0.25s ease;
 }
 
 .btn-vm-outline-light:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background-color: var(--vm-blue-soft);
   border-color: #ffffff;
-  color: #ffffff;
+  color: var(--vm-blue-deep);
   transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
-   Hero Section con los Tonos Oficiales del Logo
+   Hero Section Sólido en Azul Rey Corporativo y Rojo Sintomático del Logo
    -------------------------------------------------------------------------- */
 .vm-hero {
   position: relative;
-  background-color: var(--vm-navy-900);
+  background-color: var(--vm-blue-royal);
   color: #ffffff;
   padding: 5rem 0 5rem;
   overflow: hidden;
-  border-bottom: 4px solid var(--vm-blue-primary);
+  border-bottom: 5px solid var(--vm-red-primary);
 }
 
 .vm-hero-grid-bg {
@@ -259,10 +272,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(217, 25, 32, 0.18);
-  border: 1px solid rgba(255, 77, 84, 0.5);
-  color: #ff8589;
-  padding: 0.45rem 1rem;
+  background-color: var(--vm-red-primary);
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+  padding: 0.45rem 1.05rem;
   border-radius: 50px;
   font-size: 0.82rem;
   font-weight: 700;
@@ -273,21 +286,25 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .vm-hero-title {
   font-size: clamp(2.15rem, 4.2vw, 3.5rem);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.16;
   margin-bottom: 1.25rem;
 }
 
 .vm-text-gradient {
-  color: #708dff;
+  display: inline-block;
+  background-color: var(--vm-red-primary);
+  color: #ffffff;
+  padding: 0.04em 0.32em;
+  border-radius: 6px;
 }
 
 .vm-hero-showcase {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid rgba(77, 107, 254, 0.5);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-  background: var(--vm-navy-900);
+  border: 3px solid #ffffff;
+  box-shadow: 0 20px 45px rgba(0, 12, 138, 0.45);
+  background-color: var(--vm-blue-deep);
 }
 
 .vm-hero-main-img {
@@ -310,20 +327,20 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   object-fit: cover;
   border-radius: 6px;
   cursor: pointer;
-  border: 2px solid transparent;
-  opacity: 0.65;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  opacity: 0.75;
   transition: all 0.2s ease;
 }
 
 .vm-hero-thumb.active,
 .vm-hero-thumb:hover {
-  border-color: var(--vm-red-light);
+  border-color: var(--vm-red-primary);
   opacity: 1;
   transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
-   Barra de Estadísticas e Impacto
+   Barra de Estadísticas e Impacto (Alternancia Azul y Rojo del Logo)
    -------------------------------------------------------------------------- */
 .vm-stats-bar {
   margin-top: -2.6rem;
@@ -332,23 +349,25 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-stat-card {
-  background: #ffffff;
+  background-color: #ffffff;
   border-radius: 14px;
   padding: 1.75rem 1.4rem;
-  border: 1px solid var(--vm-slate-200);
-  box-shadow: 0 15px 35px rgba(7, 19, 62, 0.09);
+  border: 1.5px solid var(--vm-slate-200);
+  box-shadow: 0 14px 32px rgba(0, 18, 184, 0.12);
   height: 100%;
   transition: all 0.3s ease;
+  border-top: 4px solid var(--vm-blue-primary);
   border-bottom: 4px solid var(--vm-blue-primary);
 }
 
-.vm-stat-card:nth-child(even) {
+.vm-stat-card.stat-red {
+  border-top-color: var(--vm-red-primary);
   border-bottom-color: var(--vm-red-primary);
 }
 
 .vm-stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 22px 45px rgba(7, 19, 62, 0.16);
+  box-shadow: 0 20px 42px rgba(0, 24, 232, 0.18);
 }
 
 .vm-stat-number {
@@ -368,10 +387,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--vm-red-primary);
-  background: var(--vm-red-soft);
-  border: 1px solid rgba(217, 25, 32, 0.2);
-  padding: 0.35rem 0.95rem;
+  color: #ffffff;
+  background-color: var(--vm-red-primary);
+  padding: 0.38rem 1rem;
   border-radius: 50px;
   margin-bottom: 0.75rem;
 }
@@ -379,37 +397,40 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .vm-section-title {
   font-size: clamp(1.8rem, 3vw, 2.55rem);
   font-weight: 800;
-  color: var(--vm-navy-900);
+  color: var(--vm-blue-royal);
 }
 
 /* --------------------------------------------------------------------------
    Tarjetas de Servicios en Grilla de 2 Horizontal con Proporción 4:3 HD
    -------------------------------------------------------------------------- */
 .vm-service-card {
-  background: #ffffff;
+  background-color: #ffffff;
   border-radius: 18px;
-  border: 1px solid var(--vm-slate-200);
+  border: 1.5px solid var(--vm-slate-200);
+  border-top: 4px solid var(--vm-blue-primary);
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
   transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 28px rgba(7, 19, 62, 0.06);
+  box-shadow: 0 10px 28px rgba(0, 18, 184, 0.08);
 }
 
 .vm-service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 22px 48px rgba(0, 34, 232, 0.15);
-  border-color: var(--vm-blue-primary);
+  box-shadow: 0 22px 48px rgba(0, 24, 232, 0.18);
+  border-color: var(--vm-red-primary);
+  border-top-color: var(--vm-red-primary);
 }
 
 .vm-service-card.highlighted-symptom {
-  border: 2px solid var(--vm-red-primary);
-  box-shadow: 0 0 0 4px rgba(217, 25, 32, 0.18), 0 20px 40px rgba(7, 19, 62, 0.15);
+  border: 2.5px solid var(--vm-red-primary);
+  box-shadow: 0 0 0 4px rgba(217, 16, 24, 0.2), 0 20px 40px rgba(0, 18, 184, 0.16);
 }
 
 .vm-service-media-col {
-  background-color: var(--vm-navy-900);
+  background-color: var(--vm-blue-royal);
+  border-right: 3px solid var(--vm-red-primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -422,9 +443,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   aspect-ratio: 4 / 3;
   border-radius: 12px;
   overflow: hidden;
-  background: var(--vm-navy-950);
-  border: 1.5px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  background-color: var(--vm-blue-deep);
+  border: 2px solid #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 12, 138, 0.35);
 }
 
 .vm-service-img {
@@ -450,20 +471,21 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-service-thumb-btn {
   padding: 0;
-  border: 2px solid rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.45);
   border-radius: 8px;
   overflow: hidden;
-  background: var(--vm-navy-950);
+  background-color: var(--vm-blue-deep);
   aspect-ratio: 4 / 3;
   cursor: pointer;
-  opacity: 0.68;
+  opacity: 0.78;
   transition: all 0.2s ease;
 }
 
 .vm-service-thumb-btn:hover,
 .vm-service-thumb-btn.active {
   opacity: 1;
-  border-color: var(--vm-red-light);
+  border-color: var(--vm-red-primary);
+  box-shadow: 0 0 0 2px #ffffff;
   transform: translateY(-1px);
 }
 
@@ -478,13 +500,13 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(4, 10, 36, 0.9);
+  background-color: var(--vm-red-primary);
   color: #ffffff;
   font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.25rem 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1.5px solid #ffffff;
 }
 
 .vm-modal-img-4x3 {
@@ -505,7 +527,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   justify-content: center;
   font-size: 1.25rem;
   flex-shrink: 0;
-  box-shadow: 0 6px 15px rgba(0, 34, 232, 0.25);
+  box-shadow: 0 6px 15px rgba(0, 24, 232, 0.25);
 }
 
 .vm-detection-list {
@@ -534,24 +556,25 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 /* --------------------------------------------------------------------------
-   Diagnosticador Rápido de Síntomas
+   Diagnosticador Rápido de Síntomas (Azul Rey, Rojo Sintomático y Blanco)
    -------------------------------------------------------------------------- */
 .vm-symptom-box {
-  background-color: var(--vm-navy-900);
+  background-color: var(--vm-blue-royal);
   border-radius: 16px;
   padding: 2rem;
   color: #ffffff;
-  border-left: 5px solid var(--vm-red-primary);
+  border-left: 6px solid var(--vm-red-primary);
+  border-top: 2px solid var(--vm-blue-primary);
 }
 
 .vm-symptom-pill {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.92);
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  color: var(--vm-blue-royal);
   border-radius: 10px;
   padding: 0.7rem 1rem;
   font-size: 0.86rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
@@ -561,36 +584,49 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   gap: 0.65rem;
 }
 
+.vm-symptom-pill i {
+  color: var(--vm-red-primary);
+  transition: color 0.2s ease;
+}
+
 .vm-symptom-pill:hover,
 .vm-symptom-pill.active {
-  background: rgba(217, 25, 32, 0.25);
-  border-color: var(--vm-red-light);
+  background-color: var(--vm-red-primary);
+  border-color: #ffffff;
   color: #ffffff;
   transform: translateY(-2px);
 }
 
+.vm-symptom-pill:hover i,
+.vm-symptom-pill.active i {
+  color: #ffffff !important;
+}
+
 /* --------------------------------------------------------------------------
-   Certificaciones y Normativas
+   Certificaciones y Normativas (Azul Rey con Tarjetas Blancas y Acentos Rojos)
    -------------------------------------------------------------------------- */
 .vm-cert-section {
-  background-color: var(--vm-navy-900);
+  background-color: var(--vm-blue-royal);
   color: #ffffff;
-  border-top: 4px solid var(--vm-red-primary);
+  border-top: 5px solid var(--vm-red-primary);
+  border-bottom: 5px solid var(--vm-red-primary);
 }
 
 .vm-cert-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #ffffff;
+  color: var(--vm-slate-800);
+  border: 2px solid #ffffff;
+  border-top: 5px solid var(--vm-red-primary);
   border-radius: 16px;
   padding: 2rem;
   height: 100%;
   transition: all 0.3s ease;
+  box-shadow: 0 14px 32px rgba(0, 12, 138, 0.25);
 }
 
 .vm-cert-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: var(--vm-blue-light);
   transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(0, 12, 138, 0.38);
 }
 
 /* --------------------------------------------------------------------------
@@ -603,7 +639,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   padding: 1.85rem 0;
   background-color: var(--vm-slate-50);
   border-radius: 20px;
-  border: 1px solid var(--vm-slate-200);
+  border: 2px solid var(--vm-blue-border);
 }
 
 .vm-logo-track {
@@ -628,13 +664,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-marquee-item {
-  background: #ffffff;
-  border: 1px solid var(--vm-slate-200);
+  background-color: #ffffff;
+  border: 1.5px solid var(--vm-slate-200);
+  border-top: 3px solid var(--vm-blue-primary);
   border-radius: 14px;
   padding: 0.85rem 1.5rem;
   min-width: 220px;
   height: 96px;
-  box-shadow: 0 6px 16px rgba(7, 19, 62, 0.05);
+  box-shadow: 0 6px 16px rgba(0, 18, 184, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -642,9 +679,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-marquee-item:hover {
-  border-color: var(--vm-blue-primary);
+  border-color: var(--vm-red-primary);
+  border-top-color: var(--vm-red-primary);
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 34, 232, 0.14);
+  box-shadow: 0 10px 24px rgba(0, 24, 232, 0.16);
 }
 
 .vm-marquee-item img {
@@ -679,18 +717,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 50px;
   padding: 0.52rem 0.92rem;
   font-size: 0.81rem;
-  font-weight: 600;
-  background: var(--vm-slate-50);
-  color: var(--vm-navy-900);
-  border: 1px solid var(--vm-slate-200);
+  font-weight: 700;
+  background-color: #ffffff;
+  color: var(--vm-blue-royal);
+  border: 1.5px solid var(--vm-blue-border);
   transition: all 0.22s ease;
   cursor: pointer;
 }
 
 .vm-sector-filter-btn:hover {
-  border-color: var(--vm-blue-primary);
-  color: var(--vm-blue-primary);
-  background: #ffffff;
+  border-color: var(--vm-red-primary);
+  color: var(--vm-red-primary);
+  background-color: var(--vm-red-soft);
 }
 
 .vm-sector-filter-btn.active {
@@ -698,12 +736,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #ffffff;
   border-color: var(--vm-blue-primary);
   font-weight: 700;
-  box-shadow: 0 6px 16px rgba(0, 34, 232, 0.28);
+  box-shadow: 0 6px 16px rgba(0, 24, 232, 0.28);
 }
 
 .vm-client-card {
-  background: #ffffff;
-  border: 1px solid var(--vm-slate-200);
+  background-color: #ffffff;
+  border: 1.5px solid var(--vm-slate-200);
   border-top: 3px solid var(--vm-red-primary);
   border-radius: 14px;
   padding: 1.25rem;
@@ -712,18 +750,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(7, 19, 62, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 18, 184, 0.05);
 }
 
 .vm-client-card:hover {
   border-color: var(--vm-blue-primary);
   border-top-color: var(--vm-blue-primary);
-  box-shadow: 0 14px 32px rgba(0, 34, 232, 0.14);
+  box-shadow: 0 14px 32px rgba(0, 24, 232, 0.16);
   transform: translateY(-4px);
 }
 
 .vm-client-logo-box {
-  background: #ffffff;
+  background-color: #ffffff;
   border: 1px solid var(--vm-slate-100);
   border-radius: 10px;
   padding: 0.55rem 0.75rem;
@@ -761,7 +799,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .vm-client-title {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--vm-navy-900);
+  color: var(--vm-blue-royal);
   line-height: 1.3;
   margin-bottom: 0.6rem;
   min-height: 2.35rem;
@@ -772,13 +810,13 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-client-tag {
   display: inline-block;
-  background: var(--vm-slate-50);
-  color: var(--vm-slate-700);
-  border: 1px solid var(--vm-slate-200);
+  background-color: var(--vm-blue-soft);
+  color: var(--vm-blue-royal);
+  border: 1px solid var(--vm-blue-border);
   border-radius: 6px;
   padding: 0.25rem 0.65rem;
   font-size: 0.68rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: auto;
 }
 
@@ -786,11 +824,11 @@ h1, h2, h3, h4, h5, h6, .font-heading {
    Formulario de Contacto y Cotización
    -------------------------------------------------------------------------- */
 .vm-quote-card {
-  background: #ffffff;
+  background-color: #ffffff;
   border-radius: 18px;
-  border: 1px solid var(--vm-slate-200);
+  border: 1.5px solid var(--vm-slate-200);
   border-top: 5px solid var(--vm-blue-primary);
-  box-shadow: 0 20px 50px rgba(7, 19, 62, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 18, 184, 0.12);
   padding: 2.5rem;
 }
 
@@ -804,7 +842,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-form-control:focus {
   border-color: var(--vm-blue-primary);
-  box-shadow: 0 0 0 4px rgba(0, 34, 232, 0.14);
+  box-shadow: 0 0 0 4px rgba(0, 24, 232, 0.16);
 }
 
 /* --------------------------------------------------------------------------
@@ -818,41 +856,42 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: #25d366;
+  background-color: var(--vm-red-primary);
+  border: 2px solid #ffffff;
   color: #ffffff;
   text-decoration: none;
   padding: 0.8rem 1.25rem;
   border-radius: 50px;
   font-weight: 700;
   font-size: 0.92rem;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 10px 25px rgba(217, 16, 24, 0.45);
   transition: all 0.25s ease;
 }
 
 .vm-whatsapp-float:hover {
-  background: #1ebe5d;
+  background-color: var(--vm-blue-primary);
   color: #ffffff;
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 14px 30px rgba(0, 24, 232, 0.55);
 }
 
 /* --------------------------------------------------------------------------
-   Footer Corporativo
+   Footer Corporativo en Azul Cobalto del Logo con Franja Roja
    -------------------------------------------------------------------------- */
 .vm-footer {
-  background: var(--vm-navy-950);
-  color: rgba(255, 255, 255, 0.78);
-  border-top: 4px solid var(--vm-red-primary);
+  background-color: var(--vm-blue-deep);
+  color: #ffffff;
+  border-top: 5px solid var(--vm-red-primary);
 }
 
 .vm-footer a {
-  color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .vm-footer a:hover {
-  color: #708dff;
+  color: #ffccd0;
 }
 
 @media (max-width: 767.98px) {

@@ -38,10 +38,10 @@ import { companyInfo } from '../data/vibromineData'
           </p>
 
           <!-- Indicador Visual de Participación en Minería (Datos Oficiales Presentación Pág. 3) -->
-          <div class="p-4 rounded-4 mb-4" style="background: var(--vm-slate-50); border: 1px solid var(--vm-slate-200);">
+          <div class="p-4 rounded-4 mb-4" style="background-color: var(--vm-slate-50); border: 1.5px solid var(--vm-blue-border);">
             <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="fw-bold text-dark small text-uppercase">
-                <i class="fa-solid fa-chart-pie text-vm-blue me-2"></i>Distribución de Nuestros +1.600 Servicios
+              <span class="fw-bold text-vm-blue small text-uppercase">
+                <i class="fa-solid fa-chart-pie text-vm-red me-2"></i>Distribución de Nuestros +1.600 Servicios
               </span>
               <span class="badge bg-vm-red font-mono-tech">Últimos 10 Años</span>
             </div>
@@ -50,7 +50,7 @@ import { companyInfo } from '../data/vibromineData'
               <div
                 class="progress-bar fw-bold"
                 role="progressbar"
-                style="width: 40%; background-color: #0022e8;"
+                style="width: 40%; background-color: #0018e8;"
                 title="40% Empresas Mineras Directas"
               >
                 40% Mineras
@@ -58,7 +58,7 @@ import { companyInfo } from '../data/vibromineData'
               <div
                 class="progress-bar fw-bold"
                 role="progressbar"
-                style="width: 45%; background-color: #d91920;"
+                style="width: 45%; background-color: #d91018;"
                 title="45% Empresas Vinculadas a la Minería"
               >
                 45% Vinculadas a Minería
@@ -66,7 +66,7 @@ import { companyInfo } from '../data/vibromineData'
               <div
                 class="progress-bar fw-bold"
                 role="progressbar"
-                style="width: 15%; background-color: #07133e;"
+                style="width: 15%; background-color: #000c8a;"
                 title="15% Industria General y Energía"
               >
                 15%
@@ -75,15 +75,15 @@ import { companyInfo } from '../data/vibromineData'
 
             <div class="row g-2 small">
               <div class="col-sm-4 d-flex align-items-center gap-2">
-                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #0022e8;"></span>
-                <span><strong>40%</strong> Mineras Directas</span>
+                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background-color: #0018e8;"></span>
+                <span><strong class="text-vm-blue">40%</strong> Mineras Directas</span>
               </div>
               <div class="col-sm-5 d-flex align-items-center gap-2">
-                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #d91920;"></span>
-                <span><strong>45%</strong> Vinculadas a Minería</span>
+                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background-color: #d91018;"></span>
+                <span><strong class="text-vm-red">45%</strong> Vinculadas a Minería</span>
               </div>
               <div class="col-sm-3 d-flex align-items-center gap-2">
-                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background: #07133e;"></span>
+                <span class="d-inline-block rounded-circle" style="width: 10px; height: 10px; background-color: #000c8a;"></span>
                 <span><strong>15%</strong> Otros Rubros</span>
               </div>
             </div>
@@ -92,10 +92,10 @@ import { companyInfo } from '../data/vibromineData'
           <!-- Misión y Visión (Datos Oficiales Presentación Pág. 2) -->
           <div class="row g-3">
             <div class="col-md-6">
-              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm" style="border-top: 4px solid #0022e8 !important;">
+              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm" style="border-top: 4px solid #0018e8 !important;">
                 <div class="d-flex align-items-center gap-2 mb-2">
                   <i class="fa-solid fa-bullseye text-vm-blue fs-5"></i>
-                  <h3 class="h5 fw-bold mb-0">Nuestra Misión</h3>
+                  <h3 class="h5 fw-bold text-vm-blue mb-0">Nuestra Misión</h3>
                 </div>
                 <p class="small text-secondary mb-0">
                   {{ companyInfo.mission }}
@@ -103,10 +103,10 @@ import { companyInfo } from '../data/vibromineData'
               </div>
             </div>
             <div class="col-md-6">
-              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm" style="border-top: 4px solid #d91920 !important;">
+              <div class="p-4 rounded-4 h-100 border bg-white shadow-sm" style="border-top: 4px solid #d91018 !important;">
                 <div class="d-flex align-items-center gap-2 mb-2">
                   <i class="fa-solid fa-eye text-vm-red fs-5"></i>
-                  <h3 class="h5 fw-bold mb-0">Nuestra Visión</h3>
+                  <h3 class="h5 fw-bold text-vm-red mb-0">Nuestra Visión</h3>
                 </div>
                 <p class="small text-secondary mb-0">
                   {{ companyInfo.vision }}
@@ -120,7 +120,7 @@ import { companyInfo } from '../data/vibromineData'
         <div class="col-lg-6">
           <div class="row g-3">
             <div class="col-6">
-              <div class="rounded-4 overflow-hidden shadow-sm border position-relative">
+              <div class="rounded-4 overflow-hidden shadow-sm position-relative" style="border: 2px solid #0018e8;">
                 <img
                   src="/images/services/vibromine-real-02.jpg"
                   alt="Inspección de molinos VIBROMINE"
@@ -133,7 +133,7 @@ import { companyInfo } from '../data/vibromineData'
               </div>
             </div>
             <div class="col-6">
-              <div class="rounded-4 overflow-hidden shadow-sm border position-relative mt-lg-4">
+              <div class="rounded-4 overflow-hidden shadow-sm position-relative mt-lg-4" style="border: 2px solid #d91018;">
                 <img
                   src="/images/services/vibromine-real-03.jpg"
                   alt="Alineamiento de acoplamientos en faena"
@@ -146,7 +146,7 @@ import { companyInfo } from '../data/vibromineData'
               </div>
             </div>
             <div class="col-6">
-              <div class="rounded-4 overflow-hidden shadow-sm border position-relative">
+              <div class="rounded-4 overflow-hidden shadow-sm position-relative" style="border: 2px solid #d91018;">
                 <img
                   src="/images/services/vibromine-real-21.jpg"
                   alt="Nivelación topográfica en faena minera"
@@ -159,7 +159,7 @@ import { companyInfo } from '../data/vibromineData'
               </div>
             </div>
             <div class="col-6">
-              <div class="rounded-4 overflow-hidden shadow-sm border position-relative">
+              <div class="rounded-4 overflow-hidden shadow-sm position-relative" style="border: 2px solid #0018e8;">
                 <img
                   src="/images/services/vibromine-real-04.jpg"
                   alt="Medición vibracional de motores"
@@ -176,15 +176,15 @@ import { companyInfo } from '../data/vibromineData'
           <!-- Banner de Compromiso Regional -->
           <div
             class="mt-3 p-3 rounded-4 d-flex align-items-center justify-content-between flex-wrap gap-3 text-white"
-            style="background-color: #07133e; border-left: 5px solid #d91920;"
+            style="background-color: #0012b8; border-left: 6px solid #d91018;"
           >
             <div class="d-flex align-items-center gap-3">
-              <div class="rounded-circle p-3 text-white" style="background: rgba(217, 25, 32, 0.85);">
+              <div class="rounded-circle p-3 text-white" style="background-color: #d91018;">
                 <i class="fa-solid fa-map-location-dot fs-4"></i>
               </div>
               <div>
                 <div class="fw-bold">Base Operativa en Antofagasta</div>
-                <div class="small text-white-50">Despliegue rápido a Chuquicamata, Salar, Mejillones, El Salvador y Zona Norte</div>
+                <div class="small text-white">Despliegue rápido a Chuquicamata, Salar, Mejillones, El Salvador y Zona Norte</div>
               </div>
             </div>
             <a href="#cotizar" class="btn btn-sm btn-vm-red">

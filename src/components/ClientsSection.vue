@@ -110,20 +110,20 @@ const uniqueLogoClients = computed(() => {
       <!-- Banner CTA de Confianza -->
       <div
         class="mt-5 p-4 p-lg-5 rounded-4 text-white shadow"
-        style="background-color: #07133e; border-left: 6px solid #d91920;"
+        style="background-color: #0012b8; border-left: 6px solid #d91018;"
       >
         <div class="row align-items-center g-4">
           <div class="col-lg-8">
             <h3 class="h4 fw-bold mb-2">
               ¿Necesita programar una intervención preventiva o resolver una urgencia en planta?
             </h3>
-            <p class="text-white-50 mb-0">
+            <p class="text-white mb-0">
               Nuestro equipo técnico en Antofagasta está preparado para asistir en paradas de planta,
               emergencias operacionales y contratos de monitoreo sintomático periódico.
             </p>
           </div>
           <div class="col-lg-4 text-lg-end">
-            <a href="#cotizar" class="btn btn-vm-red btn-lg">
+            <a href="#cotizar" class="btn btn-vm-red btn-lg border border-white">
               <i class="fa-solid fa-headset me-2"></i>Contactar a Ingeniería
             </a>
           </div>

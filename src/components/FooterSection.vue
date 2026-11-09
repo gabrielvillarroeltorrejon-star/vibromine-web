@@ -21,13 +21,13 @@ const currentYear = new Date().getFullYear()
               <image href="/images/logo-vibromine.jpg" width="1024" height="764" />
             </svg>
           </div>
-          <p class="small text-white-50 mb-3">
+          <p class="small text-white mb-3">
             {{ companyInfo.spanishSubtitle }}. Más de 24 años de experiencia y +1.600 servicios ejecutados respaldando la continuidad operativa de la Gran Minería e Industria en Chile.
           </p>
           <div class="d-flex flex-wrap gap-2">
-            <span class="badge bg-vm-blue font-mono-tech">ISO 18436-2 Cat. II</span>
-            <span class="badge bg-vm-red font-mono-tech">ASNT SNT-TC-1A</span>
-            <span class="badge bg-dark border border-secondary font-mono-tech">NAS-410</span>
+            <span class="badge bg-vm-blue border border-white font-mono-tech">ISO 18436-2 Cat. II</span>
+            <span class="badge bg-vm-red border border-white font-mono-tech">ASNT SNT-TC-1A</span>
+            <span class="badge bg-white text-vm-blue fw-bold font-mono-tech">NAS-410</span>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ const currentYear = new Date().getFullYear()
                 href="#cotizar"
                 @click="emit('select-service-quote', srv.title)"
               >
-                <i class="fa-solid fa-angle-right text-vm-red-light me-2"></i>{{ srv.title }}
+                <i class="fa-solid fa-angle-right text-white me-2"></i>{{ srv.title }}
               </a>
             </li>
           </ul>
@@ -55,24 +55,24 @@ const currentYear = new Date().getFullYear()
           </h4>
           <ul class="list-unstyled small d-flex flex-column gap-2 mb-4">
             <li>
-              <i class="fa-solid fa-location-dot text-vm-red-light me-2"></i>
+              <i class="fa-solid fa-location-dot text-white me-2"></i>
               {{ companyInfo.contact.fullAddress }}
             </li>
             <li>
-              <i class="fa-solid fa-phone text-vm-blue-light me-2"></i>
+              <i class="fa-solid fa-phone text-white me-2"></i>
               <a :href="`tel:${companyInfo.contact.phones[0].raw}`">{{ companyInfo.contact.phones[0].display }}</a>
               /
               <a :href="`tel:${companyInfo.contact.phones[1].raw}`">{{ companyInfo.contact.phones[1].display }}</a>
             </li>
             <li>
-              <i class="fa-solid fa-envelope text-vm-red-light me-2"></i>
+              <i class="fa-solid fa-envelope text-white me-2"></i>
               <a :href="`mailto:${companyInfo.contact.email}`">{{ companyInfo.contact.email }}</a>
             </li>
           </ul>
 
           <a
             href="#cotizar"
-            class="btn btn-sm btn-vm-red d-inline-flex align-items-center gap-2"
+            class="btn btn-sm btn-vm-red border border-white d-inline-flex align-items-center gap-2"
           >
             <i class="fa-solid fa-file-signature"></i>
             <span>Solicitar Cotización en Línea</span>
@@ -81,7 +81,7 @@ const currentYear = new Date().getFullYear()
       </div>
 
       <!-- Copyright -->
-      <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50 gap-2">
+      <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center small text-white gap-2">
         <div>
           © {{ currentYear }} <strong>VIBROMINE Chile</strong> ({{ companyInfo.contact.website }}). Todos los derechos reservados.
         </div>
