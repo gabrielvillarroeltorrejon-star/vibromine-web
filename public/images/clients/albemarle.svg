@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
-    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
-    <!-- Triángulo Geométrico Verde Turquesa Albemarle -->
-    <polygon points="36,16 16,60 32,60 44,34 56,60 62,60 42,16" fill="#009C8B"/>
-    <polygon points="36,42 28,60 48,60" fill="#11487A"/>
-    <text x="70" y="47" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="20" fill="#11487A" letter-spacing="1.5">ALBEMARLE</text>
-    <rect x="70" y="54" width="132" height="2.5" fill="#009C8B"/>
-  </svg>

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
-    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
-    <rect x="16" y="20" width="44" height="40" rx="6" fill="#C62828"/>
-    <text x="38" y="47" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="21" fill="#FFFFFF">MD</text>
-    <text x="70" y="40" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="16" fill="#212121">MAESTRANZA</text>
-    <text x="70" y="56" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="18" fill="#C62828" letter-spacing="1.2">DIESEL S.A.</text>
-  </svg>

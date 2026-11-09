@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
-    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
-    <circle cx="36" cy="40" r="20" fill="#003366"/>
-    <path d="M27 28V52M45 28V52M27 40H45" stroke="#C8102E" stroke-width="5" stroke-linecap="round"/>
-    <text x="66" y="48" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="25" fill="#003366" letter-spacing="1">HOWDEN</text>
-  </svg>

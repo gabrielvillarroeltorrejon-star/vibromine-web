@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
-    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
-    <!-- Emblema Dorado Meridian / Yamana Gold -->
-    <polygon points="38,16 58,56 18,56" fill="#C59B27"/>
-    <polygon points="38,28 50,56 26,56" fill="#1B365D"/>
-    <text x="68" y="41" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="19" fill="#1B365D" letter-spacing="0.8">MERIDIAN</text>
-    <text x="68" y="56" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="11" fill="#C59B27" letter-spacing="1.5">YAMANA GOLD</text>
-  </svg>

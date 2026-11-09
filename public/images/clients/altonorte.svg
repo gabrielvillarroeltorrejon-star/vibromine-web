@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
-    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
-    <!-- Emblema Fundición y Metalurgia Altonorte -->
-    <circle cx="38" cy="40" r="21" fill="#005A70"/>
-    <path d="M38 24C44 32 47 37 47 43C47 48 43 52 38 52C33 52 29 48 29 43C29 37 32 32 38 24Z" fill="#E85D04"/>
-    <text x="68" y="42" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="20" fill="#005A70" letter-spacing="1">ALTONORTE</text>
-    <text x="68" y="56" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#E85D04" letter-spacing="0.8">COMPLEJO METALÚRGICO</text>
-  </svg>

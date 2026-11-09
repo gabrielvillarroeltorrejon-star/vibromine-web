@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
-    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
-    <!-- Cordillera Cobre Minera Las Cenizas -->
-    <path d="M16 56L32 24L44 44L52 30L64 56H16Z" fill="#B84A27"/>
-    <path d="M26 56L38 36L50 56H26Z" fill="#2C3E50"/>
-    <text x="72" y="39" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="15" fill="#2C3E50" letter-spacing="0.8">GRUPO MINERO</text>
-    <text x="72" y="56" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="18" fill="#B84A27" letter-spacing="0.5">LAS CENIZAS</text>
-  </svg>

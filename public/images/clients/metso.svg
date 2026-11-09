@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
-    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
-    <!-- Emblema Anillo Industrial Metso -->
-    <path d="M24 40C24 28 33 19 45 19C53 19 60 23 63 30L53 35C51 31 48 29 45 29C38 29 34 34 34 40C34 46 38 51 45 51C48 51 51 49 53 45L63 50C60 57 53 61 45 61C33 61 24 52 24 40Z" fill="#E65100"/>
-    <circle cx="45" cy="40" r="5" fill="#1D1D1B"/>
-    <text x="74" y="50" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="31" fill="#1D1D1B" letter-spacing="0.5">Metso</text>
-  </svg>
