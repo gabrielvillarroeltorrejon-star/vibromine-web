@@ -25,7 +25,6 @@ export const companyInfo = {
     country: 'Chile',
     fullAddress: 'Hermógenes Alfaro 1098, Antofagasta - Chile',
     website: 'www.vibromine.cl',
-    brochureUrl: '/docs/Brochure-Corporativo-VIBROMINE.pdf',
     googleMapsEmbed:
       'https://www.google.com/maps?q=Herm%C3%B3genes+Alfaro+1098,+Antofagasta,+Chile&output=embed'
   },

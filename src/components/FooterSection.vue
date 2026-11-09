@@ -71,13 +71,11 @@ const currentYear = new Date().getFullYear()
           </ul>
 
           <a
-            :href="companyInfo.contact.brochureUrl"
-            target="_blank"
-            download="Brochure-Corporativo-VIBROMINE.pdf"
+            href="#cotizar"
             class="btn btn-sm btn-vm-red d-inline-flex align-items-center gap-2"
           >
-            <i class="fa-solid fa-file-pdf"></i>
-            <span>Descargar Presentación Oficial PDF</span>
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Solicitar Cotización en Línea</span>
           </a>
         </div>
       </div>

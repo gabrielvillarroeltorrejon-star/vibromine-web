@@ -114,18 +114,8 @@ onUnmounted(() => {
 
           <div class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-2 mt-3 mt-lg-0">
             <a
-              :href="companyInfo.contact.brochureUrl"
-              target="_blank"
-              download="Brochure-Corporativo-VIBROMINE.pdf"
-              class="btn btn-sm btn-vm-outline-blue d-flex align-items-center justify-content-center gap-2 py-2 px-3"
-              title="Descargar Presentación Corporativa Oficial en PDF"
-            >
-              <i class="fa-solid fa-file-pdf text-vm-red"></i>
-              <span>Brochure PDF</span>
-            </a>
-            <a
               href="#cotizar"
-              class="btn btn-sm btn-vm-red d-flex align-items-center justify-content-center gap-2 py-2 px-3"
+              class="btn btn-vm-red d-flex align-items-center justify-content-center gap-2 py-2 px-4"
               @click="closeMobileMenu"
             >
               <i class="fa-solid fa-wave-square"></i>

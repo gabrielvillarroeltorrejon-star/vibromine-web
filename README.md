@@ -21,10 +21,8 @@ Diseñado bajo el estándar visual industrial de [Treppco Chile](https://treppco
 
 ```text
 ├── public/
-│   ├── docs/
-│   │   └── Brochure-Corporativo-VIBROMINE.pdf   # Presentación oficial descargable
 │   ├── images/
-│   │   └── services/                            # 32 fotografías reales extraídas del dossier de VIBROMINE
+│   │   └── services/                            # Fotografías reales en 4:3 HD de VIBROMINE
 │   └── favicon.svg                              # Icono vectorial corporativo
 ├── src/
 │   ├── assets/
