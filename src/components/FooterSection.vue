@@ -25,9 +25,9 @@ const currentYear = new Date().getFullYear()
             {{ companyInfo.spanishSubtitle }}. Más de 24 años de experiencia y +1.600 servicios ejecutados respaldando la continuidad operativa de la Gran Minería e Industria en Chile.
           </p>
           <div class="d-flex flex-wrap gap-2">
-            <span class="badge bg-white text-vm-blue fw-bold font-mono-tech">ISO 18436-2 Cat. II</span>
-            <span class="badge bg-white text-vm-blue fw-bold font-mono-tech">ASNT SNT-TC-1A</span>
-            <span class="badge bg-white text-vm-blue fw-bold font-mono-tech">NAS-410</span>
+            <span class="badge bg-white text-vm-red fw-bold font-mono-tech">ISO 18436-2 Cat. II</span>
+            <span class="badge bg-white text-vm-red fw-bold font-mono-tech">ASNT SNT-TC-1A</span>
+            <span class="badge bg-white text-vm-red fw-bold font-mono-tech">NAS-410</span>
           </div>
         </div>
 
