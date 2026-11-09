@@ -76,7 +76,7 @@ onUnmounted(() => {
               </a>
               <a href="#servicios" class="btn btn-vm-outline-light btn-lg d-inline-flex align-items-center gap-2">
                 <i class="fa-solid fa-layer-group text-vm-blue"></i>
-                <span>Explorar las 8 Especialidades</span>
+                <span>Explorar Especialidades</span>
               </a>
             </div>
           </div>
