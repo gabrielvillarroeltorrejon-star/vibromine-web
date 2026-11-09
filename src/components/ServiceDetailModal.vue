@@ -100,7 +100,7 @@ function handleQuoteAndClose() {
               </div>
               <div class="small text-muted mt-2 text-center">
                 <i class="fa-solid fa-camera text-vm-blue me-1"></i>
-                Registro fotográfico ejecutado por VIBROMINE en faena
+                Fotografías ejecutadas por VIBROMINE en faena
               </div>
             </div>
 
