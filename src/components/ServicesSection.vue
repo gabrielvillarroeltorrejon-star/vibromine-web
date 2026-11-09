@@ -79,11 +79,11 @@ function isServiceHighlighted(serviceId) {
             </p>
           </div>
           <div class="col-lg-8">
-            <div class="row g-2">
-              <div v-for="item in symptomFinderItems" :key="item.id" class="col-md-6">
+            <div class="row g-2 align-items-stretch">
+              <div v-for="item in symptomFinderItems" :key="item.id" class="col-md-6 d-flex">
                 <button
                   type="button"
-                  class="vm-symptom-pill"
+                  class="vm-symptom-pill h-100"
                   :class="{ active: activeSymptom && activeSymptom.id === item.id }"
                   @click="toggleSymptom(item)"
                 >
