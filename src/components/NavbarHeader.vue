@@ -43,20 +43,6 @@ onUnmounted(() => {
             <a :href="`tel:${companyInfo.contact.phones[1].raw}`" class="ms-2">{{ companyInfo.contact.phones[1].display }}</a>
           </span>
         </div>
-        <div class="d-flex align-items-center gap-2">
-          <span
-            class="badge font-mono-tech px-2 py-1"
-            style="background: rgba(0, 34, 232, 0.35); color: #ffffff; border: 1px solid rgba(112, 141, 255, 0.5);"
-          >
-            <i class="fa-solid fa-award text-vm-blue-light me-1"></i>ISO 18436-2 Cat. II
-          </span>
-          <span
-            class="badge font-mono-tech px-2 py-1"
-            style="background: rgba(217, 25, 32, 0.3); color: #ffffff; border: 1px solid rgba(255, 107, 112, 0.5);"
-          >
-            <i class="fa-solid fa-shield-halved text-vm-red-light me-1"></i>ASNT SNT-TC-1A / NAS-410
-          </span>
-        </div>
       </div>
     </div>
 
