@@ -298,18 +298,23 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-hero-title {
-  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
+  font-size: clamp(1.75rem, 2.55vw, 2.45rem);
   font-weight: 800;
-  line-height: 1.16;
-  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 1.35rem;
+  color: #ffffff;
 }
 
 .vm-text-gradient {
   display: inline-block;
   background-color: var(--vm-red-primary);
   color: #ffffff;
-  padding: 0.04em 0.32em;
-  border-radius: 6px;
+  padding: 0.14em 0.45em;
+  margin: 0.2em 0;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 12, 138, 0.4);
+  line-height: 1.15;
 }
 
 .vm-hero-showcase {
