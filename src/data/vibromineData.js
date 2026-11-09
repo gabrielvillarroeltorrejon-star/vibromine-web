@@ -455,7 +455,7 @@ export const clientsList = [
   { name: 'Maestranza Diesel S.A.', sector: 'industria', highlight: true, tag: 'Ingeniería y Fabricación', logo: '/images/clients/maestranzadiesel.png?v=4' },
   { name: 'PROMET Servicios S.p.A.', sector: 'industria', highlight: true, tag: 'Infraestructura Modular', logo: '/images/clients/promet.png?v=4' },
   { name: 'Sorena S.A.', sector: 'industria', highlight: true, tag: 'Metalurgia y Bronces', logo: '/images/clients/sorena.png?v=4' },
-  { name: 'Vesol Ltda.', sector: 'industria', highlight: true, tag: 'Servicios Industriales', logo: '/images/clients/vesol.png?v=4' }
+  { name: 'Vesol Ltda.', sector: 'industria', highlight: true, tag: 'Servicios Industriales', logo: '/images/clients/vesol.png?v=5' }
 ]
 
 export const workflowSteps = [
