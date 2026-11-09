@@ -403,7 +403,7 @@ export const certificationsList = [
     description:
       'Acredita la competencia técnica internacional para configurar mediciones espectrales, diagnosticar fallas complejas en maquinaria rotatoria y definir acciones correctivas de alta precisión.',
     icon: 'vm-icon-vibration',
-    accentColor: '#0018E8'
+    accentColor: '#D91018'
   },
   {
     id: 'cert-termografia',
@@ -425,7 +425,7 @@ export const certificationsList = [
     description:
       'Calificación de alto estándar para la calibración, evaluación e interpretación de discontinuidades internas en uniones soldadas, pernos de molinos y elementos estructurales.',
     icon: 'fa-solid fa-magnifying-glass-chart',
-    accentColor: '#0018E8'
+    accentColor: '#D91018'
   }
 ]
 
