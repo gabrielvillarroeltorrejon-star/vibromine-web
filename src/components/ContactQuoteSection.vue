@@ -82,7 +82,7 @@ function openWhatsAppWithQuote() {
       <!-- Encabezado -->
       <div class="text-center mx-auto mb-5" style="max-width: 760px;">
         <span class="vm-section-eyebrow">
-          <i class="fa-solid fa-paper-plane me-1"></i>Atención Comercial y Técnica en Antofagasta
+          <i class="fa-solid fa-envelope me-1"></i>Atención Comercial y Técnica en Antofagasta
         </span>
         <h2 class="vm-section-title mb-3">
           Solicite una Evaluación o Cotización Técnica
@@ -260,7 +260,7 @@ function openWhatsAppWithQuote() {
                     :disabled="isSubmitting"
                   >
                     <span v-if="isSubmitting" class="spinner-border spinner-border-sm"></span>
-                    <i v-else class="fa-solid fa-paper-plane"></i>
+                    <i v-else class="fa-solid fa-envelope"></i>
                     <span>{{ isSubmitting ? 'Registrando Solicitud...' : 'Enviar Solicitud de Cotización' }}</span>
                   </button>
 

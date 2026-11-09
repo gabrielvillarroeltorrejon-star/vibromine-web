@@ -233,7 +233,7 @@ function isServiceHighlighted(serviceId) {
                     class="btn btn-sm btn-vm-red flex-fill py-2"
                     @click="emit('select-service-quote', service.title)"
                   >
-                    <i class="fa-solid fa-paper-plane me-1"></i>
+                    <i class="fa-solid fa-envelope me-1"></i>
                     Cotizar Servicio
                   </button>
                 </div>
