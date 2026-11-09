@@ -37,7 +37,7 @@ onUnmounted(() => {
             <h1 class="vm-hero-title">
               <span class="d-block">Servicio de</span>
               <span class="vm-text-gradient">Mantenimiento Sintomático</span>
-              <span class="d-block">de Equipos y Maquinarias en General</span>
+              <span class="d-block">de Equipos y Maquinarias</span>
             </h1>
 
             <p class="lead text-white mb-4" style="max-width: 630px; font-size: 1.12rem;">
