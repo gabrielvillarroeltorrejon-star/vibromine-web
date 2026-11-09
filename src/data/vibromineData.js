@@ -30,7 +30,7 @@ export const companyInfo = {
   },
   heroPhotos: [
     {
-      src: '/images/services/vibromine-real-07.jpg?v=2',
+      src: '/images/services/vibromine-real-09.jpg?v=2',
       caption: 'Análisis de Vibraciones en Equipos Críticos',
       tag: 'Análisis Vibracional'
     },
@@ -40,17 +40,17 @@ export const companyInfo = {
       tag: 'Balanceo In-Situ'
     },
     {
-      src: '/images/services/vibromine-real-13.jpg?v=2',
+      src: '/images/services/vibromine-real-15.jpg?v=2',
       caption: 'Alineamiento Láser de Precisión en Trenes de Potencia',
       tag: 'Alineamiento Láser'
     },
     {
-      src: '/images/services/vibromine-real-16.jpg?v=2',
+      src: '/images/services/vibromine-real-17.jpg?v=2',
       caption: 'Alineamiento Conjunto Piñón-Corona en Molinos',
       tag: 'Piñón-Corona'
     },
     {
-      src: '/images/services/vibromine-real-19.jpg?v=2',
+      src: '/images/services/vibromine-real-21.jpg?v=2',
       caption: 'Nivelación Topográfica de Equipos de Gran Escala',
       tag: 'Nivelación Topográfica'
     },
@@ -60,7 +60,7 @@ export const companyInfo = {
       tag: 'Termografía Infrarroja'
     },
     {
-      src: '/images/services/vibromine-real-25.jpg?v=2',
+      src: '/images/services/vibromine-real-27.jpg?v=2',
       caption: 'Inspección Ultrasónica de Equipos y Estructuras',
       tag: 'Ultrasonido Estructural'
     },
