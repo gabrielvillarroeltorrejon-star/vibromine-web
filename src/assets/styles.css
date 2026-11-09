@@ -362,7 +362,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
    Barra de Estadísticas e Impacto (Alternancia Azul y Rojo del Logo)
    -------------------------------------------------------------------------- */
 .vm-stats-bar {
-  margin-top: -2.6rem;
+  margin-top: 2.75rem;
   position: relative;
   z-index: 10;
 }
