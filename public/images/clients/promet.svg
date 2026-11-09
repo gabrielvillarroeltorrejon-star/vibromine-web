@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
+    <polygon points="36,18 52,28 52,52 36,62 20,52 20,28" fill="#004B87"/>
+    <rect x="30" y="32" width="12" height="16" fill="#F37021"/>
+    <text x="64" y="48" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="26" fill="#004B87" letter-spacing="1.5">PROMET</text>
+  </svg>

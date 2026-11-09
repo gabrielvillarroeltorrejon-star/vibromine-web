@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
+    <!-- Óvalo dinámico Azul y Verde SQM -->
+    <ellipse cx="45" cy="40" rx="26" ry="20" fill="#00549F"/>
+    <path d="M21 44C30 30 50 26 70 36C65 50 48 58 29 53C24 51 22 47 21 44Z" fill="#65B32E"/>
+    <path d="M19 42C32 32 52 30 71 38" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="82" y="50" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="32" fill="#00549F" letter-spacing="1">SQM</text>
+    <text x="84" y="63" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="8.5" fill="#65B32E" letter-spacing="1.2">SOLUTIONS FOR HUMAN PROGRESS</text>
+  </svg>

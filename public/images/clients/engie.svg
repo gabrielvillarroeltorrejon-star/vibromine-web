@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
+    <!-- Sol Naciente ENGIE -->
+    <path d="M75 30A35 35 0 0 1 145 30" stroke="#00AAFF" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+    <path d="M88 30A22 22 0 0 1 132 30" fill="#00AAFF"/>
+    <text x="110" y="59" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="30" fill="#00AAFF" letter-spacing="3.5">ENGIE</text>
+  </svg>

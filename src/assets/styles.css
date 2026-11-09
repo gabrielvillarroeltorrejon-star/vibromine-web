@@ -618,32 +618,133 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 /* --------------------------------------------------------------------------
-   Clientes Mineros e Industriales
+   Clientes Mineros e Industriales con Logotipos Corporativos
    -------------------------------------------------------------------------- */
-.vm-client-card {
+.vm-logo-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 0;
+  background: var(--vm-slate-50);
+  border-radius: 16px;
+  border: 1px solid var(--vm-slate-200);
+}
+
+.vm-logo-marquee::before,
+.vm-logo-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 75px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.vm-logo-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--vm-slate-50) 0%, transparent 100%);
+}
+
+.vm-logo-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--vm-slate-50) 0%, transparent 100%);
+}
+
+.vm-logo-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  animation: vmMarqueeScroll 38s linear infinite;
+}
+
+.vm-logo-marquee:hover .vm-logo-track {
+  animation-play-state: paused;
+}
+
+@keyframes vmMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.vm-marquee-item {
   background: #ffffff;
   border: 1px solid var(--vm-slate-200);
   border-radius: 12px;
-  padding: 1.15rem 1.25rem;
-  height: 100%;
+  padding: 0.55rem 1rem;
+  box-shadow: 0 4px 12px rgba(7, 19, 62, 0.04);
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  justify-content: center;
   transition: all 0.25s ease;
+}
+
+.vm-marquee-item:hover {
+  border-color: var(--vm-blue-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 34, 232, 0.12);
+}
+
+.vm-marquee-item img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+.vm-client-card {
+  background: #ffffff;
+  border: 1px solid var(--vm-slate-200);
+  border-radius: 14px;
+  padding: 1.2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(7, 19, 62, 0.04);
 }
 
 .vm-client-card:hover {
   border-color: var(--vm-blue-primary);
-  box-shadow: 0 10px 25px rgba(0, 34, 232, 0.1);
-  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 34, 232, 0.12);
+  transform: translateY(-4px);
 }
 
 .vm-client-card.client-featured {
-  border-left: 4px solid var(--vm-blue-primary);
+  border-top: 3px solid var(--vm-blue-primary);
 }
 
 .vm-client-card.client-featured:nth-child(odd) {
-  border-left-color: var(--vm-red-primary);
+  border-top-color: var(--vm-red-primary);
+}
+
+.vm-client-logo-box {
+  background: var(--vm-slate-50);
+  border: 1px solid var(--vm-slate-100);
+  border-radius: 10px;
+  padding: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  min-height: 76px;
+}
+
+.vm-client-logo-img {
+  max-height: 58px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.vm-client-card:hover .vm-client-logo-img {
+  transform: scale(1.05);
 }
 
 /* --------------------------------------------------------------------------

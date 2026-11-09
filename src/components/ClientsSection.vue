@@ -18,23 +18,22 @@ const filteredClients = computed(() => {
   return clientsList.filter((c) => c.sector === activeSector.value)
 })
 
-function getSectorIcon(sector) {
-  const map = {
-    mineria: 'fa-solid fa-mountain-sun text-vm-red',
-    litio: 'fa-solid fa-flask text-vm-blue',
-    energia: 'fa-solid fa-bolt-lightning text-vm-red',
-    industria: 'fa-solid fa-industry text-vm-blue',
-    logistica: 'fa-solid fa-train-subway text-vm-red'
-  }
-  return map[sector] || 'fa-solid fa-building text-vm-blue'
-}
+// Lista de logotipos únicos para el carrusel continuo superior
+const uniqueLogoClients = computed(() => {
+  const seen = new Set()
+  return clientsList.filter((c) => {
+    if (seen.has(c.logo)) return false
+    seen.add(c.logo)
+    return true
+  })
+})
 </script>
 
 <template>
   <section id="clientes" class="py-5 bg-white">
     <div class="container py-lg-4">
       <!-- Encabezado de Clientes -->
-      <div class="text-center mx-auto mb-5" style="max-width: 760px;">
+      <div class="text-center mx-auto mb-4" style="max-width: 760px;">
         <span class="vm-section-eyebrow">
           <i class="fa-solid fa-handshake me-1"></i>Respaldo y Confianza Industrial
         </span>
@@ -45,6 +44,20 @@ function getSectorIcon(sector) {
           Las principales operaciones mineras de cobre, litio, oro, generación eléctrica e ingeniería del país
           avalan nuestra trayectoria de más de 24 años de servicio continuo.
         </p>
+      </div>
+
+      <!-- Carrusel Continuo de Logotipos Corporativos (Estilo Treppco) -->
+      <div class="vm-logo-marquee mb-5">
+        <div class="vm-logo-track">
+          <div
+            v-for="(client, i) in [...uniqueLogoClients, ...uniqueLogoClients]"
+            :key="`marquee-${i}`"
+            class="vm-marquee-item"
+            :title="client.name"
+          >
+            <img :src="client.logo" :alt="`Logotipo ${client.name}`" loading="lazy" />
+          </div>
+        </div>
       </div>
 
       <!-- Filtros por Sector Industrial -->
@@ -62,7 +75,7 @@ function getSectorIcon(sector) {
         </button>
       </div>
 
-      <!-- Grid de los 26 Clientes Oficiales (Pág. 12 de la Presentación) -->
+      <!-- Grid de los 26 Clientes Oficiales con su Logotipo Corporativo -->
       <div class="row g-3">
         <div
           v-for="(client, idx) in filteredClients"
@@ -70,14 +83,16 @@ function getSectorIcon(sector) {
           class="col-sm-6 col-md-4 col-lg-3"
         >
           <div class="vm-client-card" :class="{ 'client-featured': client.highlight }">
-            <div
-              class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-              style="width: 42px; height: 42px; background: var(--vm-slate-50);"
-            >
-              <i :class="[getSectorIcon(client.sector), 'fs-5']"></i>
+            <div class="vm-client-logo-box">
+              <img
+                :src="client.logo"
+                :alt="`Logotipo oficial ${client.name}`"
+                class="vm-client-logo-img"
+                loading="lazy"
+              />
             </div>
-            <div>
-              <h3 class="h6 fw-bold text-dark mb-1 lh-sm" style="font-size: 0.92rem;">
+            <div class="text-center">
+              <h3 class="h6 fw-bold text-dark mb-2 lh-sm" style="font-size: 0.9rem;">
                 {{ client.name }}
               </h3>
               <span class="badge bg-light text-secondary border" style="font-size: 0.68rem;">

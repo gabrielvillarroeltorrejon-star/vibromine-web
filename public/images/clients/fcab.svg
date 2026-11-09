@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
+    <!-- Escudo Ferroviario FCAB -->
+    <rect x="16" y="20" width="44" height="40" rx="8" fill="#0A2240"/>
+    <path d="M22 34H54M22 46H54" stroke="#E31837" stroke-width="3.5"/>
+    <circle cx="38" cy="40" r="7" fill="#FFFFFF"/>
+    <text x="70" y="45" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="28" fill="#0A2240" letter-spacing="2">FCAB</text>
+    <text x="70" y="58" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="8.5" fill="#E31837" letter-spacing="0.6">FERROCARRIL ANTOFAGASTA</text>
+  </svg>

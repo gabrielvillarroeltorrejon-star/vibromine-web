@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
+    <!-- Engranaje Industrial David Brown Santasalo -->
+    <circle cx="36" cy="40" r="16" stroke="#D32F2F" stroke-width="6" stroke-dasharray="8 4"/>
+    <circle cx="36" cy="40" r="8" fill="#263238"/>
+    <text x="64" y="39" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="15" fill="#263238">DAVID BROWN</text>
+    <text x="64" y="56" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="17" fill="#D32F2F" letter-spacing="1">SANTASALO</text>
+  </svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+    <rect width="220" height="80" rx="10" fill="#FFFFFF"/>
+    <text x="110" y="49" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="32" fill="#009999" letter-spacing="3">SIEMENS</text>
+    <rect x="35" y="57" width="150" height="3" rx="1.5" fill="#009999" opacity="0.35"/>
+  </svg>
