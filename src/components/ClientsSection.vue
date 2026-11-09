@@ -82,7 +82,7 @@ const uniqueLogoClients = computed(() => {
           :key="idx"
           class="col-sm-6 col-md-4 col-lg-3"
         >
-          <div class="vm-client-card" :class="{ 'client-featured': client.highlight }">
+          <div class="vm-client-card">
             <div class="vm-client-logo-box">
               <img
                 :src="client.logo"
@@ -91,11 +91,11 @@ const uniqueLogoClients = computed(() => {
                 loading="lazy"
               />
             </div>
-            <div class="text-center">
-              <h3 class="h6 fw-bold text-dark mb-2 lh-sm" style="font-size: 0.9rem;">
+            <div class="vm-client-info">
+              <h3 class="vm-client-title">
                 {{ client.name }}
               </h3>
-              <span class="badge bg-light text-secondary border" style="font-size: 0.68rem;">
+              <span class="vm-client-tag">
                 {{ client.tag }}
               </span>
             </div>
