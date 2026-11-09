@@ -463,7 +463,7 @@ export const workflowSteps = [
     step: '01',
     title: 'Levantamiento en Faena',
     description: 'Despliegue ágil de nuestros especialistas a su planta o yacimiento con instrumentación calibrada.',
-    icon: 'vm-icon-clipboard'
+    icon: 'fa-solid fa-file-pen'
   },
   {
     step: '02',
