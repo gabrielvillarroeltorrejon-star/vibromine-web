@@ -53,7 +53,7 @@ function handleQuoteAndClose() {
             </div>
             <div>
               <div class="d-flex align-items-center gap-2 mb-1">
-                <span class="badge bg-vm-red font-mono-tech">ESPECIALIDAD {{ service.number }}</span>
+                <span class="badge bg-vm-red">{{ service.categoryLabel }}</span>
                 <span class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25">
                   {{ service.badge }}
                 </span>

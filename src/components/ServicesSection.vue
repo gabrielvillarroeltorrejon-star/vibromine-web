@@ -156,7 +156,6 @@ function isServiceHighlighted(serviceId) {
                       class="vm-service-img"
                       loading="lazy"
                     />
-                    <span class="vm-service-num">SERVICIO {{ service.number }}</span>
                     <span class="vm-service-badge">
                       <i class="fa-solid fa-check-double text-vm-red-light me-1"></i>{{ service.badge }}
                     </span>
