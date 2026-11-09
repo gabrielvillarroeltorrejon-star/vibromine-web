@@ -185,7 +185,6 @@ function isServiceHighlighted(serviceId) {
 
                 <div class="d-flex justify-content-between align-items-center mt-2 pt-1 text-white fw-semibold" style="font-size: 0.72rem;">
                   <span><i class="fa-solid fa-camera text-white me-1"></i>Registro en Faena</span>
-                  <span class="font-mono-tech badge bg-vm-red">4:3 HD</span>
                 </div>
               </div>
 

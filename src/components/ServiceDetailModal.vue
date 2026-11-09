@@ -100,7 +100,7 @@ function handleQuoteAndClose() {
               </div>
               <div class="small text-muted mt-2 text-center">
                 <i class="fa-solid fa-camera text-vm-blue me-1"></i>
-                Fotografías en formato 4:3 HD (1200×900) ejecutadas por VIBROMINE en faena
+                Registro fotográfico ejecutado por VIBROMINE en faena
               </div>
             </div>
 
