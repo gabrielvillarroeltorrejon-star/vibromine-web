@@ -32,11 +32,7 @@ import { certificationsList, workflowSteps } from '../data/vibromineData'
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div
                 class="rounded-4 d-flex align-items-center justify-content-center text-white shadow-sm"
-                :style="{
-                  width: '60px',
-                  height: '60px',
-                  backgroundColor: cert.accentColor
-                }"
+                style="width: 60px; height: 60px; background-color: #0018e8;"
               >
                 <i :class="[cert.icon, 'fs-3']"></i>
               </div>
