@@ -859,7 +859,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background-color: var(--vm-red-primary);
+  background-color: #25d366;
   border: 2px solid #ffffff;
   color: #ffffff;
   text-decoration: none;
@@ -867,15 +867,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 50px;
   font-weight: 700;
   font-size: 0.92rem;
-  box-shadow: 0 10px 25px rgba(217, 16, 24, 0.45);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
   transition: all 0.25s ease;
 }
 
 .vm-whatsapp-float:hover {
-  background-color: var(--vm-blue-primary);
+  background-color: #1ebe5d;
   color: #ffffff;
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 30px rgba(0, 24, 232, 0.55);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.6);
 }
 
 /* --------------------------------------------------------------------------

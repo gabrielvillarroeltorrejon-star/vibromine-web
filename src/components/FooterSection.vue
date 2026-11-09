@@ -100,7 +100,7 @@ const currentYear = new Date().getFullYear()
       aria-label="Contactar por WhatsApp"
     >
       <i class="fa-brands fa-whatsapp fs-4"></i>
-      <span class="d-none d-sm-inline">Atención en Faena</span>
+      <span class="d-none d-sm-inline">Atención Directa WhatsApp</span>
     </a>
   </footer>
 </template>
