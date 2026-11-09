@@ -430,12 +430,12 @@ export const certificationsList = [
 ]
 
 export const clientsList = [
-  { name: 'Codelco Chile - División Chuquicamata', sector: 'mineria', highlight: true, tag: 'Gran Minería del Cobre', logo: '/images/clients/codelco.png' },
-  { name: 'Codelco Chile - División El Salvador', sector: 'mineria', highlight: true, tag: 'Gran Minería del Cobre', logo: '/images/clients/codelco.png' },
-  { name: 'Complejo Metalúrgico Altonorte S.A.', sector: 'mineria', highlight: true, tag: 'Fundición Metalúrgica', logo: '/images/clients/altonorte.png' },
-  { name: 'SQM Salar S.A.', sector: 'litio', highlight: true, tag: 'Minería No Metálica & Litio', logo: '/images/clients/sqm.png' },
-  { name: 'SQM Industrial S.A.', sector: 'litio', highlight: true, tag: 'Minería No Metálica', logo: '/images/clients/sqm.png' },
-  { name: 'Albemarle Ltda.', sector: 'litio', highlight: true, tag: 'Líder Mundial en Litio', logo: '/images/clients/albemarle.png' },
+  { name: 'Codelco Chile - División Chuquicamata', sector: 'mineria', highlight: true, tag: 'Gran Minería del Cobre', logo: '/images/clients/codelco.png?v=3' },
+  { name: 'Codelco Chile - División El Salvador', sector: 'mineria', highlight: true, tag: 'Gran Minería del Cobre', logo: '/images/clients/codelco.png?v=3' },
+  { name: 'Complejo Metalúrgico Altonorte S.A.', sector: 'mineria', highlight: true, tag: 'Fundición Metalúrgica', logo: '/images/clients/altonorte.png?v=3' },
+  { name: 'SQM Salar S.A.', sector: 'litio', highlight: true, tag: 'Minería No Metálica & Litio', logo: '/images/clients/sqm.png?v=3' },
+  { name: 'SQM Industrial S.A.', sector: 'litio', highlight: true, tag: 'Minería No Metálica', logo: '/images/clients/sqm.png?v=3' },
+  { name: 'Albemarle Ltda.', sector: 'litio', highlight: true, tag: 'Líder Mundial en Litio', logo: '/images/clients/albemarle.png?v=3' },
   { name: 'Minera Meridian Ltda. (Yamana Gold)', sector: 'mineria', highlight: true, tag: 'Minería de Oro y Plata', logo: '/images/clients/yamana.png' },
   { name: 'Minera Las Cenizas S.A.', sector: 'mineria', highlight: false, tag: 'Mediana Minería', logo: '/images/clients/lascenizas.png' },
   { name: 'Guanaco Compañía Minera S.p.A.', sector: 'mineria', highlight: false, tag: 'Operación Minera', logo: '/images/clients/guanaco.png' },
