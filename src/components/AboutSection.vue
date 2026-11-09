@@ -122,7 +122,7 @@ import { companyInfo } from '../data/vibromineData'
             <div class="col-6">
               <div class="rounded-4 overflow-hidden shadow-sm position-relative" style="border: 2px solid #0018e8;">
                 <img
-                  src="/images/services/vibromine-real-02.jpg"
+                  src="=2"
                   alt="Inspección de molinos VIBROMINE"
                   class="w-100 object-fit-cover"
                   style="aspect-ratio: 4 / 3;"
@@ -135,7 +135,7 @@ import { companyInfo } from '../data/vibromineData'
             <div class="col-6">
               <div class="rounded-4 overflow-hidden shadow-sm position-relative mt-lg-4" style="border: 2px solid #d91018;">
                 <img
-                  src="/images/services/vibromine-real-03.jpg"
+                  src="=2"
                   alt="Alineamiento de acoplamientos en faena"
                   class="w-100 object-fit-cover"
                   style="aspect-ratio: 4 / 3;"
@@ -148,7 +148,7 @@ import { companyInfo } from '../data/vibromineData'
             <div class="col-6">
               <div class="rounded-4 overflow-hidden shadow-sm position-relative" style="border: 2px solid #d91018;">
                 <img
-                  src="/images/services/vibromine-real-21.jpg"
+                  src="=2"
                   alt="Nivelación topográfica en faena minera"
                   class="w-100 object-fit-cover"
                   style="aspect-ratio: 4 / 3;"
@@ -161,7 +161,7 @@ import { companyInfo } from '../data/vibromineData'
             <div class="col-6">
               <div class="rounded-4 overflow-hidden shadow-sm position-relative" style="border: 2px solid #0018e8;">
                 <img
-                  src="/images/services/vibromine-real-04.jpg"
+                  src="=2"
                   alt="Medición vibracional de motores"
                   class="w-100 object-fit-cover"
                   style="aspect-ratio: 4 / 3;"

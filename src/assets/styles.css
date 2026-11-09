@@ -339,37 +339,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   transform: scale(1.03);
 }
 
-.vm-hero-nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #000c8a;
-  color: #ffffff;
-  border: 1.5px solid #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  z-index: 3;
-}
-
-.vm-hero-nav-btn:hover {
-  background-color: var(--vm-red-primary);
-  transform: translateY(-50%) scale(1.08);
-}
-
-.vm-hero-nav-prev {
-  left: 12px;
-}
-
-.vm-hero-nav-next {
-  right: 12px;
-}
-
 .vm-hero-thumb-grid {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));

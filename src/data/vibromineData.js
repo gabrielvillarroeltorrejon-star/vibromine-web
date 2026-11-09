@@ -30,42 +30,42 @@ export const companyInfo = {
   },
   heroPhotos: [
     {
-      src: '/images/services/vibromine-real-07.jpg',
+      src: '/images/services/vibromine-real-09.jpg?v=2',
       caption: 'Análisis de Vibraciones en Equipos Críticos',
       tag: 'Análisis Vibracional'
     },
     {
-      src: '/images/services/vibromine-real-10.jpg',
+      src: '/images/services/vibromine-real-10.jpg?v=2',
       caption: 'Balanceo Dinámico In-Situ (1 y 2 Planos)',
       tag: 'Balanceo In-Situ'
     },
     {
-      src: '/images/services/vibromine-real-13.jpg',
+      src: '/images/services/vibromine-real-15.jpg?v=2',
       caption: 'Alineamiento Láser de Precisión en Trenes de Potencia',
       tag: 'Alineamiento Láser'
     },
     {
-      src: '/images/services/vibromine-real-16.jpg',
+      src: '/images/services/vibromine-real-17.jpg?v=2',
       caption: 'Alineamiento Conjunto Piñón-Corona en Molinos',
       tag: 'Piñón-Corona'
     },
     {
-      src: '/images/services/vibromine-real-19.jpg',
+      src: '/images/services/vibromine-real-21.jpg?v=2',
       caption: 'Nivelación Topográfica de Equipos de Gran Escala',
       tag: 'Nivelación Topográfica'
     },
     {
-      src: '/images/services/vibromine-real-22.jpg',
+      src: '/images/services/vibromine-real-22.jpg?v=2',
       caption: 'Inspección por Termografía Infrarroja en Planta',
       tag: 'Termografía Infrarroja'
     },
     {
-      src: '/images/services/vibromine-real-25.jpg',
+      src: '/images/services/vibromine-real-27.jpg?v=2',
       caption: 'Inspección Ultrasónica de Equipos y Estructuras',
       tag: 'Ultrasonido Estructural'
     },
     {
-      src: '/images/services/vibromine-real-30.jpg',
+      src: '/images/services/vibromine-real-30.jpg?v=2',
       caption: 'Detección Acústica por Ultrasonido Aerotransportado',
       tag: 'Ultrasonido Acústico'
     }
@@ -133,9 +133,9 @@ export const servicesList = [
       'Incrementa la disponibilidad y confiabilidad de activos críticos.'
     ],
     images: [
-      '/images/services/vibromine-real-07.jpg',
-      '/images/services/vibromine-real-08.jpg',
-      '/images/services/vibromine-real-09.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   },
   {
@@ -165,9 +165,9 @@ export const servicesList = [
       'Reducción inmediata de niveles de vibración y consumo energético.'
     ],
     images: [
-      '/images/services/vibromine-real-10.jpg',
-      '/images/services/vibromine-real-11.jpg',
-      '/images/services/vibromine-real-12.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   },
   {
@@ -197,9 +197,9 @@ export const servicesList = [
       'Entrega de protocolo certificado antes y después de la corrección.'
     ],
     images: [
-      '/images/services/vibromine-real-13.jpg',
-      '/images/services/vibromine-real-14.jpg',
-      '/images/services/vibromine-real-15.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   },
   {
@@ -229,9 +229,9 @@ export const servicesList = [
       'Servicio integral: Geometría + Termografía + Vibraciones en una sola intervención.'
     ],
     images: [
-      '/images/services/vibromine-real-16.jpg',
-      '/images/services/vibromine-real-17.jpg',
-      '/images/services/vibromine-real-18.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   },
   {
@@ -263,9 +263,9 @@ export const servicesList = [
       'Asegura el montaje y comisionamiento bajo especificaciones OEM.'
     ],
     images: [
-      '/images/services/vibromine-real-19.jpg',
-      '/images/services/vibromine-real-20.jpg',
-      '/images/services/vibromine-real-21.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   },
   {
@@ -297,9 +297,9 @@ export const servicesList = [
       'Reportes termográficos con termogramas radiométricos y criticidad.'
     ],
     images: [
-      '/images/services/vibromine-real-22.jpg',
-      '/images/services/vibromine-real-23.jpg',
-      '/images/services/vibromine-real-24.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   },
   {
@@ -329,9 +329,9 @@ export const servicesList = [
       'Cumplimiento estricto con estándares internacionales de soldadura.'
     ],
     images: [
-      '/images/services/vibromine-real-25.jpg',
-      '/images/services/vibromine-real-26.jpg',
-      '/images/services/vibromine-real-27.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   },
   {
@@ -361,9 +361,9 @@ export const servicesList = [
       'Incrementa la seguridad en instalaciones de gas y tableros de media tensión.'
     ],
     images: [
-      '/images/services/vibromine-real-30.jpg',
-      '/images/services/vibromine-real-31.jpg',
-      '/images/services/vibromine-real-05.jpg'
+      '=2',
+      '=2',
+      '=2'
     ]
   }
 ]

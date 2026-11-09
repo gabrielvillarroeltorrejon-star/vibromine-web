@@ -9,15 +9,6 @@ function selectPhoto(idx) {
   activePhotoIndex.value = idx
 }
 
-function prevPhoto() {
-  activePhotoIndex.value =
-    (activePhotoIndex.value - 1 + companyInfo.heroPhotos.length) % companyInfo.heroPhotos.length
-}
-
-function nextPhoto() {
-  activePhotoIndex.value = (activePhotoIndex.value + 1) % companyInfo.heroPhotos.length
-}
-
 onMounted(() => {
   slideTimer = setInterval(() => {
     activePhotoIndex.value = (activePhotoIndex.value + 1) % companyInfo.heroPhotos.length
@@ -107,32 +98,6 @@ onUnmounted(() => {
                   <i class="fa-solid fa-camera text-white me-1"></i>
                   Registro Real en Terreno · {{ companyInfo.heroPhotos[activePhotoIndex].tag }}
                 </div>
-
-                <!-- Contador de fotografías -->
-                <div
-                  class="position-absolute top-0 end-0 m-3 px-2 py-1 rounded-pill fw-bold small font-mono-tech"
-                  style="background-color: #000c8a; color: #ffffff; border: 1.5px solid #ffffff; font-size: 0.75rem;"
-                >
-                  {{ activePhotoIndex + 1 }} / {{ companyInfo.heroPhotos.length }}
-                </div>
-
-                <!-- Botones Anterior / Siguiente -->
-                <button
-                  type="button"
-                  class="vm-hero-nav-btn vm-hero-nav-prev"
-                  aria-label="Foto anterior"
-                  @click="prevPhoto"
-                >
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button
-                  type="button"
-                  class="vm-hero-nav-btn vm-hero-nav-next"
-                  aria-label="Foto siguiente"
-                  @click="nextPhoto"
-                >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
               </div>
 
               <!-- Pie de foto interactivo con las 8 miniaturas (1 por servicio) -->
