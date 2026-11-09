@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, watch, onMounted } from 'vue'
 import { companyInfo, servicesList } from '../data/vibromineData'
-import { submitQuotationLead, getLocalLeads, isSupabaseConfigured } from '../lib/supabase'
+import { submitQuotationLead, getLocalLeads } from '../lib/supabase'
 
 const props = defineProps({
   preselectedService: {
@@ -47,12 +47,10 @@ async function handleSubmit() {
   statusMessage.value = ''
 
   try {
-    const result = await submitQuotationLead(form)
+    await submitQuotationLead(form)
     submitStatus.value = 'success'
     statusMessage.value =
-      result.mode === 'supabase'
-        ? '¡Solicitud registrada exitosamente en nuestra base de datos Supabase! Nuestro equipo de ingeniería en Antofagasta se pondrá en contacto a la brevedad.'
-        : '¡Solicitud registrada exitosamente! (Almacenada en registro local de demostración y lista para sincronizar con Supabase). También puede enviarla directo por WhatsApp con un clic abajo.'
+      '¡Solicitud registrada exitosamente! Nuestro equipo de ingeniería en Antofagasta se pondrá en contacto a la brevedad. También puede enviarla directo por WhatsApp con un clic abajo.'
 
     recentSubmissions.value = getLocalLeads()
     form.message = ''
@@ -106,13 +104,6 @@ function openWhatsAppWithQuote() {
                   Respuesta prioritaria para jefes de planta, planificadores y mantenedores
                 </p>
               </div>
-              <span
-                class="badge rounded-pill px-3 py-2 font-mono-tech"
-                :class="isSupabaseConfigured ? 'bg-vm-blue' : 'badge-vm-blue'"
-              >
-                <i class="fa-solid fa-database me-1"></i>
-                {{ isSupabaseConfigured ? 'Supabase Cloud Activo' : 'Supabase Ready' }}
-              </span>
             </div>
 
             <!-- Alerta de Confirmación -->
@@ -206,7 +197,7 @@ function openWhatsAppWithQuote() {
                   </label>
                   <select v-model="form.serviceInterest" class="form-select vm-form-control" required>
                     <option v-for="srv in servicesList" :key="srv.id" :value="srv.title">
-                      {{ srv.number }}. {{ srv.title }}
+                      {{ srv.title }}
                     </option>
                     <option value="Contrato de Mantenimiento Sintomático Integral">
                       Contrato de Mantenimiento Sintomático Integral (Múltiples Servicios)
