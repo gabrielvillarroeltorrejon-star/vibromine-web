@@ -31,23 +31,43 @@ export const companyInfo = {
   heroPhotos: [
     {
       src: '/images/services/vibromine-real-07.jpg',
-      caption: 'Monitoreo y Análisis Vibracional en Planta Minera',
-      tag: 'Análisis Predictivo'
+      caption: 'Análisis de Vibraciones en Equipos Críticos',
+      tag: 'Análisis Vibracional'
+    },
+    {
+      src: '/images/services/vibromine-real-10.jpg',
+      caption: 'Balanceo Dinámico In-Situ (1 y 2 Planos)',
+      tag: 'Balanceo In-Situ'
     },
     {
       src: '/images/services/vibromine-real-13.jpg',
       caption: 'Alineamiento Láser de Precisión en Trenes de Potencia',
-      tag: 'Precisión Láser'
-    },
-    {
-      src: '/images/services/vibromine-real-02.jpg',
-      caption: 'Inspección Estructural y Mantenimiento en Molinos',
-      tag: 'Trabajo en Faena'
+      tag: 'Alineamiento Láser'
     },
     {
       src: '/images/services/vibromine-real-16.jpg',
-      caption: 'Alineamiento Conjunto Piñón-Corona de Gran Envergadura',
-      tag: 'Gran Minería'
+      caption: 'Alineamiento Conjunto Piñón-Corona en Molinos',
+      tag: 'Piñón-Corona'
+    },
+    {
+      src: '/images/services/vibromine-real-19.jpg',
+      caption: 'Nivelación Topográfica de Equipos de Gran Escala',
+      tag: 'Nivelación Topográfica'
+    },
+    {
+      src: '/images/services/vibromine-real-22.jpg',
+      caption: 'Inspección por Termografía Infrarroja en Planta',
+      tag: 'Termografía Infrarroja'
+    },
+    {
+      src: '/images/services/vibromine-real-25.jpg',
+      caption: 'Inspección Ultrasónica de Equipos y Estructuras',
+      tag: 'Ultrasonido Estructural'
+    },
+    {
+      src: '/images/services/vibromine-real-30.jpg',
+      caption: 'Detección Acústica por Ultrasonido Aerotransportado',
+      tag: 'Ultrasonido Acústico'
     }
   ]
 }

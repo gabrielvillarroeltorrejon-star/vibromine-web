@@ -9,6 +9,15 @@ function selectPhoto(idx) {
   activePhotoIndex.value = idx
 }
 
+function prevPhoto() {
+  activePhotoIndex.value =
+    (activePhotoIndex.value - 1 + companyInfo.heroPhotos.length) % companyInfo.heroPhotos.length
+}
+
+function nextPhoto() {
+  activePhotoIndex.value = (activePhotoIndex.value + 1) % companyInfo.heroPhotos.length
+}
+
 onMounted(() => {
   slideTimer = setInterval(() => {
     activePhotoIndex.value = (activePhotoIndex.value + 1) % companyInfo.heroPhotos.length
@@ -81,10 +90,10 @@ onUnmounted(() => {
             </div>
           </div>
 
-          <!-- Columna Derecha: Showcase Fotográfico Real en Faena -->
+          <!-- Columna Derecha: Showcase Fotográfico Real en Faena (8 Servicios) -->
           <div class="col-lg-5">
             <div class="vm-hero-showcase">
-              <div class="position-relative">
+              <div class="position-relative overflow-hidden">
                 <img
                   :src="companyInfo.heroPhotos[activePhotoIndex].src"
                   :alt="companyInfo.heroPhotos[activePhotoIndex].caption"
@@ -99,26 +108,53 @@ onUnmounted(() => {
                   Registro Real en Terreno · {{ companyInfo.heroPhotos[activePhotoIndex].tag }}
                 </div>
 
-                <!-- Pie de foto interactivo -->
+                <!-- Contador de fotografías -->
                 <div
-                  class="position-absolute bottom-0 inset-x-0 w-100 p-3"
-                  style="background-color: #000c8a; border-top: 3px solid #d91018;"
+                  class="position-absolute top-0 end-0 m-3 px-2 py-1 rounded-pill fw-bold small font-mono-tech"
+                  style="background-color: #000c8a; color: #ffffff; border: 1.5px solid #ffffff; font-size: 0.75rem;"
                 >
-                  <p class="mb-2 fw-bold text-white small">
-                    <i class="fa-solid fa-helmet-safety text-white me-2"></i>
-                    {{ companyInfo.heroPhotos[activePhotoIndex].caption }}
-                  </p>
-                  <div class="d-flex align-items-center gap-2">
-                    <img
-                      v-for="(photo, idx) in companyInfo.heroPhotos"
-                      :key="idx"
-                      :src="photo.src"
-                      :alt="photo.caption"
-                      class="vm-hero-thumb"
-                      :class="{ active: idx === activePhotoIndex }"
-                      @click="selectPhoto(idx)"
-                    />
-                  </div>
+                  {{ activePhotoIndex + 1 }} / {{ companyInfo.heroPhotos.length }}
+                </div>
+
+                <!-- Botones Anterior / Siguiente -->
+                <button
+                  type="button"
+                  class="vm-hero-nav-btn vm-hero-nav-prev"
+                  aria-label="Foto anterior"
+                  @click="prevPhoto"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  type="button"
+                  class="vm-hero-nav-btn vm-hero-nav-next"
+                  aria-label="Foto siguiente"
+                  @click="nextPhoto"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <!-- Pie de foto interactivo con las 8 miniaturas (1 por servicio) -->
+              <div
+                class="w-100 p-3"
+                style="background-color: #000c8a; border-top: 3px solid #d91018;"
+              >
+                <p class="mb-2 fw-bold text-white small d-flex align-items-center">
+                  <i class="fa-solid fa-helmet-safety text-white me-2 flex-shrink-0"></i>
+                  <span class="text-truncate">{{ companyInfo.heroPhotos[activePhotoIndex].caption }}</span>
+                </p>
+                <div class="vm-hero-thumb-grid">
+                  <img
+                    v-for="(photo, idx) in companyInfo.heroPhotos"
+                    :key="idx"
+                    :src="photo.src"
+                    :alt="photo.caption"
+                    :title="photo.caption"
+                    class="vm-hero-thumb"
+                    :class="{ active: idx === activePhotoIndex }"
+                    @click="selectPhoto(idx)"
+                  />
                 </div>
               </div>
             </div>
