@@ -14,12 +14,22 @@ export const companyInfo = {
   vision:
     'Ser líder en la zona norte respaldando las operaciones de nuestros clientes. Ampliar constantemente nuestras áreas de servicios e investigaciones, teniendo como meta cubrir todos los requerimientos de nuestros clientes.',
   contact: {
-    email: 'info.contacto@vibromine.cl',
-    phones: [
-      { display: '+56 55 2592504', raw: '+56552592504', label: 'Mesa Central 1' },
-      { display: '+56 55 2592503', raw: '+56552592503', label: 'Mesa Central 2' }
+    email: 'juanc.gonzalez.a@vibromine.cl',
+    secondaryEmail: 'administracion@vibromine.cl',
+    quoteEmails: ['juanc.gonzalez.a@vibromine.cl', 'administracion@vibromine.cl'],
+    allEmails: [
+      'juanc.gonzalez.a@vibromine.cl',
+      'administracion@vibromine.cl'
     ],
-    whatsapp: '56552592504',
+    phones: [
+      { display: '(55) 2592503', raw: '+56552592503', label: 'Red Fija 1' },
+      { display: '2592504', raw: '+56552592504', label: 'Red Fija 2' }
+    ],
+    mobilePhones: [
+      { display: '+569 95819424', raw: '+56995819424', label: 'Móvil 1' },
+      { display: '+569 91226712', raw: '+56991226712', label: 'Móvil 2' }
+    ],
+    whatsapp: '56995819424',
     address: 'Hermógenes Alfaro 1098',
     city: 'Antofagasta',
     country: 'Chile',
@@ -145,7 +155,7 @@ export const servicesList = [
     shortTitle: 'Balanceo In-Situ',
     category: 'correctivo',
     categoryLabel: 'Corrección en Faena',
-    icon: 'fa-solid fa-Compact-disc fa-spin-pulse',
+    icon: 'fa-solid fa-fan',
     iconClass: 'fa-solid fa-fan',
     badge: '1 y 2 Planos en Terreno',
     summary:
@@ -423,7 +433,7 @@ export const certificationsList = [
     description:
       'Acredita la competencia técnica internacional para configurar mediciones espectrales, diagnosticar fallas complejas en maquinaria rotatoria y definir acciones correctivas de alta precisión.',
     icon: 'vm-icon-vibration',
-    accentColor: '#D91018'
+    accentColor: '#ff0000'
   },
   {
     id: 'cert-termografia',
@@ -434,7 +444,7 @@ export const certificationsList = [
     description:
       'Respalda la ejecución estandarizada de inspecciones térmicas cuantitativas y cualitativas en sistemas eléctricos de potencia y equipos mecánicos industriales.',
     icon: 'fa-solid fa-temperature-high',
-    accentColor: '#D91018'
+    accentColor: '#ff0000'
   },
   {
     id: 'cert-ultrasonido',
@@ -445,7 +455,7 @@ export const certificationsList = [
     description:
       'Calificación de alto estándar para la calibración, evaluación e interpretación de discontinuidades internas en uniones soldadas, pernos de molinos y elementos estructurales.',
     icon: 'fa-solid fa-magnifying-glass-chart',
-    accentColor: '#D91018'
+    accentColor: '#ff0000'
   }
 ]
 
@@ -495,7 +505,7 @@ export const workflowSteps = [
     step: '03',
     title: 'Corrección In-Situ',
     description: 'Ejecución de balanceo dinámico, alineamiento láser, ajuste piñón-corona o nivelación topográfica.',
-    icon: 'fa-solid fa-Bullseye fa-crosshairs'
+    icon: 'fa-solid fa-crosshairs'
   },
   {
     step: '04',

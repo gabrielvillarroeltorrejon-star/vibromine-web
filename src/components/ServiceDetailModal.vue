@@ -34,7 +34,7 @@ function handleQuoteAndClose() {
     tabindex="-1"
     role="dialog"
     aria-modal="true"
-    style="background-color: rgba(0, 12, 138, 0.82); backdrop-filter: blur(6px);"
+    style="background-color: rgba(0, 0, 184, 0.42); backdrop-filter: blur(4px);"
     @click.self="emit('close')"
   >
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -42,12 +42,12 @@ function handleQuoteAndClose() {
         <!-- Encabezado del Modal -->
         <div
           class="modal-header text-white border-0 p-4"
-          style="background-color: #0012b8; border-bottom: 4px solid #d91018 !important;"
+          style="background-color: #0000e6; border-bottom: 4px solid #ff0000 !important;"
         >
           <div class="d-flex align-items-center gap-3">
             <div
               class="rounded-3 d-flex align-items-center justify-content-center"
-              style="width: 52px; height: 52px; background-color: #d91018; color: #ffffff; border: 2px solid #ffffff;"
+              style="width: 52px; height: 52px; background-color: #ff0000; color: #ffffff; border: 2px solid #ffffff;"
             >
               <i :class="[service.iconClass || service.icon, 'fs-4']"></i>
             </div>
@@ -74,7 +74,7 @@ function handleQuoteAndClose() {
           <div class="row g-4">
             <!-- Galería Fotográfica de Terreno en Proporción 4:3 HD (1200x900) -->
             <div class="col-md-6">
-              <div class="rounded-4 overflow-hidden shadow-sm mb-2 bg-vm-blue" style="border: 2px solid #0018e8;">
+              <div class="rounded-4 overflow-hidden shadow-sm mb-2 bg-vm-blue" style="border: 2px solid #0000ff;">
                 <img
                   :src="service.images[selectedImgIndex]"
                   :alt="`${service.title} - Imagen ${selectedImgIndex + 1}`"
@@ -86,8 +86,8 @@ function handleQuoteAndClose() {
                   v-for="(imgUrl, i) in service.images"
                   :key="i"
                   type="button"
-                  class="p-0 border rounded-3 overflow-hidden flex-fill"
-                  :class="selectedImgIndex === i ? 'border-danger border-2 shadow-sm' : 'opacity-50'"
+                  class="p-0 rounded-3 overflow-hidden flex-fill bg-white"
+                  :style="selectedImgIndex === i ? 'border: 2.5px solid #ff0000; box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);' : 'border: 1.5px solid var(--vm-slate-200); opacity: 0.65;'"
                   @click="selectedImgIndex = i"
                 >
                   <img
@@ -143,8 +143,11 @@ function handleQuoteAndClose() {
         </div>
 
         <!-- Pie del Modal -->
-        <div class="modal-footer bg-light border-top px-4 py-3 d-flex justify-content-between">
-          <button type="button" class="btn btn-outline-secondary" @click="emit('close')">
+        <div
+          class="modal-footer px-4 py-3 d-flex justify-content-between"
+          style="background-color: var(--vm-slate-50); border-top: 1.5px solid var(--vm-slate-200);"
+        >
+          <button type="button" class="btn btn-vm-outline-blue" @click="emit('close')">
             Cerrar ventana
           </button>
           <button type="button" class="btn btn-vm-red" @click="handleQuoteAndClose">

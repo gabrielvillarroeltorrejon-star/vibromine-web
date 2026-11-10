@@ -25,14 +25,11 @@ import { certificationsList, workflowSteps } from '../data/vibromineData'
       <!-- Tarjetas de las 3 Certificaciones Oficiales (Pág. 3 de la Presentación) -->
       <div class="row g-4 mb-5">
         <div v-for="cert in certificationsList" :key="cert.id" class="col-lg-4">
-          <div
-            class="vm-cert-card d-flex flex-column"
-            :style="{ borderTopColor: cert.accentColor }"
-          >
+          <div class="vm-cert-card d-flex flex-column">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div
                 class="rounded-4 d-flex align-items-center justify-content-center text-white shadow-sm"
-                style="width: 60px; height: 60px; background-color: #0018e8;"
+                style="width: 60px; height: 60px; background-color: #0000ff;"
               >
                 <i :class="[cert.icon, 'fs-3']"></i>
               </div>
@@ -61,7 +58,7 @@ import { certificationsList, workflowSteps } from '../data/vibromineData'
       <!-- Metodología Operacional de 4 Etapas -->
       <div
         class="p-4 p-lg-5 rounded-4"
-        style="background-color: #000c8a; border: 2px solid #ffffff; border-top: 5px solid #d91018;"
+        style="background-color: #0000b8; border: 2px solid #ffffff; border-top: 5px solid #ff0000;"
       >
         <div class="text-center mb-4">
           <h3 class="h4 fw-bold text-white mb-1">
@@ -73,11 +70,8 @@ import { certificationsList, workflowSteps } from '../data/vibromineData'
         </div>
 
         <div class="row g-4">
-          <div v-for="(step, sIdx) in workflowSteps" :key="step.step" class="col-sm-6 col-lg-3">
-            <div
-              class="position-relative p-3 rounded-4 h-100 bg-white"
-              :style="{ borderTop: sIdx % 2 === 0 ? '4px solid #0018e8' : '4px solid #d91018' }"
-            >
+          <div v-for="step in workflowSteps" :key="step.step" class="col-sm-6 col-lg-3">
+            <div class="vm-workflow-card position-relative p-3">
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="font-mono-tech fw-bold fs-4 text-vm-red">{{ step.step }}</span>
                 <i :class="[step.icon, 'text-vm-blue fs-4']"></i>

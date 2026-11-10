@@ -44,8 +44,8 @@ onUnmounted(() => {
               En <strong>VIBROMINE</strong> respaldamos la continuidad operativa y confiabilidad
               de la Gran Minería e Industria con más de <strong>24 años de experiencia</strong>.
               Especialistas en análisis de vibraciones, balanceo dinámico in-situ, alineamiento láser y ensayos no
-              destructivos bajo normas <span class="badge bg-vm-red fw-bold">ISO 18436-2</span> y
-              <span class="badge bg-vm-red fw-bold">ASNT SNT-TC-1A</span>.
+              destructivos bajo normas <span class="badge bg-vm-red border border-white fw-bold">ISO 18436-2</span> y
+              <span class="badge bg-vm-red border border-white fw-bold">ASNT SNT-TC-1A</span>.
             </p>
 
             <!-- Puntos Clave de Confianza -->
@@ -93,7 +93,7 @@ onUnmounted(() => {
                 <!-- Sello superior -->
                 <div
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill fw-bold small"
-                  style="background-color: #d91018; color: #ffffff; border: 1.5px solid #ffffff;"
+                  style="background-color: #ff0000; color: #ffffff; border: 1.5px solid #ffffff;"
                 >
                   <i class="fa-solid fa-camera text-white me-1"></i>
                   Registro Real en Terreno · {{ companyInfo.heroPhotos[activePhotoIndex].tag }}
@@ -103,7 +103,7 @@ onUnmounted(() => {
               <!-- Pie de foto interactivo con las 8 miniaturas (1 por servicio) -->
               <div
                 class="w-100 p-3"
-                style="background-color: #000c8a; border-top: 3px solid #d91018;"
+                style="background-color: #0000b8; border-top: 3px solid #ff0000;"
               >
                 <p class="mb-2 fw-bold text-white small d-flex align-items-center">
                   <i class="fa-solid fa-helmet-safety text-white me-2 flex-shrink-0"></i>
@@ -132,28 +132,24 @@ onUnmounted(() => {
     <div class="container vm-stats-bar mb-5">
       <div class="row g-4">
         <div v-for="(stat, index) in keyStats" :key="index" class="col-sm-6 col-xl-3">
-          <div class="vm-stat-card" :class="{ 'stat-red': index % 2 === 1 }">
+          <div class="vm-stat-card">
             <div class="d-flex justify-content-between align-items-start mb-3">
               <div>
-                <span class="vm-stat-number" :class="index % 2 === 1 ? 'text-vm-red' : 'text-vm-blue'">
+                <span class="vm-stat-number text-vm-blue">
                   {{ stat.value }}
                 </span>
-                <span
-                  class="ms-1 fw-bold text-uppercase small"
-                  :class="index % 2 === 1 ? 'text-vm-red' : 'text-vm-blue'"
-                >
+                <span class="ms-1 fw-bold text-uppercase small text-vm-red">
                   {{ stat.unit }}
                 </span>
               </div>
               <div
-                class="rounded-3 d-flex align-items-center justify-content-center"
-                :class="index % 2 === 1 ? 'bg-vm-red' : 'bg-vm-blue'"
+                class="rounded-3 d-flex align-items-center justify-content-center bg-vm-blue"
                 style="width: 44px; height: 44px;"
               >
                 <i :class="[stat.icon, 'fs-5 text-white']"></i>
               </div>
             </div>
-            <h3 class="h6 fw-bold mb-1" :class="index % 2 === 1 ? 'text-vm-red' : 'text-vm-blue'">{{ stat.label }}</h3>
+            <h3 class="h6 fw-bold mb-1 text-vm-blue">{{ stat.label }}</h3>
             <p class="text-secondary small mb-0">{{ stat.description }}</p>
           </div>
         </div>

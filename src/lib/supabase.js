@@ -16,11 +16,51 @@ export const supabase = isSupabaseConfigured
   : null
 
 const LOCAL_STORAGE_KEY = 'vibromine_local_leads'
+const OFFICIAL_PRIMARY_EMAIL = 'juanc.gonzalez.a@vibromine.cl'
+const OFFICIAL_CC_EMAILS = 'administracion@vibromine.cl'
 
 /**
- * Envía una solicitud de cotización o contacto a Supabase.
+ * Envía la cotización por correo electrónico a los correos oficiales de VIBROMINE:
+ * - juanc.gonzalez.a@vibromine.cl
+ * - administracion@vibromine.cl
+ */
+async function sendQuotationEmailNotification(payload) {
+  try {
+    const response = await fetch(`https://formsubmit.co/ajax/${OFFICIAL_PRIMARY_EMAIL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `Nueva Cotización VIBROMINE: ${payload.service_interest} — ${payload.company}`,
+        _cc: OFFICIAL_CC_EMAILS,
+        _replyto: payload.email,
+        _template: 'table',
+        _captcha: 'false',
+        Nombre_Completo: payload.full_name,
+        Empresa_o_Faena: payload.company,
+        Cargo_o_Area: payload.role_position,
+        Correo_Cliente: payload.email,
+        Telefono_Contacto: payload.phone,
+        Servicio_Solicitado: payload.service_interest,
+        Prioridad: payload.urgency_level,
+        Ubicacion_Faena: payload.location_faena,
+        Detalle_Requerimiento: payload.message,
+        Destinatarios_Oficiales: 'juanc.gonzalez.a@vibromine.cl, administracion@vibromine.cl'
+      })
+    })
+    return response.ok
+  } catch (err) {
+    console.warn('Aviso: envío de correo directo pendiente de conexión:', err)
+    return false
+  }
+}
+
+/**
+ * Envía una solicitud de cotización o contacto a los correos oficiales y a Supabase.
  * Si aún no se han configurado las variables de entorno de Supabase,
- * almacena el registro localmente en el navegador para demostración funcional sin errores.
+ * almacena el registro localmente y despacha la notificación por correo.
  */
 export async function submitQuotationLead(leadData) {
   const payload = {
@@ -33,8 +73,12 @@ export async function submitQuotationLead(leadData) {
     urgency_level: leadData.urgencyLevel || 'Normal',
     location_faena: leadData.locationFaena?.trim() || 'Antofagasta / Zona Norte',
     message: leadData.message?.trim(),
-    status: 'Nuevo'
+    recipient_emails: 'juanc.gonzalez.a@vibromine.cl, administracion@vibromine.cl',
+    status: 'Enviado'
   }
+
+  // Envía notificación a juanc.gonzalez.a@vibromine.cl y administracion@vibromine.cl
+  const emailPromise = sendQuotationEmailNotification(payload)
 
   if (isSupabaseConfigured && supabase) {
     const { data, error } = await supabase
@@ -47,13 +91,13 @@ export async function submitQuotationLead(leadData) {
       throw new Error(error.message || 'No se pudo registrar la solicitud en la base de datos.')
     }
 
+    await emailPromise
     saveLeadLocally(payload, 'cloud')
     return { mode: 'supabase', data }
   } else {
-    // Simulación de latencia de red para experiencia realista
-    await new Promise((resolve) => setTimeout(resolve, 650))
-    const saved = saveLeadLocally(payload, 'local_demo')
-    return { mode: 'local_fallback', data: [saved] }
+    await emailPromise
+    const saved = saveLeadLocally(payload, 'email_official')
+    return { mode: 'email_official', data: [saved] }
   }
 }
 

@@ -74,7 +74,7 @@ const uniqueLogoClients = computed(() => {
           :class="{ active: activeSector === sec.id }"
           @click="activeSector = sec.id"
         >
-          <i :class="[sec.icon, 'me-1', activeSector === sec.id ? 'text-white' : 'text-vm-blue']"></i>
+          <i :class="[sec.icon, 'me-1']"></i>
           <span>{{ sec.label }}</span>
         </button>
       </div>
@@ -110,7 +110,7 @@ const uniqueLogoClients = computed(() => {
       <!-- Banner CTA de Confianza -->
       <div
         class="mt-5 p-4 p-lg-5 rounded-4 text-white shadow"
-        style="background-color: #0012b8; border-left: 6px solid #d91018;"
+        style="background-color: #0000e6; border-left: 6px solid #ff0000;"
       >
         <div class="row align-items-center g-4">
           <div class="col-lg-8">

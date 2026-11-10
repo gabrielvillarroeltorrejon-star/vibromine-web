@@ -50,7 +50,7 @@ async function handleSubmit() {
     await submitQuotationLead(form)
     submitStatus.value = 'success'
     statusMessage.value =
-      '¡Solicitud registrada exitosamente! Nuestro equipo de ingeniería en Antofagasta se pondrá en contacto a la brevedad. También puede enviarla directo por WhatsApp con un clic abajo.'
+      '¡Solicitud enviada exitosamente a juanc.gonzalez.a@vibromine.cl y administracion@vibromine.cl! Nuestro equipo en Antofagasta se pondrá en contacto a la brevedad.'
 
     recentSubmissions.value = getLocalLeads()
     form.message = ''
@@ -73,6 +73,28 @@ function openWhatsAppWithQuote() {
       `• Detalles: ${form.message || 'Solicito contacto con ingeniería.'}`
   )
   window.open(`https://wa.me/${companyInfo.contact.whatsapp}?text=${text}`, '_blank')
+}
+
+function openEmailWithQuote() {
+  const recipients = companyInfo.contact.quoteEmails.join(',')
+  const subject = encodeURIComponent(
+    `Solicitud de Cotización Técnica VIBROMINE — ${form.serviceInterest} (${form.company || 'Cliente'})`
+  )
+  const body = encodeURIComponent(
+    `Estimado equipo VIBROMINE,\n\n` +
+      `Junto con saludar, solicito cotización / evaluación técnica con el siguiente detalle:\n\n` +
+      `• Nombre y Apellido: ${form.fullName || '-'}\n` +
+      `• Empresa / Compañía Minera: ${form.company || '-'}\n` +
+      `• Cargo / Área: ${form.rolePosition || '-'}\n` +
+      `• Correo Electrónico: ${form.email || '-'}\n` +
+      `• Teléfono / Celular: ${form.phone || '-'}\n` +
+      `• Especialidad Requerida: ${form.serviceInterest}\n` +
+      `• Prioridad de Atención: ${form.urgencyLevel}\n` +
+      `• Ubicación de Faena o Planta: ${form.locationFaena || 'Antofagasta / Zona Norte'}\n\n` +
+      `Descripción del Requerimiento:\n${form.message || 'Solicito contacto técnico.'}\n\n` +
+      `Atentamente,\n${form.fullName || ''}`
+  )
+  window.location.href = `mailto:${recipients}?subject=${subject}&body=${body}`
 }
 </script>
 
@@ -106,35 +128,47 @@ function openWhatsAppWithQuote() {
               </div>
             </div>
 
-            <!-- Alerta de Confirmación -->
+            <!-- Alerta de Confirmación Corporativa -->
             <div
               v-if="submitStatus === 'success'"
-              class="alert alert-success border-success rounded-4 p-3 mb-4"
+              class="rounded-4 p-3 mb-4"
+              style="background-color: var(--vm-blue-soft); border: 2px solid var(--vm-blue-primary);"
               role="alert"
             >
               <div class="d-flex align-items-start gap-3">
-                <i class="fa-solid fa-circle-check fs-4 text-success mt-1"></i>
+                <i class="fa-solid fa-circle-check fs-4 text-vm-blue mt-1"></i>
                 <div>
-                  <h4 class="h6 fw-bold mb-1">¡Requerimiento Recibido por VIBROMINE!</h4>
-                  <p class="small mb-2">{{ statusMessage }}</p>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-success fw-bold"
-                    @click="openWhatsAppWithQuote"
-                  >
-                    <i class="fa-brands fa-whatsapp me-1"></i>
-                    Enviar copia inmediata por WhatsApp
-                  </button>
+                  <h4 class="h6 fw-bold text-vm-blue mb-1">¡Requerimiento Recibido por VIBROMINE!</h4>
+                  <p class="small text-secondary mb-2">{{ statusMessage }}</p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-vm-red fw-bold"
+                      @click="openWhatsAppWithQuote"
+                    >
+                      <i class="fa-brands fa-whatsapp me-1"></i>
+                      Enviar copia por WhatsApp
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-vm-primary fw-bold"
+                      @click="openEmailWithQuote"
+                    >
+                      <i class="fa-solid fa-envelope me-1"></i>
+                      Abrir en mi cliente de correo
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div
               v-if="submitStatus === 'error'"
-              class="alert alert-danger rounded-4 p-3 mb-4"
+              class="rounded-4 p-3 mb-4 fw-semibold"
+              style="background-color: var(--vm-red-soft); border: 2px solid var(--vm-red-primary); color: var(--vm-red-hover);"
               role="alert"
             >
-              <i class="fa-solid fa-triangle-exclamation me-2"></i>{{ statusMessage }}
+              <i class="fa-solid fa-triangle-exclamation text-vm-red me-2"></i>{{ statusMessage }}
             </div>
 
             <form @submit.prevent="handleSubmit">
@@ -289,14 +323,15 @@ function openWhatsAppWithQuote() {
                 <div
                   v-for="item in recentSubmissions.slice(0, 2)"
                   :key="item.id"
-                  class="p-2 rounded-3 bg-light border small d-flex justify-content-between align-items-center flex-wrap gap-2"
+                  class="p-2 rounded-3 small d-flex justify-content-between align-items-center flex-wrap gap-2"
+                  style="background-color: var(--vm-slate-50); border: 1.5px solid var(--vm-slate-200);"
                 >
                   <div>
-                    <strong class="text-dark">{{ item.full_name }}</strong> ·
+                    <strong class="text-vm-blue">{{ item.full_name }}</strong> ·
                     <span class="text-secondary">{{ item.company }}</span> —
                     <span class="badge bg-vm-blue">{{ item.service_interest }}</span>
                   </div>
-                  <span class="badge bg-success">{{ item.status || 'Recibido' }}</span>
+                  <span class="badge bg-vm-red">{{ item.status || 'Recibido' }}</span>
                 </div>
               </div>
             </div>
@@ -309,7 +344,7 @@ function openWhatsAppWithQuote() {
             <!-- Tarjeta Corporativa de Contacto Directo -->
             <div
               class="p-4 rounded-4 text-white shadow"
-              style="background-color: #0012b8; border-top: 5px solid #d91018;"
+              style="background-color: #0000e6; border-top: 5px solid #ff0000;"
             >
               <h3 class="h4 fw-bold mb-3 pb-2 border-bottom border-white border-opacity-25">
                 Canales Directos VIBROMINE
@@ -320,7 +355,7 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #ff0000;"
                   >
                     <i class="fa-solid fa-location-dot fs-5"></i>
                   </div>
@@ -334,25 +369,39 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #ff0000;"
                   >
                     <i class="fa-solid fa-phone-volume fs-5"></i>
                   </div>
                   <div>
-                    <div class="small text-white">Teléfonos Red Fija Antofagasta</div>
-                    <div class="d-flex flex-wrap gap-2 mt-1">
+                    <div class="small text-white">Teléfonos de Contacto</div>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mt-1 font-mono-tech">
                       <a
                         :href="`tel:${companyInfo.contact.phones[0].raw}`"
-                        class="text-white fw-bold text-decoration-none font-mono-tech"
+                        class="text-white fw-bold text-decoration-none"
                       >
                         {{ companyInfo.contact.phones[0].display }}
                       </a>
-                      <span class="text-white">/</span>
+                      <span class="text-white">-</span>
                       <a
                         :href="`tel:${companyInfo.contact.phones[1].raw}`"
-                        class="text-white fw-bold text-decoration-none font-mono-tech"
+                        class="text-white fw-bold text-decoration-none"
                       >
                         {{ companyInfo.contact.phones[1].display }}
+                      </a>
+                      <span class="text-white mx-1">/</span>
+                      <a
+                        :href="`tel:${companyInfo.contact.mobilePhones[0].raw}`"
+                        class="text-white fw-bold text-decoration-none"
+                      >
+                        {{ companyInfo.contact.mobilePhones[0].display }}
+                      </a>
+                      <span class="text-white">-</span>
+                      <a
+                        :href="`tel:${companyInfo.contact.mobilePhones[1].raw}`"
+                        class="text-white fw-bold text-decoration-none"
+                      >
+                        {{ companyInfo.contact.mobilePhones[1].display }}
                       </a>
                     </div>
                   </div>
@@ -362,17 +411,23 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #ff0000;"
                   >
                     <i class="fa-solid fa-envelope-open-text fs-5"></i>
                   </div>
-                  <div>
-                    <div class="small text-white">Correo Electrónico Corporativo</div>
+                  <div class="d-flex flex-column">
+                    <div class="small text-white">Correos Electrónicos Oficiales</div>
                     <a
-                      :href="`mailto:${companyInfo.contact.email}`"
+                      :href="`mailto:${companyInfo.contact.email},${companyInfo.contact.secondaryEmail}`"
                       class="text-white fw-bold text-decoration-none"
                     >
                       {{ companyInfo.contact.email }}
+                    </a>
+                    <a
+                      :href="`mailto:${companyInfo.contact.secondaryEmail},${companyInfo.contact.email}`"
+                      class="text-white fw-bold text-decoration-none"
+                    >
+                      {{ companyInfo.contact.secondaryEmail }}
                     </a>
                   </div>
                 </div>
@@ -381,7 +436,7 @@ function openWhatsAppWithQuote() {
                 <div class="d-flex align-items-center gap-3">
                   <div
                     class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
-                    style="width: 44px; height: 44px; background-color: #ffffff; color: #d91018;"
+                    style="width: 44px; height: 44px; background-color: #ffffff; color: #ff0000;"
                   >
                     <i class="fa-solid fa-globe fs-5"></i>
                   </div>
@@ -394,9 +449,12 @@ function openWhatsAppWithQuote() {
             </div>
 
             <!-- Mapa Interactivo de Hermógenes Alfaro 1098, Antofagasta -->
-            <div class="rounded-4 overflow-hidden border shadow-sm bg-white flex-grow-1 d-flex flex-column">
+            <div
+              class="rounded-4 overflow-hidden shadow-sm bg-white flex-grow-1 d-flex flex-column"
+              style="border: 1.5px solid var(--vm-slate-200); border-top: 4px solid var(--vm-blue-primary);"
+            >
               <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
-                <span class="fw-bold small text-dark">
+                <span class="fw-bold small text-vm-blue">
                   <i class="fa-solid fa-map-pin text-vm-red me-1"></i>
                   Ubicación: Hermógenes Alfaro 1098, Antofagasta
                 </span>

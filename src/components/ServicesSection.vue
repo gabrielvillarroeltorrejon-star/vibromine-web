@@ -97,7 +97,7 @@ function isServiceHighlighted(serviceId) {
             <div
               v-if="activeSymptom"
               class="mt-3 p-3 rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2"
-              style="background-color: #000c8a; border: 2px solid #ffffff;"
+              style="background-color: #0000b8; border: 2px solid #ffffff;"
             >
               <div class="small text-white">
                 <span class="badge bg-vm-red me-2"><i class="fa-solid fa-lightbulb me-1"></i>Diagnóstico Recomendado</span>
@@ -130,23 +130,23 @@ function isServiceHighlighted(serviceId) {
         </button>
       </div>
 
-      <!-- Grilla de 2 Columnas con Tarjetas Horizontales y Proporción 4:3 HD -->
-      <div class="row g-4">
+      <!-- Grilla de 2 Columnas con Tarjetas Ajustadas al Viewport (100vh útil) -->
+      <div class="row g-4 vm-services-grid">
         <div
           v-for="service in filteredServices"
           :key="service.id"
-          class="col-lg-6"
+          class="col-lg-6 vm-service-col"
         >
           <article
             class="vm-service-card"
             :class="{ 'highlighted-symptom': isServiceHighlighted(service.id) }"
           >
-            <div class="row g-0 h-100">
-              <!-- Columna Multimedia Izquierda: Imagen Principal 4:3 HD + Selector de 3 Fotos 4:3 -->
+            <div class="row g-0 h-100 flex-grow-1">
+              <!-- Columna Multimedia Izquierda: Imagen Principal + Selector de 3 Fotos -->
               <div class="col-md-5 vm-service-media-col">
-                <div>
+                <div class="d-flex flex-column flex-grow-1">
                   <div
-                    class="vm-service-img-wrapper cursor-pointer"
+                    class="vm-service-img-wrapper cursor-pointer flex-grow-1"
                     @click="emit('open-service-modal', service)"
                     title="Clic para ampliar ficha técnica y galería"
                   >
@@ -189,40 +189,43 @@ function isServiceHighlighted(serviceId) {
               </div>
 
               <!-- Columna de Contenido Técnico Derecha -->
-              <div class="col-md-7 p-4 d-flex flex-column">
-                <div class="d-flex align-items-start gap-3 mb-2">
-                  <div class="vm-service-icon-box">
-                    <i :class="service.iconClass || service.icon"></i>
+              <div class="col-md-7 p-3 p-xl-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex align-items-start gap-2 gap-xl-3 mb-2">
+                    <div class="vm-service-icon-box">
+                      <i :class="service.iconClass || service.icon"></i>
+                    </div>
+                    <div>
+                      <span class="text-uppercase fw-bold text-vm-red d-block" style="font-size: 0.7rem; letter-spacing: 0.05em;">
+                        {{ service.categoryLabel }}
+                      </span>
+                      <h3 class="h6 fw-bold text-vm-blue mb-0 lh-sm" style="font-size: 1.08rem;">{{ service.title }}</h3>
+                    </div>
                   </div>
-                  <div>
-                    <span class="text-uppercase fw-bold text-vm-red d-block" style="font-size: 0.72rem; letter-spacing: 0.05em;">
-                      {{ service.categoryLabel }}
-                    </span>
-                    <h3 class="h5 fw-bold text-vm-blue mb-0 lh-sm">{{ service.title }}</h3>
+
+                  <p class="text-secondary mb-2" style="font-size: 0.84rem; line-height: 1.42;">
+                    {{ service.summary }}
+                  </p>
+
+                  <div class="fw-bold text-dark mb-1" style="font-size: 0.82rem;">
+                    <i class="fa-solid fa-crosshairs text-vm-blue me-1"></i>{{ service.detectionsTitle }}
                   </div>
+                  <ul class="vm-detection-list mb-2">
+                    <li v-for="(item, idx) in service.detections.slice(0, 4)" :key="idx">
+                      {{ item }}
+                    </li>
+                    <li v-if="service.detections.length > 4" class="text-vm-blue fw-semibold">
+                      + {{ service.detections.length - 4 }} parámetros técnicos adicionales...
+                    </li>
+                  </ul>
                 </div>
 
-                <p class="small text-secondary mb-3">
-                  {{ service.summary }}
-                </p>
-
-                <div class="fw-bold text-dark small mb-2">
-                  <i class="fa-solid fa-crosshairs text-vm-blue me-1"></i>{{ service.detectionsTitle }}
-                </div>
-                <ul class="vm-detection-list flex-grow-1 mb-3">
-                  <li v-for="(item, idx) in service.detections.slice(0, 4)" :key="idx">
-                    {{ item }}
-                  </li>
-                  <li v-if="service.detections.length > 4" class="text-vm-blue fw-semibold">
-                    + {{ service.detections.length - 4 }} parámetros técnicos adicionales...
-                  </li>
-                </ul>
-
-                <!-- Botones de Acción Horizontales -->
-                <div class="d-flex flex-wrap gap-2 pt-3 border-top mt-auto">
+                <!-- Botones de Acción Horizontales en una sola fila -->
+                <div class="d-flex flex-nowrap gap-2 pt-2 border-top mt-auto">
                   <button
                     type="button"
-                    class="btn btn-sm btn-vm-outline-blue flex-fill py-2"
+                    class="btn btn-sm btn-vm-outline-blue flex-fill py-2 px-2 text-nowrap"
+                    style="font-size: 0.82rem;"
                     @click="emit('open-service-modal', service)"
                   >
                     <i class="fa-solid fa-magnifying-glass-plus text-vm-red me-1"></i>
@@ -230,7 +233,8 @@ function isServiceHighlighted(serviceId) {
                   </button>
                   <button
                     type="button"
-                    class="btn btn-sm btn-vm-red flex-fill py-2"
+                    class="btn btn-sm btn-vm-red flex-fill py-2 px-2 text-nowrap"
+                    style="font-size: 0.82rem;"
                     @click="emit('select-service-quote', service.title)"
                   >
                     <i class="fa-solid fa-envelope me-1"></i>

@@ -8,18 +8,15 @@ const currentYear = new Date().getFullYear()
 <template>
   <footer class="vm-footer pt-5 pb-4">
     <div class="container">
-      <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
+      <div class="row g-4 pb-4 border-bottom border-white border-opacity-25">
         <!-- Columna 1: Identidad Corporativa con Logo Oficial -->
         <div class="col-lg-4">
-          <div class="d-inline-block bg-white p-2 px-3 rounded-3 mb-3 shadow-sm">
-            <svg
-              style="height: 52px; width: auto; display: block;"
-              viewBox="95 232 835 238"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Logo Oficial VIBROMINE"
-            >
-              <image href="/images/logo-vibromine.jpg" width="1024" height="764" />
-            </svg>
+          <div class="d-inline-block bg-white p-2 rounded-3 mb-3 shadow-sm">
+            <img
+              src="/images/logo-vibromine.png"
+              alt="Logo Oficial VIBROMINE"
+              style="height: 56px; width: auto; display: block;"
+            />
           </div>
           <p class="small text-white mb-3">
             {{ companyInfo.spanishSubtitle }}. Más de 24 años de experiencia y +1.600 servicios ejecutados respaldando la continuidad operativa de la Gran Minería e Industria en Chile.
@@ -42,7 +39,7 @@ const currentYear = new Date().getFullYear()
                 href="#cotizar"
                 @click="emit('select-service-quote', srv.title)"
               >
-                <i class="fa-solid fa-angle-right text-white me-2"></i>{{ srv.title }}
+                <i class="fa-solid fa-angle-right me-2"></i>{{ srv.title }}
               </a>
             </li>
           </ul>
@@ -58,15 +55,31 @@ const currentYear = new Date().getFullYear()
               <i class="fa-solid fa-location-dot text-white me-2"></i>
               {{ companyInfo.contact.fullAddress }}
             </li>
-            <li>
-              <i class="fa-solid fa-phone text-white me-2"></i>
-              <a :href="`tel:${companyInfo.contact.phones[0].raw}`">{{ companyInfo.contact.phones[0].display }}</a>
-              /
-              <a :href="`tel:${companyInfo.contact.phones[1].raw}`">{{ companyInfo.contact.phones[1].display }}</a>
+            <li class="d-flex align-items-start">
+              <i class="fa-solid fa-phone text-white me-2 mt-1"></i>
+              <div>
+                <div>
+                  <a :href="`tel:${companyInfo.contact.phones[0].raw}`">{{ companyInfo.contact.phones[0].display }}</a>
+                  -
+                  <a :href="`tel:${companyInfo.contact.phones[1].raw}`">{{ companyInfo.contact.phones[1].display }}</a>
+                </div>
+                <div>
+                  <a :href="`tel:${companyInfo.contact.mobilePhones[0].raw}`">{{ companyInfo.contact.mobilePhones[0].display }}</a>
+                  -
+                  <a :href="`tel:${companyInfo.contact.mobilePhones[1].raw}`">{{ companyInfo.contact.mobilePhones[1].display }}</a>
+                </div>
+              </div>
             </li>
-            <li>
-              <i class="fa-solid fa-envelope text-white me-2"></i>
-              <a :href="`mailto:${companyInfo.contact.email}`">{{ companyInfo.contact.email }}</a>
+            <li class="d-flex align-items-start">
+              <i class="fa-solid fa-envelope text-white me-2 mt-1"></i>
+              <div class="d-flex flex-column gap-1">
+                <a :href="`mailto:${companyInfo.contact.email},${companyInfo.contact.secondaryEmail}`">
+                  {{ companyInfo.contact.email }}
+                </a>
+                <a :href="`mailto:${companyInfo.contact.secondaryEmail},${companyInfo.contact.email}`">
+                  {{ companyInfo.contact.secondaryEmail }}
+                </a>
+              </div>
             </li>
           </ul>
 

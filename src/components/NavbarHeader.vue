@@ -6,11 +6,25 @@ const isScrolled = ref(false)
 const mobileMenuOpen = ref(false)
 
 function handleScroll() {
-  isScrolled.value = window.scrollY > 30
+  const y = window.scrollY
+  if (!isScrolled.value && y > 60) {
+    isScrolled.value = true
+  } else if (isScrolled.value && y < 20) {
+    isScrolled.value = false
+  }
 }
 
 function closeMobileMenu() {
   mobileMenuOpen.value = false
+}
+
+function scrollToTop(event) {
+  if (event) event.preventDefault()
+  closeMobileMenu()
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname)
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 onMounted(() => {
@@ -28,19 +42,29 @@ onUnmounted(() => {
     <div class="vm-topbar py-2 d-none d-lg-block">
       <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center gap-4">
-          <span>
-            <i class="fa-solid fa-location-dot text-white me-1"></i>
+          <a href="#cotizar" class="vm-topbar-item">
+            <i class="fa-solid fa-location-dot me-1"></i>
             {{ companyInfo.contact.fullAddress }}
-          </span>
-          <a :href="`mailto:${companyInfo.contact.email}`">
-            <i class="fa-solid fa-envelope text-white me-1"></i>
-            {{ companyInfo.contact.email }}
           </a>
-          <span>
-            <i class="fa-solid fa-phone-volume text-white me-1"></i>
-            <a :href="`tel:${companyInfo.contact.phones[0].raw}`" class="me-2">{{ companyInfo.contact.phones[0].display }}</a>
+          <span class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-envelope vm-topbar-icon"></i>
+            <a :href="`mailto:${companyInfo.contact.email},${companyInfo.contact.secondaryEmail}`" class="vm-topbar-item">
+              {{ companyInfo.contact.email }}
+            </a>
             <span class="text-white">|</span>
-            <a :href="`tel:${companyInfo.contact.phones[1].raw}`" class="ms-2">{{ companyInfo.contact.phones[1].display }}</a>
+            <a :href="`mailto:${companyInfo.contact.secondaryEmail},${companyInfo.contact.email}`" class="vm-topbar-item">
+              {{ companyInfo.contact.secondaryEmail }}
+            </a>
+          </span>
+          <span class="d-flex align-items-center">
+            <i class="fa-solid fa-phone-volume vm-topbar-icon me-1"></i>
+            <a :href="`tel:${companyInfo.contact.phones[0].raw}`" class="vm-topbar-item">{{ companyInfo.contact.phones[0].display }}</a>
+            <span class="text-white mx-1">-</span>
+            <a :href="`tel:${companyInfo.contact.phones[1].raw}`" class="vm-topbar-item">{{ companyInfo.contact.phones[1].display }}</a>
+            <span class="text-white mx-2">/</span>
+            <a :href="`tel:${companyInfo.contact.mobilePhones[0].raw}`" class="vm-topbar-item">{{ companyInfo.contact.mobilePhones[0].display }}</a>
+            <span class="text-white mx-1">-</span>
+            <a :href="`tel:${companyInfo.contact.mobilePhones[1].raw}`" class="vm-topbar-item">{{ companyInfo.contact.mobilePhones[1].display }}</a>
           </span>
         </div>
       </div>
@@ -50,16 +74,12 @@ onUnmounted(() => {
     <nav class="navbar navbar-expand-lg vm-navbar" :class="{ scrolled: isScrolled }">
       <div class="container">
         <!-- Logo Oficial de VIBROMINE Recortado con Precisión -->
-        <a class="navbar-brand py-0 d-flex align-items-center" href="#inicio" aria-label="VIBROMINE Inicio">
-          <svg
+        <a class="navbar-brand py-0 d-flex align-items-center" href="#inicio" aria-label="VIBROMINE Inicio" @click="scrollToTop">
+          <img
+            src="/images/logo-vibromine.png"
+            alt="Logo Oficial VIBROMINE - SKM Symptomatic Keen Maintenance - Servicio de Mantenimiento Sintomático"
             class="vm-logo-svg"
-            viewBox="95 232 835 238"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Logo Oficial VIBROMINE - SKM Symptomatic Keen Maintenance - Servicio de Mantenimiento Sintomático"
-          >
-            <image href="/images/logo-vibromine.jpg" width="1024" height="764" />
-          </svg>
+          />
         </a>
 
         <!-- Botón Hamburguesa Móvil -->
@@ -76,7 +96,7 @@ onUnmounted(() => {
         <div class="collapse navbar-collapse" :class="{ show: mobileMenuOpen }">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1 mt-3 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link vm-nav-link" href="#inicio" @click="closeMobileMenu">Inicio</a>
+              <a class="nav-link vm-nav-link" href="#inicio" @click="scrollToTop">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link vm-nav-link" href="#nosotros" @click="closeMobileMenu">Nosotros</a>

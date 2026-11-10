@@ -1,40 +1,40 @@
 /* ==========================================================================
    SISTEMA DE DISEÑO E IDENTIDAD CORPORATIVA VIBROMINE (100% SÓLIDO, CERO GRADIENTES)
    Paleta Oficial Extraída Píxel por Píxel del Logotipo VIBROMINE:
-   - Azul Rey / Eléctrico VIBROMINE: #0018E8 / #0012B8 / #000C8A
-   - Rojo Sintomático (Pulso Vibracional): #D91018 / #B30910
+   - Azul Rey / Eléctrico VIBROMINE: #0000ff / #0000e6 / #0000b8
+   - Rojo Sintomático (Pulso Vibracional): #ff0000 / #d90000
    - Blanco Puro: #FFFFFF y Hielo Técnico: #F3F6FC
    ========================================================================== */
 
 :root {
   /* Azules Oficiales del Logo VIBROMINE ("V", Ondas y Wordmark) */
-  --vm-blue-primary: #0018e8;
-  --vm-blue-royal: #0012b8;
-  --vm-blue-deep: #000c8a;
+  --vm-blue-primary: #0000ff;
+  --vm-blue-royal: #0000e6;
+  --vm-blue-deep: #0000b8;
   --vm-blue-soft: #eef2ff;
   --vm-blue-border: #b8c7ff;
 
   /* Rojos Oficiales del Logo VIBROMINE (Pulso Vibracional y "Servicio de Mantenimiento Sintomático") */
-  --vm-red-primary: #d91018;
-  --vm-red-hover: #b30910;
+  --vm-red-primary: #ff0000;
+  --vm-red-hover: #d90000;
   --vm-red-soft: #fff0f1;
   --vm-red-border: #f7b8bc;
 
   /* Lienzos Neutros Limpios (Blanco del Logo y Hielo Azulado) */
   --vm-white: #ffffff;
-  --vm-slate-50: #f3f6fc;
-  --vm-slate-100: #e5ecfa;
-  --vm-slate-200: #cdd8f0;
-  --vm-slate-600: #334366;
+  --vm-slate-50: #f4f7fc;
+  --vm-slate-100: #e8eef8;
+  --vm-slate-200: #cdd9ed;
+  --vm-slate-600: #334155;
   --vm-slate-700: #1e3163;
-  --vm-slate-800: #0a194e;
+  --vm-slate-800: #0f172a;
 
   /* Tokens redirigidos a los Azules reales del Logo (nunca negro) */
-  --vm-navy-950: #000c8a;
-  --vm-navy-900: #0012b8;
-  --vm-navy-800: #0018e8;
+  --vm-navy-950: #0000b8;
+  --vm-navy-900: #0000e6;
+  --vm-navy-800: #0000ff;
   --vm-blue-light: #ffffff;
-  --vm-red-light: #ffccd0;
+  --vm-red-light: #fff0f1;
 
   --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -43,7 +43,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 115px;
 }
 
 body {
@@ -93,7 +93,16 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .text-vm-red-light {
-  color: #ffccd0 !important;
+  color: var(--vm-red-soft) !important;
+}
+
+.text-secondary,
+.text-muted {
+  color: var(--vm-slate-600) !important;
+}
+
+.text-dark {
+  color: var(--vm-slate-800) !important;
 }
 
 .bg-vm-blue {
@@ -141,40 +150,38 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-bottom: 3px solid var(--vm-red-primary);
 }
 
-.vm-topbar a {
+.vm-topbar a,
+.vm-topbar-item,
+.vm-topbar-icon {
   color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.vm-topbar a:hover {
-  color: #ffccd0;
+.vm-topbar a:hover,
+.vm-topbar-item:hover,
+.vm-topbar-item:hover i,
+.vm-topbar span:hover > .vm-topbar-icon {
+  color: var(--vm-red-primary) !important;
 }
 
 .vm-navbar {
   background-color: #ffffff;
   border-bottom: 2px solid var(--vm-blue-primary);
-  transition: all 0.3s ease;
-  padding-top: 0.65rem;
-  padding-bottom: 0.65rem;
-  box-shadow: 0 4px 18px rgba(0, 24, 232, 0.08);
+  transition: box-shadow 0.3s ease;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 255, 0.08);
 }
 
 .vm-navbar.scrolled {
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
-  box-shadow: 0 10px 28px rgba(0, 24, 232, 0.14);
+  box-shadow: 0 10px 28px rgba(0, 0, 255, 0.16);
 }
 
 .vm-logo-svg {
-  height: 58px;
+  height: 56px;
   width: auto;
   display: block;
-  transition: transform 0.25s ease;
-}
-
-.vm-navbar.scrolled .vm-logo-svg {
-  height: 50px;
 }
 
 .vm-nav-link {
@@ -195,22 +202,24 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 /* --------------------------------------------------------------------------
    Botones Corporativos Sólidos (Azul VIBROMINE y Rojo Sintomático)
    -------------------------------------------------------------------------- */
-.btn-vm-primary {
+.btn-vm-primary,
+.btn-vm-blue {
   background-color: var(--vm-blue-primary);
   color: #ffffff;
   font-weight: 700;
   border: none;
   padding: 0.75rem 1.6rem;
   border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 24, 232, 0.28);
+  box-shadow: 0 6px 18px rgba(0, 0, 255, 0.28);
   transition: all 0.25s ease;
 }
 
-.btn-vm-primary:hover {
+.btn-vm-primary:hover,
+.btn-vm-blue:hover {
   background-color: var(--vm-blue-royal);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 18, 184, 0.38);
+  box-shadow: 0 10px 24px rgba(0, 0, 230, 0.38);
 }
 
 .btn-vm-red,
@@ -221,7 +230,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border: none;
   padding: 0.75rem 1.6rem;
   border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(217, 16, 24, 0.32);
+  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.32);
   transition: all 0.25s ease;
 }
 
@@ -230,7 +239,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: var(--vm-red-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(179, 9, 16, 0.45);
+  box-shadow: 0 10px 24px rgba(217, 0, 0, 0.42);
 }
 
 .btn-vm-outline-blue {
@@ -247,6 +256,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: var(--vm-blue-primary);
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+.btn-vm-outline-blue:hover i {
+  color: #ffffff !important;
 }
 
 .btn-vm-outline-light {
@@ -313,7 +326,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   margin: 0.2em 0;
   border-radius: 10px;
   border: 2px solid #ffffff;
-  box-shadow: 0 10px 24px rgba(0, 12, 138, 0.4);
+  box-shadow: 0 10px 24px rgba(0, 0, 184, 0.4);
   line-height: 1.15;
 }
 
@@ -322,7 +335,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 16px;
   overflow: hidden;
   border: 3px solid #ffffff;
-  box-shadow: 0 20px 45px rgba(0, 12, 138, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 184, 0.45);
   background-color: var(--vm-blue-deep);
 }
 
@@ -378,21 +391,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 14px;
   padding: 1.75rem 1.4rem;
   border: 1.5px solid var(--vm-slate-200);
-  box-shadow: 0 14px 32px rgba(0, 18, 184, 0.12);
+  border-top: 4px solid var(--vm-blue-primary);
+  box-shadow: 0 14px 32px rgba(0, 0, 230, 0.12);
   height: 100%;
   transition: all 0.3s ease;
-  border-top: 4px solid var(--vm-blue-primary);
-  border-bottom: 4px solid var(--vm-blue-primary);
-}
-
-.vm-stat-card.stat-red {
-  border-top-color: var(--vm-red-primary);
-  border-bottom-color: var(--vm-red-primary);
 }
 
 .vm-stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 42px rgba(0, 24, 232, 0.18);
+  border-color: var(--vm-red-primary);
+  border-top-color: var(--vm-red-primary);
+  box-shadow: 0 20px 42px rgba(0, 0, 255, 0.18);
 }
 
 .vm-stat-number {
@@ -428,6 +437,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 /* --------------------------------------------------------------------------
    Tarjetas de Servicios en Grilla de 2 Horizontal con Proporción 4:3 HD
    -------------------------------------------------------------------------- */
+.vm-service-col {
+  scroll-margin-top: 125px;
+}
+
 .vm-service-card {
   background-color: #ffffff;
   border-radius: 18px;
@@ -437,20 +450,27 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   height: 100%;
   display: flex;
   flex-direction: column;
+  scroll-margin-top: 125px;
   transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 28px rgba(0, 18, 184, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 230, 0.08);
+}
+
+@media (min-width: 992px) {
+  .vm-service-card {
+    min-height: clamp(440px, calc(100vh - 140px), 560px);
+  }
 }
 
 .vm-service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 22px 48px rgba(0, 24, 232, 0.18);
+  box-shadow: 0 22px 48px rgba(0, 0, 255, 0.18);
   border-color: var(--vm-red-primary);
   border-top-color: var(--vm-red-primary);
 }
 
 .vm-service-card.highlighted-symptom {
   border: 2.5px solid var(--vm-red-primary);
-  box-shadow: 0 0 0 4px rgba(217, 16, 24, 0.2), 0 20px 40px rgba(0, 18, 184, 0.16);
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.2), 0 20px 40px rgba(0, 0, 230, 0.16);
 }
 
 .vm-service-media-col {
@@ -465,18 +485,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .vm-service-img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  min-height: 190px;
   border-radius: 12px;
   overflow: hidden;
   background-color: var(--vm-blue-deep);
   border: 2px solid #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 12, 138, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 184, 0.35);
 }
 
 .vm-service-img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 4 / 3;
+  min-height: 190px;
   object-fit: cover;
   image-rendering: -webkit-optimize-contrast;
   filter: contrast(1.03) saturate(1.04);
@@ -542,30 +562,31 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .vm-service-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   background-color: var(--vm-blue-primary);
   color: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
-  box-shadow: 0 6px 15px rgba(0, 24, 232, 0.25);
+  box-shadow: 0 6px 15px rgba(0, 0, 255, 0.25);
 }
 
 .vm-detection-list {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .vm-detection-list li {
   position: relative;
-  padding-left: 1.45rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.88rem;
+  padding-left: 1.35rem;
+  margin-bottom: 0.28rem;
+  font-size: 0.83rem;
+  line-height: 1.35;
   color: var(--vm-slate-600);
 }
 
@@ -640,21 +661,27 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-bottom: 5px solid var(--vm-red-primary);
 }
 
-.vm-cert-card {
+.vm-cert-card,
+.vm-workflow-card,
+.vm-about-card {
   background-color: #ffffff;
   color: var(--vm-slate-800);
-  border: 2px solid #ffffff;
-  border-top: 5px solid var(--vm-red-primary);
+  border: 1.5px solid var(--vm-slate-200);
+  border-top: 4px solid var(--vm-blue-primary);
   border-radius: 16px;
   padding: 2rem;
   height: 100%;
   transition: all 0.3s ease;
-  box-shadow: 0 14px 32px rgba(0, 12, 138, 0.25);
+  box-shadow: 0 14px 32px rgba(0, 0, 184, 0.18);
 }
 
-.vm-cert-card:hover {
+.vm-cert-card:hover,
+.vm-workflow-card:hover,
+.vm-about-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 42px rgba(0, 12, 138, 0.38);
+  border-color: var(--vm-red-primary);
+  border-top-color: var(--vm-red-primary);
+  box-shadow: 0 20px 42px rgba(0, 0, 255, 0.25);
 }
 
 /* --------------------------------------------------------------------------
@@ -699,7 +726,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   padding: 0.85rem 1.5rem;
   min-width: 220px;
   height: 96px;
-  box-shadow: 0 6px 16px rgba(0, 18, 184, 0.06);
+  box-shadow: 0 6px 16px rgba(0, 0, 230, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -710,7 +737,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-color: var(--vm-red-primary);
   border-top-color: var(--vm-red-primary);
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 24, 232, 0.16);
+  box-shadow: 0 10px 24px rgba(0, 0, 255, 0.16);
 }
 
 .vm-marquee-item img {
@@ -747,10 +774,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-size: 0.81rem;
   font-weight: 700;
   background-color: #ffffff;
-  color: var(--vm-blue-royal);
-  border: 1.5px solid var(--vm-blue-border);
+  color: var(--vm-blue-primary);
+  border: 2px solid var(--vm-blue-primary);
   transition: all 0.22s ease;
   cursor: pointer;
+}
+
+.vm-sector-filter-btn i {
+  color: var(--vm-blue-primary);
+  transition: color 0.22s ease;
 }
 
 .vm-sector-filter-btn:hover {
@@ -759,18 +791,26 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: var(--vm-red-soft);
 }
 
+.vm-sector-filter-btn:hover i {
+  color: var(--vm-red-primary) !important;
+}
+
 .vm-sector-filter-btn.active {
-  background-color: var(--vm-blue-primary);
+  background-color: var(--vm-red-primary);
   color: #ffffff;
-  border-color: var(--vm-blue-primary);
+  border-color: var(--vm-red-primary);
   font-weight: 700;
-  box-shadow: 0 6px 16px rgba(0, 24, 232, 0.28);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.32);
+}
+
+.vm-sector-filter-btn.active i {
+  color: #ffffff !important;
 }
 
 .vm-client-card {
   background-color: #ffffff;
   border: 1.5px solid var(--vm-slate-200);
-  border-top: 3px solid var(--vm-red-primary);
+  border-top: 4px solid var(--vm-blue-primary);
   border-radius: 14px;
   padding: 1.25rem;
   height: 100%;
@@ -778,13 +818,13 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(0, 18, 184, 0.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 230, 0.05);
 }
 
 .vm-client-card:hover {
-  border-color: var(--vm-blue-primary);
-  border-top-color: var(--vm-blue-primary);
-  box-shadow: 0 14px 32px rgba(0, 24, 232, 0.16);
+  border-color: var(--vm-red-primary);
+  border-top-color: var(--vm-red-primary);
+  box-shadow: 0 14px 32px rgba(0, 0, 255, 0.16);
   transform: translateY(-4px);
 }
 
@@ -856,7 +896,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 18px;
   border: 1.5px solid var(--vm-slate-200);
   border-top: 5px solid var(--vm-blue-primary);
-  box-shadow: 0 20px 50px rgba(0, 18, 184, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 230, 0.12);
   padding: 2.5rem;
 }
 
@@ -870,7 +910,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .vm-form-control:focus {
   border-color: var(--vm-blue-primary);
-  box-shadow: 0 0 0 4px rgba(0, 24, 232, 0.16);
+  box-shadow: 0 0 0 4px rgba(0, 0, 255, 0.16);
 }
 
 /* --------------------------------------------------------------------------
@@ -918,8 +958,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   transition: color 0.2s ease;
 }
 
-.vm-footer a:hover {
-  color: #ffccd0;
+.vm-footer a:hover,
+.vm-footer a:hover i {
+  color: var(--vm-red-primary) !important;
 }
 
 @media (max-width: 767.98px) {
